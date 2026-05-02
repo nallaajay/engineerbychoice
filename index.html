@@ -488,9 +488,9 @@
     <!-- CONTACT FORM -->
     <div class="contact-form-wrap" id="contact-form">
       <div class="contact-form-label">Send a Message</div>
-      <div id="form-success" class="form-success" style="display:none;">✓ Message sent — I'll be in touch within 24 hours.</div>
-      <div id="form-error" class="form-error" style="display:none;">Something went wrong. Please email me directly at ajayn@engineerbychoice.com</div>
-      <form id="portfolio-contact" class="contact-form">
+      <form action="https://formspree.io/f/xrejbwdv" method="POST">
+        <input type="hidden" name="_subject" value="New enquiry — engineerbychoice.com"/>
+        <input type="hidden" name="_next" value="https://www.engineerbychoice.com"/>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Your Name</label>
@@ -517,7 +517,7 @@
           <label class="form-label">Message</label>
           <textarea name="message" class="form-input form-textarea" placeholder="Tell me about your project, timeline, and what you need..." required></textarea>
         </div>
-        <button type="submit" id="form-btn" class="form-submit">Send Message →</button>
+        <button type="submit" class="form-submit">Send Message →</button>
       </form>
     </div>
 
@@ -535,41 +535,7 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    document.getElementById('portfolio-contact').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      var btn = document.getElementById('form-btn');
-      var success = document.getElementById('form-success');
-      var error = document.getElementById('form-error');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-      success.style.display = 'none';
-      error.style.display = 'none';
-      var data = new FormData(this);
-      try {
-        var response = await fetch('https://formspree.io/f/xrejbwdv', {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          success.style.display = 'block';
-          this.reset();
-          btn.textContent = '✓ Sent';
-        } else {
-          var json = await response.json();
-          console.log('Formspree error:', json);
-          error.style.display = 'block';
-          btn.textContent = 'Send Message →';
-          btn.disabled = false;
-        }
-      } catch(err) {
-        console.log('Fetch error:', err);
-        error.style.display = 'block';
-        btn.textContent = 'Send Message →';
-        btn.disabled = false;
-      }
-    });
-  </script>
+</body>
+</html>
 </body>
 </html>
