@@ -86,6 +86,30 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') lightbox?.classList.remove('open');
 });
 
+// ── Video autoplay on scroll into view (src-swap method — most reliable)
+const videoAutoplay = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const iframe = entry.target.querySelector('iframe');
+    if (!iframe) return;
+    if (entry.isIntersecting) {
+      // Add autoplay+mute to src if not already there
+      if (!iframe.src.includes('autoplay=1')) {
+        const sep = iframe.src.includes('?') ? '&' : '?';
+        iframe.src = iframe.src + sep + 'autoplay=1&mute=1';
+      }
+    } else {
+      // Remove autoplay params to pause — strip and reload
+      iframe.src = iframe.src
+        .replace('&autoplay=1&mute=1', '')
+        .replace('?autoplay=1&mute=1', '')
+        .replace('autoplay=1&mute=1&', '')
+        .replace('autoplay=1&mute=1', '');
+    }
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('.video-only').forEach(el => videoAutoplay.observe(el));
+
 // ── Smooth cursor trail (subtle)
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Engineer by Choice — Portfolio loaded.');
