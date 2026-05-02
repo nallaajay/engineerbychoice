@@ -115,9 +115,5 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Engineer by Choice — Portfolio loaded.');
 });
 
-function handleFormSubmit(e) {
-  e.preventDefault();
-  var success = document.getElementById('form-success');
-  if (success) { success.style.display = 'block'; }
-  e.target.reset();
-}
+
+
