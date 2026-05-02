@@ -488,20 +488,23 @@
     <!-- CONTACT FORM -->
     <div class="contact-form-wrap reveal" id="contact-form">
       <div class="contact-form-label">Send a Message</div>
-      <form class="contact-form" onsubmit="handleFormSubmit(event)">
+      <form class="contact-form" action="https://formspree.io/f/xrejbwdv" method="POST">
+        <input type="hidden" name="_replyto" value="engineerbychoicebudget@gmail.com"/>
+        <input type="hidden" name="_subject" value="New enquiry from engineerbychoice.com"/>
+        <input type="text" name="_gotcha" style="display:none"/>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" placeholder="John Smith" required/>
+            <input type="text" name="name" class="form-input" placeholder="John Smith" required/>
           </div>
           <div class="form-group">
             <label class="form-label">Your Email</label>
-            <input type="email" class="form-input" placeholder="john@company.com" required/>
+            <input type="email" name="email" class="form-input" placeholder="john@company.com" required/>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Subject</label>
-          <select class="form-input form-select">
+          <select name="subject" class="form-input form-select">
             <option value="">— Select a topic —</option>
             <option>Medical Device Consulting</option>
             <option>Robotics / Mechatronics Project</option>
@@ -513,10 +516,9 @@
         </div>
         <div class="form-group">
           <label class="form-label">Message</label>
-          <textarea class="form-input form-textarea" placeholder="Tell me about your project, timeline, and what you need..." required></textarea>
+          <textarea name="message" class="form-input form-textarea" placeholder="Tell me about your project, timeline, and what you need..." required></textarea>
         </div>
         <button type="submit" class="form-submit">Send Message →</button>
-        <div class="form-success" id="form-success">✓ Message sent — I'll be in touch within 24 hours.</div>
       </form>
     </div>
 
