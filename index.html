@@ -488,23 +488,23 @@
     <!-- CONTACT FORM -->
     <div class="contact-form-wrap reveal" id="contact-form">
       <div class="contact-form-label">Send a Message</div>
-      <form class="contact-form" action="https://formspree.io/f/xrejbwdv" method="POST">
-        <input type="hidden" name="_replyto" value="engineerbychoicebudget@gmail.com"/>
-        <input type="hidden" name="_subject" value="New enquiry from engineerbychoice.com"/>
-        <input type="text" name="_gotcha" style="display:none"/>
+      <div data-fs-success style="display:none;" class="form-success">✓ Message sent — I'll be in touch within 24 hours.</div>
+      <div data-fs-error style="display:none;" class="form-error">Something went wrong. Please email me directly at ajayn@engineerbychoice.com</div>
+      <form id="portfolio-contact" class="contact-form">
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Your Name</label>
-            <input type="text" name="name" class="form-input" placeholder="John Smith" required/>
+            <input type="text" name="name" data-fs-field class="form-input" placeholder="John Smith" required/>
           </div>
           <div class="form-group">
             <label class="form-label">Your Email</label>
-            <input type="email" name="email" class="form-input" placeholder="john@company.com" required/>
+            <input type="email" name="email" data-fs-field class="form-input" placeholder="john@company.com" required/>
+            <span data-fs-error="email" style="font-size:0.7rem;color:#c0392b;"></span>
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Subject</label>
-          <select name="subject" class="form-input form-select">
+          <select name="subject" data-fs-field class="form-input form-select">
             <option value="">— Select a topic —</option>
             <option>Medical Device Consulting</option>
             <option>Robotics / Mechatronics Project</option>
@@ -516,11 +516,18 @@
         </div>
         <div class="form-group">
           <label class="form-label">Message</label>
-          <textarea name="message" class="form-input form-textarea" placeholder="Tell me about your project, timeline, and what you need..." required></textarea>
+          <textarea name="message" data-fs-field class="form-input form-textarea" placeholder="Tell me about your project, timeline, and what you need..." required></textarea>
+          <span data-fs-error="message" style="font-size:0.7rem;color:#c0392b;"></span>
         </div>
-        <button type="submit" class="form-submit">Send Message →</button>
+        <button type="submit" data-fs-submit-btn class="form-submit">Send Message →</button>
       </form>
     </div>
+
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#portfolio-contact', formId: 'xrejbwdv' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
     <div class="about-links" style="justify-content:center;margin-top:2.5rem;">
       <a href="https://grabcad.com/ajay.nalla-1" target="_blank" class="about-link">↗ GrabCAD Portfolio</a>
