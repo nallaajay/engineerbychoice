@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ajay Nalla — Engineer by Choice | Mechatronics & Medical Device Engineer</title>
+  <meta name="description" content="Mechatronics and Mechanical Engineer — UBC M.Eng. Medical devices, robotics, CNC, additive manufacturing. Available for remote consulting globally."/>
+  <meta name="keywords" content="mechatronics engineer, medical device engineer, ISO 13485, robotics, CNC, additive manufacturing, UBC, remote engineering consulting"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-close">✕</div>
+    <img id="lightbox-img" src="" alt="Project image"/>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#home" class="nav-logo">Engineer by Choice</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text">ENGINEER</div>
+    <div class="hero-left">
+      <div class="hero-eyebrow">Mechatronics · Medical Devices · Robotics · Manufacturing</div>
+      <h1 class="hero-name">Ajay<span>Nalla.</span></h1>
+      <p class="hero-tagline">Engineering systems where mechanical precision meets embedded intelligence — from Class III implantable devices to parallel-kinematic robots.</p>
+      <div class="hero-tags">
+        <span class="tag">ISO 13485 · FDA</span>
+        <span class="tag">Class III Medical Devices</span>
+        <span class="tag">Robotics & Automation</span>
+        <span class="tag">R&D · Product Development</span>
+        <span class="tag">CNC · Additive Manufacturing</span>
+        <span class="tag">Remote · Available Globally</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Work Together</a>
+      </div>
+      <div class="hero-credentials">
+        <div class="credential-row">
+          <div class="cred"><strong>M.Eng</strong>University of British Columbia</div>
+          <div class="cred"><strong>B.Tech</strong>JNTUH · Mechanical Engineering</div>
+          <div class="cred"><strong>Exp.</strong>Canada · India</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-frame">
+        <img src="images/profile-graduation.jpg" alt="Ajay Nalla — UBC M.Eng Graduation"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-label">01 — Profile</div>
+    <h2 class="section-heading">Built Different.</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I am a <strong>Mechatronics and Mechanical Engineer</strong> operating at the convergence of hardware design, embedded systems, and regulated manufacturing. My work spans Class III invasive medical devices, cable-driven parallel robots, spherical manipulators, and large-format additive manufacturing systems.</p>
+        <p>With an <strong>M.Eng from the University of British Columbia</strong> and experience at <strong>Resonetics Canada</strong> as an R&D Mechanical Design Engineer — owning the full path from new product development and process validation through production line creation, QMS documentation, and manufacturing team leadership — I bring both deep technical capability and the discipline that safety-critical environments demand.</p>
+        <p>I design systems that <strong>close the loop</strong>: from mechanical architecture through electronics integration, firmware, and final validation in ISO 13485 environments. This cross-domain fluency — spanning R&D, manufacturing, robotics, and embedded systems — is rare, and it defines every project I take on.</p>
+        <div class="about-links">
+          <a href="https://www.linkedin.com/in/ajayreddynalla/" target="_blank" class="about-link">↗ LinkedIn</a>
+          <a href="https://grabcad.com/ajay.nalla-1" target="_blank" class="about-link">↗ GrabCAD Models</a>
+          <a href="#contact" class="about-link" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});return false;">↗ Get in Touch</a>
+        </div>
+      </div>
+      <div class="about-right reveal">
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-number">5+</div><div class="stat-label">Years Engineering Experience</div></div>
+          <div class="stat-card"><div class="stat-number">III</div><div class="stat-label">Class III Medical Device Work</div></div>
+          <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Major Projects Delivered</div></div>
+          <div class="stat-card"><div class="stat-number">ISO</div><div class="stat-label">13485 / QMS Regulated Env.</div></div>
+        </div>
+        <div class="about-device-img">
+          <img src="images/medical-implant.jpg" alt="Class III implantable medical device — fingertip scale"/>
+          <div class="about-device-caption">Class III Implantable Device · Fingertip Scale · Life-Critical Engineering</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="section-label">02 — Portfolio</div>
+    <h2 class="section-heading">Selected Works.</h2>
+
+    <!-- P1: RESONETICS (moved to first) -->
+    <div class="project-card reveal">
+      <div class="project-inner">
+        <div class="project-gallery">
+          <img class="main-img lightbox-trigger" src="images/resonetics-battery2.png" alt="Resonetics Contego P200 — Lithium CFx Battery" style="width:100%;height:100%;object-fit:contain;background:#0d0d0f;cursor:pointer;padding:2rem;"/>
+          <div class="gallery-thumbs">
+            <img class="thumb lightbox-trigger" src="images/resonetics-battery2.png" alt="Resonetics Contego P200 battery"/>
+            <img class="thumb lightbox-trigger" src="images/medical-implant.jpg" alt="Implant scale reference"/>
+          </div>
+          <div class="gallery-courtesy">Images courtesy Resonetics Medical Power</div>
+        </div>
+        <div class="project-content">
+          <div class="project-number">01</div>
+          <div class="project-category">Medical Device R&D · ISO 13485 · Class III</div>
+          <h3 class="project-title">Resonetics — Implantable Device Systems</h3>
+          <p class="project-desc">R&D Mechanical Design Engineer and Manufacturing Team Lead for Class III implantable battery systems powering pacemakers and neurostimulators (Abbott, Stryker, Boston Scientific) — within a fully ISO 13485 / FDA-compliant QMS. Reported directly to R&D Director, bridging product development and manufacturing while leading a team of 4 engineers overseeing 50 production workers. Owned the complete path from new product development through production — designing and validating new processes (IQ/OQ/PQ, DHF/DMR), automating manual manufacturing processes, and driving root-cause analysis and CAPA resolution. Delivered measurable impact: <strong>reduced scrap from ~30% to ~2%</strong> and <strong>cut critical process time from 40 hours to ~20 minutes</strong> through system redesign, automation, and equipment retrofitting.</p>
+          <div class="project-tech">
+            <span class="tech-pill">ISO 13485 / FDA</span>
+            <span class="tech-pill">Class III Devices</span>
+            <span class="tech-pill">R&D Mechanical Design</span>
+            <span class="tech-pill">IQ / OQ / PQ</span>
+            <span class="tech-pill">DHF / DMR</span>
+            <span class="tech-pill">Lean Manufacturing</span>
+            <span class="tech-pill">CTQ Data Analysis</span>
+            <span class="tech-pill">Team Leadership</span>
+          </div>
+          <div class="project-highlight">Scrap reduced ~30% → ~2% · Critical process time 40 hrs → ~20 min through automation and system redesign · Clients: Abbott, Stryker, Boston Scientific.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2: CONCRETE PRINTER -->
+    <div class="project-card reveal">
+      <div class="project-inner reverse">
+        <div class="project-gallery" style="position:relative;background:#0d0d0f;">
+          <iframe src="https://www.youtube.com/embed/IjnoCOKBG7U?rel=0&modestbranding=1" title="Concrete 3D Printer Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:360px;display:block;border:0;position:absolute;inset:0;"></iframe>
+          <div style="min-height:360px;"></div>
+          <div class="gallery-thumbs">
+            <img class="thumb lightbox-trigger" src="images/concrete-printer-cable.jpg" alt="Cable-driven concrete printer"/>
+            <img class="thumb lightbox-trigger" src="images/concrete-extrusion.jpg" alt="Extrusion nozzle closeup"/>
+            <img class="thumb lightbox-trigger" src="images/concrete-printed.png" alt="Printed concrete result"/>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-number">02</div>
+          <div class="project-category">Construction Robotics · Large-Scale Additive Manufacturing</div>
+          <h3 class="project-title">Concrete 3D Printer</h3>
+          <p class="project-desc">Led design and development of a cable-driven concrete 3D printing system targeting ~10,000 sq ft construction scale. Progressed from independent consultant to project lead, managing a team of 5 engineers and 2 technicians. Owned mechanical and system design end-to-end — motion architecture, extrusion system, and vision-based path correction. Delivered a functional prototype within 14 months using under $100K of a $1M project budget through rapid prototyping, FDM-based development, and capital-conscious design.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Cable-Driven Parallel Robot</span>
+            <span class="tech-pill">Extrusion System</span>
+            <span class="tech-pill">Vision-Based Path Correction</span>
+            <span class="tech-pill">Motion Architecture</span>
+            <span class="tech-pill">Team Leadership</span>
+            <span class="tech-pill">Rapid Prototyping</span>
+          </div>
+          <div class="project-highlight">Functional prototype in 14 months · Under $100K of $1M budget · Team of 7 · Targeting 10,000 sq ft construction scale.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3: BCIT -->
+    <div class="project-card reveal">
+      <div class="project-inner">
+        <div class="project-gallery" style="position:relative;background:#0d0d0f;">
+          <iframe src="https://www.youtube.com/embed/qKFPMa1yNug?rel=0&modestbranding=1" title="CNC 5-Axis HAAS 750 Simulation — VERICUT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:360px;display:block;border:0;position:absolute;inset:0;"></iframe>
+          <div style="min-height:360px;"></div>
+          <div class="gallery-thumbs">
+            <img class="thumb lightbox-trigger" src="images/3dprint-metals.jpg" alt="Metal 3D prints"/>
+            <img class="thumb lightbox-trigger" src="images/3dprint-plastics.jpg" alt="Plastic 3D prints"/>
+            <img class="thumb lightbox-trigger" src="images/3dprint-powder.jpg" alt="Powder bed fusion prints"/>
+            <img class="thumb lightbox-trigger" src="images/cnc-haas-lab.jpg" alt="HAAS CNC machines"/>
+          </div>
+          <div class="gallery-courtesy">Images & video courtesy BCIT Advanced Manufacturing Hub</div>
+        </div>
+        <div class="project-content">
+          <div class="project-number">03</div>
+          <div class="project-category">Applied Research · Advanced Manufacturing · BCIT</div>
+          <h3 class="project-title">BCIT — Advanced Manufacturing Research</h3>
+          <p class="project-desc">Research Analyst at BCIT's Advanced Additive Manufacturing Technology Hub, working across the full spectrum of digital manufacturing — from 5-axis CNC machining to polymer and metal additive processes (FDM, SLA, HP MJF). Led material research on copper-infused PLA filaments for FDM, resulting in a published research study on improving mechanical performance and printability. Hands-on across CAM programming, toolpath optimization, and fabrication, with contributions to biomedical and robotic system development within applied research and product development initiatives.</p>
+          <div class="project-tech">
+            <span class="tech-pill">HAAS 5-Axis CNC</span>
+            <span class="tech-pill">VERICUT CAM Simulation</span>
+            <span class="tech-pill">HP MJF Powder Bed</span>
+            <span class="tech-pill">FDM / SLA</span>
+            <span class="tech-pill">Metal Additive</span>
+            <span class="tech-pill">Published Research</span>
+          </div>
+          <div class="project-highlight">Published research on copper-infused PLA · Full-spectrum digital manufacturing · Biomedical and robotic system contributions at BCIT's AM Technology Hub.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P4: SPM -->
+    <div class="project-card reveal">
+      <div class="project-inner reverse">
+        <div class="project-gallery" style="position:relative;background:#0d0d0f;">
+          <iframe src="https://www.youtube.com/embed/nOu_WwaFv3Y?rel=0&modestbranding=1" title="Spherical Parallel Manipulator Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:360px;display:block;border:0;position:absolute;inset:0;"></iframe>
+          <div style="min-height:360px;"></div>
+          <div class="gallery-thumbs">
+            <img class="thumb lightbox-trigger" src="images/spm-main.png" alt="SPM prototype — full system"/>
+            <img class="thumb lightbox-trigger" src="images/spm-workbench.png" alt="SPM wiring and assembly"/>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-number">04</div>
+          <div class="project-category">Parallel Robotics · UBC Research · System Redesign</div>
+          <h3 class="project-title">Spherical Parallel Manipulator</h3>
+          <p class="project-desc">Designed and developed a 3-DOF spherical parallel manipulator, followed by a full system-level redesign to resolve mechanical, actuation, and control limitations. Diagnosed structural misalignment, actuator underperformance, and electronics failure — then rebuilt end-to-end covering mechanical validation, actuator selection, power architecture, and embedded control. Delivered a fully functional platform with stable motion: servo actuation, Raspberry Pi control, inverse kinematics modelled in Adams, and dual control modes — physical potentiometers and a digital app with slider-based and predefined position control via inverse kinematics.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Parallel Kinematics</span>
+            <span class="tech-pill">Adams IK Simulation</span>
+            <span class="tech-pill">Raspberry Pi Control</span>
+            <span class="tech-pill">Servo Actuation</span>
+            <span class="tech-pill">Digital App GUI</span>
+            <span class="tech-pill">Potentiometer Control</span>
+          </div>
+          <div class="project-highlight">Dual control modes — physical potentiometers and digital app. IK-driven predefined positions via Adams simulation. Full system redesign from failure diagnosis to functional platform.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P5: BIONIC ARM (Makershive) -->
+    <div class="project-card reveal">
+      <div class="project-inner">
+        <div class="project-gallery" style="position:relative;background:#0d0d0f;">
+          <iframe src="https://www.youtube.com/embed/dnWHzWE7D-o?rel=0&modestbranding=1" title="Bionic Arm — Makershive Prosthetic Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:360px;display:block;border:0;position:absolute;inset:0;"></iframe>
+          <div style="min-height:360px;"></div>
+          <div class="gallery-thumbs">
+            <img class="thumb lightbox-trigger" src="images/bionic-arm-render.png" alt="Bionic arm 3D render"/>
+            <img class="thumb lightbox-trigger" src="images/bionic-app.png" alt="KAL ASSIST control app"/>
+          </div>
+          <div class="gallery-courtesy">Images & video courtesy Makers Hive Innovations</div>
+        </div>
+        <div class="project-content">
+          <div class="project-number">05</div>
+          <div class="project-category">Biomedical Robotics · Prosthetics · ISO 13485</div>
+          <h3 class="project-title">Makershive — Bionic Prosthetic Hand</h3>
+          <p class="project-desc">Core contributor to an affordable, high-performance bionic prosthetic hand — spanning mechanical design, system integration, and product optimization. Delivered 18 grip modes and ~8 kg load capacity using custom actuation and embedded systems. Drove cost reduction from ~$30K–60K to under $3K through CAE, rapid prototyping, and design simplification. Led coordination between mechanical and electronics teams, developed under ISO 13485 standards for real-world deployment in cost-sensitive markets.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Custom Actuators</span>
+            <span class="tech-pill">Bluetooth Control</span>
+            <span class="tech-pill">3D Printed Body</span>
+            <span class="tech-pill">Custom EMG Electrodes</span>
+            <span class="tech-pill">ISO 13485</span>
+            <span class="tech-pill">18 Grip Modes</span>
+          </div>
+          <div class="project-highlight">Cost reduced from ~$30K–60K to under $3K · 18 grip modes · ~8 kg load capacity · Fully bionic hand developed to ISO 13485 standards for accessible deployment.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P6: MOTORSPORT -->
+    <div class="project-card reveal">
+      <div class="project-inner reverse">
+        <div class="project-gallery">
+          <img class="main-img lightbox-trigger" src="images/kart-racing.jpg" alt="BAJA ATV competition" style="width:100%;height:100%;object-fit:cover;cursor:pointer;"/>
+          <div class="gallery-thumbs">
+            <img class="thumb lightbox-trigger" src="images/kart-racing.jpg" alt="BAJA ATV racing action"/>
+            <img class="thumb lightbox-trigger" src="images/kart-sitting.jpg" alt="Formula kart competition"/>
+            <img class="thumb lightbox-trigger" src="images/cnc-simulation.png" alt="CNC CAM simulation"/>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-number">06</div>
+          <div class="project-category">Vehicle Dynamics · Motorsport Engineering · BAJA</div>
+          <h3 class="project-title">Formula & BAJA Motorsport</h3>
+          <p class="project-desc">Designed, built, and competed with Formula-style kart and BAJA all-terrain vehicles as part of student design teams — working across the full vehicle lifecycle: chassis design, suspension geometry, powertrain integration, and vehicle dynamics tuning. Hands-on fabrication using lathe, milling, welding, cutting, and tube bending alongside CAD/CAE-driven design validation and CNC-machined custom components. Responsible for design engineering, cost analysis, budget planning, and compliance with BAJA technical rules and safety standards. Competed in SAE India BAJA — a large-scale endurance event with rigorous technical inspection validating both engineering design and build quality.</p>
+          <div class="project-tech">
+            <span class="tech-pill">Chassis Design</span>
+            <span class="tech-pill">Suspension Geometry</span>
+            <span class="tech-pill">Powertrain Integration</span>
+            <span class="tech-pill">Lathe / Mill / Welding</span>
+            <span class="tech-pill">CAD / CAE Validation</span>
+            <span class="tech-pill">Budget Management</span>
+          </div>
+          <div class="project-highlight">Full design-to-race cycle — chassis, suspension, fabrication, CNC components. Design Engineer and Costing Engineer — budget owner and compliance lead for BAJA rules.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="section-label">03 — Career</div>
+    <h2 class="section-heading">Experience.</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Feb 2024 — Present</div>
+        <div class="timeline-company">Resonetics Medical Power</div>
+        <div class="timeline-role">Mechanical Design Engineer · Surrey, Canada</div>
+        <ul class="timeline-details">
+          <li>R&D Mechanical Design Engineer in product development for Class III implantable lithium/Li-Ion batteries serving Abbott, Stryker, and Boston Scientific</li>
+          <li>Reports directly to R&D Director — bridges product development and manufacturing; leads 4 engineers overseeing 50 production workers</li>
+          <li>Reduced scrap from ~30% to ~2% and cut critical process time from 40 hrs to ~20 min through system redesign and equipment retrofitting — saving USD 1M+</li>
+          <li>Automated manual manufacturing processes using Lean Manufacturing; developed CTQ data analysis tools to identify trends and prevent production backlogs</li>
+          <li>Designed and validated manufacturing processes compliant with ISO 13485 & FDA regulations; created DHF/DMR documentation and robust traceability systems</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Apr 2023 — Feb 2024</div>
+        <div class="timeline-company">British Columbia Institute of Technology (BCIT)</div>
+        <div class="timeline-role">Research Analyst — Applied Research · Burnaby, Canada</div>
+        <ul class="timeline-details">
+          <li>Hired by BCIT's Applied Research division for material research on FDM metal-filled polymer filaments; developed novel approaches to enhance mechanical properties</li>
+          <li>Led copper-infused PLA filament research resulting in a published research study on improving strength and printability</li>
+          <li>Managed Advanced Additive Manufacturing Lab; provided manufacturing support across metal, composites, SLS, and FDM processes for industry clients</li>
+          <li>Hands-on across 5-axis CNC (HAAS UMC 750), VERICUT simulation, HP MJF powder bed, and multi-material additive systems</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Dec 2022 — Feb 2023</div>
+        <div class="timeline-company">Industrial Pixel VFX</div>
+        <div class="timeline-role">Mechanical & Electrical Designer · Vancouver, Canada</div>
+        <ul class="timeline-details">
+          <li>Designed and developed electromechanical systems for the film industry — clients include Marvel, DC, and major Hollywood productions</li>
+          <li>Responsible for full body scan rigs, face scanners, and mobile LiDAR systems for capturing actors and scenes to create digital doubles</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Nov 2022 — Jan 2024</div>
+        <div class="timeline-company">Archtype 3D · 14North Construction Ltd</div>
+        <div class="timeline-role">Consultant Engineer (Mechatronics) · Saskatoon, Canada</div>
+        <ul class="timeline-details">
+          <li>Independent engineering consultant hired to develop a concrete 3D printer for construction — progressed to project lead managing 5 engineers and 2 technicians</li>
+          <li>Designed and developed a Cable-Driven Parallel Robot capable of printing 10,000 sq ft structures; delivered functional prototype within 14 months under $100K of a $1M budget</li>
+          <li>Owned motion architecture, extrusion system design, vision-based path correction, and tested 8×8 ft concrete 3D print samples</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2019 — Aug 2021</div>
+        <div class="timeline-company">Makers Hive Innovations</div>
+        <div class="timeline-role">Mechanical Design & Support Engineer · Hyderabad, India</div>
+        <ul class="timeline-details">
+          <li>Core R&D mechanical design team member at an internationally recognised startup developing advanced bionic upper limb prostheses — designed, validated, and patented electromechanical mechanisms to ISO 13485</li>
+          <li>Drove cost reduction from ~$30K–60K to under $3K through CAE, rapid prototyping, and design simplification; delivered 18 grip modes and ~8 kg load capacity</li>
+          <li>Cross-functional collaboration with electronics team on control board design; engineered in-house testing strategies that accelerated ISO 13485 certification</li>
+          <li>Led coordination of additive manufacturing for prototype acceleration; monitored externally manufactured component quality</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Mar 2019 — Aug 2019</div>
+        <div class="timeline-company">Leap Robots LLP</div>
+        <div class="timeline-role">Research Associate · Hyderabad, India</div>
+        <ul class="timeline-details">
+          <li>Mechanical designs for electronic enclosures, robot frames, and gearboxes; FDM in-house prototyping and assembly</li>
+          <li>Programmed Arduino and Raspberry Pi microcontrollers for robot control systems</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Mar 2018 — Sep 2018</div>
+        <div class="timeline-company">Eleation</div>
+        <div class="timeline-role">Engineering Intern · Pune, India</div>
+        <ul class="timeline-details">
+          <li>Design validation using Ansys Workbench 18.1 — validated wind turbine blade design through CFD analysis with full documentation</li>
+          <li>Worked across Ansys Mechanical and Ansys Fluent simulation environments</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="section-label">04 — Capabilities</div>
+    <h2 class="section-heading">Technical Stack.</h2>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Mechanical Design</div>
+        <ul class="skill-list">
+          <li>SolidWorks / CATIA / Fusion 360</li>
+          <li>GD&T and Tolerance Analysis</li>
+          <li>FEA — Structural & Thermal</li>
+          <li>Mechanism Design & Kinematics</li>
+          <li>DFM / DFA Principles</li>
+          <li>Technical Drawing & Detailing</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Mechatronics & Embedded</div>
+        <ul class="skill-list">
+          <li>Embedded C / C# / Python</li>
+          <li>Raspberry Pi & Arduino Systems</li>
+          <li>Servo & Stepper Motor Control</li>
+          <li>Sensor Integration & Signal Processing</li>
+          <li>PCB Schematic Review</li>
+          <li>Bluetooth / Wireless Comms</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Manufacturing</div>
+        <ul class="skill-list">
+          <li>5-Axis CNC — HAAS Mill & Lathe</li>
+          <li>CAM — Mastercam / Fusion CAM</li>
+          <li>FDM / SLA / DLP Additive</li>
+          <li>HP MJF Powder Bed Fusion</li>
+          <li>Metal Additive Manufacturing</li>
+          <li>Metrology & Inspection</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Robotics & Control</div>
+        <ul class="skill-list">
+          <li>Forward & Inverse Kinematics</li>
+          <li>Parallel & Serial Manipulators</li>
+          <li>Cable-Driven Parallel Robots</li>
+          <li>MATLAB / Simulink</li>
+          <li>PID & Control Systems</li>
+          <li>Workspace & Singularity Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Medical Device / Regulatory</div>
+        <ul class="skill-list">
+          <li>ISO 13485 QMS</li>
+          <li>Class III Device Manufacturing</li>
+          <li>DHF / DMR Documentation</li>
+          <li>IQ / OQ / PQ Validation</li>
+          <li>CAPA & NCR Management</li>
+          <li>21 CFR Part 820 Awareness</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Tools & Methods</div>
+        <ul class="skill-list">
+          <li>FMEA / Risk Management</li>
+          <li>Six Sigma / Lean Basics</li>
+          <li>Technical Report Writing</li>
+          <li>Project & Team Management</li>
+          <li>Linux / Windows / CLI</li>
+          <li>Git / Version Control</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education" id="education">
+    <div class="section-label">05 — Academic</div>
+    <h2 class="section-heading">Education.</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-degree">Master of Engineering</div>
+        <div class="edu-school">University of British Columbia, Vancouver, Canada</div>
+        <div class="edu-year">Mechanical Engineering · Mechatronics · 2021 – 2023</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-degree">Bachelor of Technology</div>
+        <div class="edu-school">JNTUH · Mechanical Engineering, Hyderabad</div>
+        <div class="edu-year">Mechanical Engineering · Robotics & Vehicle Projects</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-degree">LLB — In Progress</div>
+        <div class="edu-school">MGLC · Osmania University, Hyderabad</div>
+        <div class="edu-year">3-Year LLB Program · 2024 — Present</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-degree">ISO 13485</div>
+        <div class="edu-school">Medical Device QMS — Industry Experience</div>
+        <div class="edu-year">Regulatory · Class III · Production Validation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-label" style="justify-content:center;">06 — Contact</div>
+    <h2 class="contact-heading">Let's Build Something.</h2>
+    <p class="contact-sub">Have a project in mind? Looking for a remote engineering partner? Get in touch — I respond within 24 hours.</p>
+
+    <div class="contact-grid">
+      <div class="contact-item reveal">
+        <span class="contact-item-label">Email</span>
+        <a href="mailto:ajayn@engineerbychoice.com" class="contact-item-value">ajayn@engineerbychoice.com</a>
+      </div>
+      <div class="contact-item reveal">
+        <span class="contact-item-label">India</span>
+        <a href="tel:+919177481351" class="contact-item-value">+91 917 748 1351</a>
+      </div>
+      <div class="contact-item reveal">
+        <span class="contact-item-label">Canada</span>
+        <a href="tel:+17783236990" class="contact-item-value">+1 778 323 6990</a>
+      </div>
+      <div class="contact-item reveal">
+        <span class="contact-item-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/ajayreddynalla/" target="_blank" class="contact-item-value">ajayreddynalla</a>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form-wrap reveal" id="contact-form">
+      <div class="contact-form-label">Send a Message</div>
+      <form class="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="John Smith" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Email</label>
+            <input type="email" class="form-input" placeholder="john@company.com" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <select class="form-input form-select">
+            <option value="">— Select a topic —</option>
+            <option>Medical Device Consulting</option>
+            <option>Robotics / Mechatronics Project</option>
+            <option>CNC / Additive Manufacturing</option>
+            <option>R&D Engineering Support</option>
+            <option>Fractional Engineering Role</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input form-textarea" placeholder="Tell me about your project, timeline, and what you need..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message →</button>
+        <div class="form-success" id="form-success">✓ Message sent — I'll be in touch within 24 hours.</div>
+      </form>
+    </div>
+
+    <div class="about-links" style="justify-content:center;margin-top:2.5rem;">
+      <a href="https://grabcad.com/ajay.nalla-1" target="_blank" class="about-link">↗ GrabCAD Portfolio</a>
+      <a href="https://www.linkedin.com/in/ajayreddynalla/" target="_blank" class="about-link">↗ LinkedIn</a>
+      <a href="mailto:ajaynalla.ge@gmail.com" class="about-link">↗ Gmail</a>
+    </div>
+    <div class="contact-domains">engineerbychoice.com &nbsp;·&nbsp; engineerbychoice.in &nbsp;·&nbsp; engineerbychoice.ca &nbsp;·&nbsp; engineerbychoice.org</div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Engineer by Choice</div>
+    <div class="footer-copy">© 2026 · Ajay Nalla · All Rights Reserved · engineerbychoice.com</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
