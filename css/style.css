@@ -431,7 +431,74 @@ footer {
 .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: 0.15em; color: var(--gold-dim); }
 .footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
 
-/* ── ANIMATIONS ── */
+/* ── HERO AVAILABLE BADGE ── */
+.hero-available-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold-dim);
+  padding: 0.4rem 1rem; margin-bottom: 1.2rem;
+  background: var(--gold-glow);
+  opacity: 0; animation: fadeUp 0.8s 0.05s forwards;
+}
+.badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(201,168,76,0.5); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 5px rgba(201,168,76,0); }
+}
+
+/* ── HERO IMAGE STATS ── */
+.hero-img-stats {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin-top: 1.2rem;
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 0.8rem 1.2rem;
+}
+.hero-stat {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.2rem; padding: 0 1.2rem; text-align: center;
+}
+.hs-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem; color: var(--gold); line-height: 1;
+}
+.hs-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.48rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--muted);
+}
+.hero-stat-divider {
+  width: 1px; height: 36px; background: var(--border); flex-shrink: 0;
+}
+
+/* ── TICKER ── */
+.hero-ticker-wrap {
+  overflow: hidden; border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--deep); padding: 0.65rem 0;
+}
+.hero-ticker {
+  display: flex; gap: 2.5rem; align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 32s linear infinite;
+}
+.hero-ticker span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--muted);
+  flex-shrink: 0;
+}
+.ticker-dot { color: var(--gold) !important; font-size: 0.7rem !important; }
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
