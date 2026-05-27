@@ -361,6 +361,51 @@ section { padding: 7rem 5rem; position: relative; }
   color: rgba(240,237,232,0.7); font-style: italic;
 }
 
+/* ── SERVICES ── */
+.services { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin-bottom: 3rem;
+}
+.service-card {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 2.2rem 2rem 1.8rem;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%; background: var(--gold);
+}
+.service-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); }
+.service-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem; color: rgba(201,168,76,0.06);
+  line-height: 1; user-select: none; margin-bottom: -0.5rem;
+}
+.service-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.05em;
+  color: var(--white); margin-bottom: 1rem; line-height: 1.1;
+}
+.service-desc {
+  font-size: 0.92rem; line-height: 1.85;
+  color: rgba(240,237,232,0.6); font-weight: 300;
+  flex: 1; margin-bottom: 1.5rem;
+}
+.service-engagement {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold-dim);
+  padding-top: 0.8rem; border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.services-cta { text-align: center; margin-top: 1rem; }
+
 /* ── EXPERIENCE ── */
 .experience { background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .timeline { max-width: 900px; position: relative; }
@@ -550,6 +595,7 @@ footer {
   .project-inner.reverse { direction: ltr; }
   .project-gallery { min-height: 280px; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .edu-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr 1fr; }
@@ -562,6 +608,7 @@ footer {
   .hamburger { display: flex; z-index: 501; }
   section { padding: 4rem 1.5rem; }
   .hero { padding: 6rem 1.5rem 3rem; }
+  .services-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
