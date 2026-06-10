@@ -6,16 +6,57 @@
   <title>Ajay Nalla — Engineer by Choice | Mechatronics & Medical Device Engineer</title>
   <meta name="description" content="Mechatronics and Mechanical Engineer — UBC M.Eng. Medical devices, robotics, CNC, additive manufacturing. Available for remote consulting globally."/>
   <meta name="keywords" content="mechatronics engineer, medical device engineer, ISO 13485, robotics, CNC, additive manufacturing, UBC, remote engineering consulting"/>
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.engineerbychoice.com/"/>
+  <meta property="og:title" content="Ajay Nalla — Engineer by Choice | Mechatronics &amp; Medical Device Engineer"/>
+  <meta property="og:description" content="Class III medical devices, robotics, CNC &amp; additive manufacturing. UBC M.Eng. ISO 13485. Available for remote engineering consulting globally."/>
+  <meta property="og:image" content="https://www.engineerbychoice.com/images/profile-graduation.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Ajay Nalla — Engineer by Choice"/>
+  <meta name="twitter:description" content="Mechatronics &amp; Medical Device Engineer. ISO 13485 · Robotics · Additive Manufacturing. Remote consulting worldwide."/>
+  <meta name="twitter:image" content="https://www.engineerbychoice.com/images/profile-graduation.jpg"/>
+  <link rel="canonical" href="https://www.engineerbychoice.com/"/>
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="images/profile-graduation.jpg"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ajay Nalla",
+    "url": "https://www.engineerbychoice.com",
+    "image": "https://www.engineerbychoice.com/images/profile-graduation.jpg",
+    "jobTitle": "Mechatronics & Mechanical Design Engineer",
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "University of British Columbia"},
+      {"@type": "CollegeOrUniversity", "name": "JNTUH"}
+    ],
+    "knowsAbout": ["Medical Device Engineering", "ISO 13485", "Robotics", "Mechatronics", "CNC Machining", "Additive Manufacturing"],
+    "sameAs": [
+      "https://www.linkedin.com/in/ajayreddynalla/",
+      "https://grabcad.com/ajay.nalla-1"
+    ],
+    "email": "mailto:ajayn@engineerbychoice.com"
+  }
+  </script>
 </head>
 <body>
+  <div id="scroll-progress"></div>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
-    <div class="lightbox-close">✕</div>
+    <button class="lightbox-close" aria-label="Close">✕</button>
     <img id="lightbox-img" src="" alt="Project image"/>
   </div>
 
@@ -31,7 +72,7 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="hamburger"><span></span><span></span><span></span></div>
+    <div class="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></div>
   </nav>
 
   <!-- HERO -->
@@ -88,7 +129,7 @@
           </div>
         </div>
         <div class="hero-img-frame">
-          <img src="images/profile-graduation.jpg" alt="Ajay Nalla — UBC M.Eng Graduation"/>
+          <img src="images/profile-graduation.jpg" alt="Ajay Nalla — UBC M.Eng Graduation" fetchpriority="high"/>
         </div>
       </div>
     </div>
@@ -135,13 +176,13 @@
       </div>
       <div class="about-right reveal">
         <div class="stats-grid">
-          <div class="stat-card"><div class="stat-number">5+</div><div class="stat-label">Years Engineering Experience</div></div>
+          <div class="stat-card"><div class="stat-number" data-target="7" data-suffix="+">7+</div><div class="stat-label">Years Engineering Experience</div></div>
           <div class="stat-card"><div class="stat-number">III</div><div class="stat-label">Class III Medical Device Work</div></div>
-          <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Major Projects Delivered</div></div>
+          <div class="stat-card"><div class="stat-number" data-target="6" data-suffix="">6</div><div class="stat-label">Major Projects Delivered</div></div>
           <div class="stat-card"><div class="stat-number">ISO</div><div class="stat-label">13485 / QMS Regulated Env.</div></div>
         </div>
         <div class="about-device-img">
-          <img src="images/medical-implant.jpg" alt="Class III implantable medical device — fingertip scale"/>
+          <img src="images/medical-implant.jpg" alt="Class III implantable medical device — fingertip scale" loading="lazy" decoding="async"/>
           <div class="about-device-caption">Class III Implantable Device · Fingertip Scale · Life-Critical Engineering</div>
           <div class="about-device-caption" style="font-size:0.48rem;opacity:0.55;border-top:1px solid var(--border);padding-top:0.4rem;">Image courtesy Resonetics Medical Power</div>
         </div>
@@ -158,10 +199,10 @@
     <div class="project-card reveal">
       <div class="project-inner">
         <div class="project-gallery">
-          <img class="main-img lightbox-trigger" src="images/resonetics-battery2.png" alt="Resonetics Contego P200 — Lithium CFx Battery" style="width:100%;height:100%;object-fit:contain;background:#0d0d0f;cursor:pointer;padding:2rem;"/>
+          <img class="main-img lightbox-trigger" src="images/resonetics-battery2.png" alt="Resonetics Contego P200 — Lithium CFx Battery" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;background:#0d0d0f;cursor:pointer;padding:2rem;"/>
           <div class="gallery-thumbs">
-            <img class="thumb lightbox-trigger" src="images/resonetics-battery2.png" alt="Resonetics Contego P200 battery"/>
-            <img class="thumb lightbox-trigger" src="images/medical-implant.jpg" alt="Implant scale reference"/>
+            <img class="thumb lightbox-trigger" src="images/resonetics-battery2.png" alt="Resonetics Contego P200 battery" loading="lazy" decoding="async"/>
+            <img class="thumb lightbox-trigger" src="images/medical-implant.jpg" alt="Implant scale reference" loading="lazy" decoding="async"/>
           </div>
           <div class="gallery-courtesy">Images courtesy Resonetics Medical Power</div>
         </div>
@@ -188,9 +229,12 @@
     <!-- P2: CONCRETE PRINTER -->
     <div class="project-card reveal">
       <div class="project-inner reverse">
-        <div class="project-gallery video-only" style="position:relative;background:#000;">
-          <iframe id="video-concrete" src="https://www.youtube.com/embed/IjnoCOKBG7U?rel=0&modestbranding=1" title="Concrete 3D Printer Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:420px;display:block;border:0;position:absolute;inset:0;"></iframe>
-          <div style="min-height:420px;"></div>
+        <div class="project-gallery video-only" data-video-id="IjnoCOKBG7U" data-video-title="Concrete 3D Printer Demo">
+          <button class="yt-facade" aria-label="Play video: Concrete 3D Printer Demo">
+            <img src="https://i.ytimg.com/vi/IjnoCOKBG7U/hqdefault.jpg" alt="Concrete 3D Printer Demo" loading="lazy" decoding="async"/>
+            <span class="play-btn"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M0 0 L22 13 L0 26 Z"/></svg></span>
+            <span class="video-label">Watch Demo</span>
+          </button>
         </div>
         <div class="project-content">
           <div class="project-number">02</div>
@@ -213,9 +257,12 @@
     <!-- P3: BCIT -->
     <div class="project-card reveal">
       <div class="project-inner">
-        <div class="project-gallery video-only" style="position:relative;background:#000;">
-          <iframe id="video-bcit" src="https://www.youtube.com/embed/qKFPMa1yNug?rel=0&modestbranding=1" title="CNC 5-Axis HAAS 750 Simulation — VERICUT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:420px;display:block;border:0;position:absolute;inset:0;"></iframe>
-          <div style="min-height:420px;"></div>
+        <div class="project-gallery video-only" data-video-id="qKFPMa1yNug" data-video-title="CNC 5-Axis HAAS 750 Simulation — VERICUT">
+          <button class="yt-facade" aria-label="Play video: CNC 5-Axis HAAS 750 Simulation — VERICUT">
+            <img src="https://i.ytimg.com/vi/qKFPMa1yNug/hqdefault.jpg" alt="CNC 5-Axis HAAS 750 Simulation — VERICUT" loading="lazy" decoding="async"/>
+            <span class="play-btn"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M0 0 L22 13 L0 26 Z"/></svg></span>
+            <span class="video-label">Watch Demo</span>
+          </button>
           <div class="gallery-courtesy">Video courtesy BCIT Advanced Manufacturing Hub</div>
         </div>
         <div class="project-content">
@@ -245,9 +292,12 @@
     <!-- P4: SPM -->
     <div class="project-card reveal">
       <div class="project-inner reverse">
-        <div class="project-gallery video-only" style="position:relative;background:#000;">
-          <iframe id="video-spm" src="https://www.youtube.com/embed/nOu_WwaFv3Y?rel=0&modestbranding=1" title="Spherical Parallel Manipulator Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:420px;display:block;border:0;position:absolute;inset:0;"></iframe>
-          <div style="min-height:420px;"></div>
+        <div class="project-gallery video-only" data-video-id="nOu_WwaFv3Y" data-video-title="Spherical Parallel Manipulator Demo">
+          <button class="yt-facade" aria-label="Play video: Spherical Parallel Manipulator Demo">
+            <img src="https://i.ytimg.com/vi/nOu_WwaFv3Y/hqdefault.jpg" alt="Spherical Parallel Manipulator Demo" loading="lazy" decoding="async"/>
+            <span class="play-btn"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M0 0 L22 13 L0 26 Z"/></svg></span>
+            <span class="video-label">Watch Demo</span>
+          </button>
         </div>
         <div class="project-content">
           <div class="project-number">04</div>
@@ -270,9 +320,12 @@
     <!-- P5: BIONIC ARM (Makershive) -->
     <div class="project-card reveal">
       <div class="project-inner">
-        <div class="project-gallery video-only" style="position:relative;background:#000;">
-          <iframe id="video-bionic" src="https://www.youtube.com/embed/dnWHzWE7D-o?rel=0&modestbranding=1" title="Bionic Arm — Makershive Prosthetic Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:420px;display:block;border:0;position:absolute;inset:0;"></iframe>
-          <div style="min-height:420px;"></div>
+        <div class="project-gallery video-only" data-video-id="dnWHzWE7D-o" data-video-title="Bionic Arm — Makershive Prosthetic Demo">
+          <button class="yt-facade" aria-label="Play video: Bionic Arm — Makershive Prosthetic Demo">
+            <img src="https://i.ytimg.com/vi/dnWHzWE7D-o/hqdefault.jpg" alt="Bionic Arm — Makershive Prosthetic Demo" loading="lazy" decoding="async"/>
+            <span class="play-btn"><svg width="22" height="26" viewBox="0 0 22 26"><path d="M0 0 L22 13 L0 26 Z"/></svg></span>
+            <span class="video-label">Watch Demo</span>
+          </button>
           <div class="gallery-courtesy">Video courtesy Makers Hive Innovations</div>
         </div>
         <div class="project-content">
@@ -303,11 +356,11 @@
     <div class="project-card reveal">
       <div class="project-inner reverse">
         <div class="project-gallery">
-          <img class="main-img lightbox-trigger" src="images/kart-racing.jpg" alt="BAJA ATV competition" style="width:100%;height:100%;object-fit:cover;cursor:pointer;"/>
+          <img class="main-img lightbox-trigger" src="images/kart-racing.jpg" alt="BAJA ATV competition" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;cursor:pointer;"/>
           <div class="gallery-thumbs">
-            <img class="thumb lightbox-trigger" src="images/kart-racing.jpg" alt="BAJA ATV racing action"/>
-            <img class="thumb lightbox-trigger" src="images/kart-sitting.jpg" alt="Formula kart competition"/>
-            <img class="thumb lightbox-trigger" src="images/cnc-simulation.png" alt="CNC CAM simulation"/>
+            <img class="thumb lightbox-trigger" src="images/kart-racing.jpg" alt="BAJA ATV racing action" loading="lazy" decoding="async"/>
+            <img class="thumb lightbox-trigger" src="images/kart-sitting.jpg" alt="Formula kart competition" loading="lazy" decoding="async"/>
+            <img class="thumb lightbox-trigger" src="images/cnc-simulation.png" alt="CNC CAM simulation" loading="lazy" decoding="async"/>
           </div>
         </div>
         <div class="project-content">
@@ -591,7 +644,8 @@
       <div class="contact-form-label">Send a Message</div>
       <form action="https://formspree.io/f/xrejbwdv" method="POST">
         <input type="hidden" name="_subject" value="New enquiry — engineerbychoice.com"/>
-        <input type="hidden" name="_next" value="https://www.engineerbychoice.com"/>
+        <input type="hidden" name="_next" value="https://www.engineerbychoice.com/thanks.html"/>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Your Name</label>
@@ -632,11 +686,9 @@
 
   <footer>
     <div class="footer-logo">Engineer by Choice</div>
-    <div class="footer-copy">© 2026 · Ajay Nalla · All Rights Reserved · engineerbychoice.com</div>
+    <div class="footer-copy">© <span id="year">2026</span> · Ajay Nalla · All Rights Reserved · engineerbychoice.com</div>
   </footer>
 
   <script src="js/main.js"></script>
-</body>
-</html>
 </body>
 </html>
