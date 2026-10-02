@@ -191,6 +191,25 @@ if (contactForm) {
   });
 }
 
+// ── Copy email to clipboard
+document.querySelectorAll('.copy-email').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const email = btn.dataset.email;
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = email; ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;opacity:0;';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Engineer by Choice — loaded.');
 });

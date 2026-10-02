@@ -914,3 +914,24 @@ a.proof-card { display: block; text-decoration: none; }
 .svc-email a { color: var(--gold); text-decoration: none; }
 @media (max-width: 1024px) { .steps-grid { grid-template-columns: 1fr; } .page-hero { padding-top: 8rem; } }
 @media (max-width: 700px) { .page-hero { padding-top: 7rem; padding-bottom: 3.5rem; } .svc-cta { padding: 4rem 1.5rem; } }
+
+/* ── COPY EMAIL ── */
+.copy-email {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.35rem 0.8rem; background: none; cursor: pointer;
+  border: 1px solid var(--gold-dim); color: var(--gold);
+  transition: background 0.3s, color 0.3s; vertical-align: middle;
+}
+.copy-email:hover { background: var(--gold-glow); }
+.copy-email.copied { background: var(--gold); color: var(--black); border-color: var(--gold); }
+.email-chip {
+  display: inline-flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+  border: 1px solid var(--border-bright); padding: 0.25rem 0.3rem 0.25rem 1rem;
+}
+.email-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.08em; color: var(--white);
+  user-select: all; -webkit-user-select: all; white-space: nowrap;
+}
+@media (max-width: 700px) { .email-chip { padding-left: 0.7rem; } .email-text { letter-spacing: 0.02em; } }
