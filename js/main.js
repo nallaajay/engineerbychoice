@@ -12,7 +12,9 @@ window.addEventListener('scroll', () => {
     if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id');
   });
   navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+    const href = link.getAttribute('href');
+    if (!href.startsWith('#')) return;
+    link.classList.toggle('active', href === `#${current}`);
   });
 
   if (progressBar) {
