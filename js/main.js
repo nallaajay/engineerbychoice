@@ -80,7 +80,8 @@ const lightboxClose = document.querySelector('.lightbox-close');
 
 document.querySelectorAll('.lightbox-trigger').forEach(img => {
   img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
+    lightboxImg.src = img.currentSrc || img.src;
+    lightboxImg.alt = img.alt || 'Enlarged project image';
     lightbox.classList.add('open');
     lightboxClose?.focus();
   });

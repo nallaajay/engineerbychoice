@@ -935,3 +935,6 @@ a.proof-card { display: block; text-decoration: none; }
   user-select: all; -webkit-user-select: all; white-space: nowrap;
 }
 @media (max-width: 700px) { .email-chip { padding-left: 0.7rem; } .email-text { letter-spacing: 0.02em; } }
+
+/* ── CASE STUDY LINK (project cards) ── */
+.project-cs-link { margin-top: 1.4rem; }

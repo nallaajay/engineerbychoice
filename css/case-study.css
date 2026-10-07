@@ -1,0 +1,280 @@
+/* ══════════════════════════════════════════════
+   CASE STUDY TEMPLATE
+   Shared by every page in /projects/. Loads after style.css
+   and reuses its :root tokens, buttons, tags and stat cards.
+   ══════════════════════════════════════════════ */
+
+.cs-wrap { max-width: 1100px; margin: 0 auto; }
+
+/* ── HERO ── */
+.cs-hero {
+  padding-top: 8.5rem; padding-bottom: 4rem;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  border-bottom: 1px solid var(--border);
+}
+.cs-breadcrumb {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 2rem;
+}
+.cs-breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.cs-breadcrumb li + li::before { content: '/'; margin-right: 0.6rem; color: var(--gold-dim); }
+.cs-breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.cs-breadcrumb a:hover { color: var(--gold); }
+.cs-breadcrumb [aria-current] { color: var(--white); }
+
+.cs-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.2rem;
+}
+.cs-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  line-height: 0.92; letter-spacing: 0.02em; color: var(--white);
+}
+.cs-subtitle {
+  font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+  font-style: italic; font-weight: 300; line-height: 1.75;
+  color: rgba(240,237,232,0.72); margin-top: 1.5rem; max-width: 780px;
+}
+.cs-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+
+.cs-hero-media {
+  margin-top: 3rem; border: 1px solid var(--border);
+  background: var(--deep); position: relative;
+}
+.cs-hero-media img { display: block; width: 100%; height: auto; cursor: zoom-in; }
+
+.cs-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem; margin-top: 1.5rem;
+}
+.cs-stats .stat-number { font-size: clamp(1.9rem, 3.2vw, 2.6rem); }
+.cs-stats .stat-label { font-size: 0.56rem; line-height: 1.6; }
+
+/* ── SECTIONS ── */
+.cs-section { border-bottom: 1px solid var(--border); }
+.cs-section.alt { background: var(--deep); }
+.cs-section .section-heading { margin-bottom: 2.5rem; }
+
+/* Snapshot cards */
+.cs-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+.cs-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-top: 2px solid var(--gold); padding: 2rem 1.8rem;
+}
+.cs-card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.8rem;
+}
+.cs-card p { font-size: 1.02rem; line-height: 1.8; color: rgba(240,237,232,0.72); font-weight: 300; }
+
+/* ── STORY STEPS ── */
+.cs-step { padding: 4rem 0; border-top: 1px solid var(--border); }
+.cs-step:first-of-type { border-top: 0; padding-top: 0; }
+.cs-step-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.42em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.6rem;
+}
+.cs-step-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  letter-spacing: 0.04em; line-height: 1; color: var(--white);
+  margin-bottom: 1.8rem;
+}
+.cs-step-body { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
+.cs-step-body.has-media { grid-template-columns: 1.05fr 1fr; }
+.cs-media { display: flex; flex-direction: column; gap: 1.8rem; min-width: 0; }
+
+.cs-prose { max-width: 720px; min-width: 0; }
+.cs-prose p, .cs-prose li {
+  font-size: 1.08rem; line-height: 1.9; font-weight: 300;
+  color: rgba(240,237,232,0.75);
+}
+.cs-prose p { margin-bottom: 1.2rem; }
+.cs-prose strong { color: var(--white); font-weight: 600; }
+.cs-prose em { color: var(--white); }
+.cs-prose ul { list-style: none; margin-bottom: 1.2rem; }
+.cs-prose li { padding: 0.3rem 0 0.3rem 1.4rem; position: relative; }
+.cs-prose li::before { content: '—'; position: absolute; left: 0; color: var(--gold-dim); }
+.cs-pull {
+  border-left: 2px solid var(--gold); background: var(--gold-glow);
+  padding: 1rem 1.2rem; margin: 1.6rem 0;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem;
+  letter-spacing: 0.04em; line-height: 1.2; color: var(--gold);
+}
+
+/* Figures */
+.cs-figure { margin: 0; min-width: 0; }
+.cs-figure img, .cs-figure video {
+  display: block; width: 100%; height: auto;
+  background: var(--deep); border: 1px solid var(--border);
+}
+.cs-figure img { cursor: zoom-in; }
+.cs-figure.portrait video { max-height: 560px; width: auto; max-width: 100%; margin: 0 auto; }
+.cs-figure figcaption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.06em; line-height: 1.7;
+  color: var(--muted); margin-top: 0.75rem;
+  padding-left: 0.8rem; border-left: 1px solid var(--gold-dim);
+}
+
+/* YouTube Short: lite embed in a 9:16 frame */
+.cs-short {
+  position: relative; aspect-ratio: 9 / 16;
+  width: min(100%, 236px); max-height: 420px;
+  margin: 0 auto; border: 1px solid var(--border); background: #000;
+}
+.cs-short .yt-facade { min-height: 0; height: 100%; }
+
+/* ── TABLES ── */
+.cs-table-wrap { margin-top: 2rem; }
+.cs-table-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.cs-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.cs-table th, .cs-table td {
+  text-align: left; vertical-align: top;
+  padding: 0.9rem 1rem; border-bottom: 1px solid var(--border);
+}
+.cs-table thead th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400; background: var(--panel);
+}
+.cs-table td { font-size: 0.98rem; line-height: 1.65; color: rgba(240,237,232,0.72); font-weight: 300; }
+.cs-table td:first-child { color: var(--white); font-weight: 400; }
+.cs-table tbody tr:last-child td { border-bottom: 0; }
+
+/* Results grid: pass / fail cells keep their text so colour isn't the only signal */
+.cs-results th, .cs-results td { text-align: center; }
+.cs-results tbody th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.1em; font-weight: 400;
+  color: var(--white); background: var(--panel); white-space: nowrap;
+}
+.cs-results td { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.04em; }
+.cs-results td:first-child { color: inherit; }
+.cs-results .pass { background: rgba(201,168,76,0.12); color: #d9c07a; }
+.cs-results .fail { background: rgba(180,70,60,0.16); color: #d9867b; }
+.cs-results .status { display: block; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.6rem; }
+.cs-results .amps { display: block; color: rgba(240,237,232,0.7); margin-top: 0.15rem; }
+.cs-table-note {
+  font-size: 0.98rem; font-style: italic; line-height: 1.7;
+  color: var(--muted); margin-top: 1rem; font-weight: 300;
+}
+
+/* ── CLOSING ── */
+.cs-close-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: start; }
+.cs-proves {
+  border: 1px solid var(--gold); background: var(--gold-glow);
+  padding: 2.2rem 2rem; position: relative;
+}
+.cs-proves p {
+  font-size: 1.2rem; line-height: 1.85; font-style: italic;
+  color: rgba(240,237,232,0.86); font-weight: 300;
+}
+.cs-next { background: var(--surface); border: 1px solid var(--border); padding: 2.2rem 2rem; }
+.cs-sub-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.cs-next ul { list-style: none; }
+.cs-next li {
+  font-size: 1.02rem; line-height: 1.75; color: rgba(240,237,232,0.72);
+  font-weight: 300; padding: 0.45rem 0 0.45rem 1.4rem; position: relative;
+}
+.cs-next li::before { content: '→'; position: absolute; left: 0; color: var(--gold-dim); }
+.cs-next strong { color: var(--white); font-weight: 600; }
+
+.cs-credits p { font-size: 1.05rem; line-height: 1.85; color: rgba(240,237,232,0.72); font-weight: 300; max-width: 760px; }
+.cs-credits a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); }
+.cs-credits a:hover { color: var(--white); }
+.cs-credits .cs-pills { margin-top: 1.5rem; }
+
+/* CTA */
+.cs-cta {
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.cs-cta-text {
+  font-size: 1.15rem; font-style: italic; font-weight: 300; line-height: 1.8;
+  color: var(--muted); max-width: 620px; margin: 0 auto 2.5rem;
+}
+.cs-cta-buttons { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+
+/* Prev / next project */
+.cs-pager {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+  margin: 4rem auto 0; max-width: 900px; text-align: left;
+}
+.cs-pager a {
+  display: block; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 1.4rem 1.6rem; transition: border-color 0.3s;
+}
+.cs-pager a:hover { border-color: var(--gold-dim); }
+.cs-pager .dir {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold);
+}
+.cs-pager .name {
+  display: block; margin-top: 0.4rem;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem;
+  letter-spacing: 0.04em; color: var(--white); line-height: 1.1;
+}
+.cs-pager .next { text-align: right; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .cs-hero { padding-top: 7.5rem; }
+  .cs-stats { grid-template-columns: 1fr 1fr; }
+  .cs-step-body.has-media { grid-template-columns: 1fr; }
+  .cs-close-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .cs-hero { padding-top: 6.5rem; padding-bottom: 3rem; }
+  .cs-hero-media { margin-top: 2rem; }
+  .cs-stats { gap: 0.8rem; }
+  .cs-stats .stat-card { padding: 1.1rem 1rem 1.1rem 1.2rem; }
+  .cs-cards { grid-template-columns: 1fr; }
+  .cs-card { padding: 1.6rem 1.3rem; }
+  .cs-step { padding: 3rem 0; }
+  .cs-proves, .cs-next { padding: 1.6rem 1.3rem; }
+  .cs-pager { grid-template-columns: 1fr; }
+  .cs-pager .next { text-align: left; }
+
+  /* Diagnosis table → stacked cards */
+  .cs-table.stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .cs-table.stack, .cs-table.stack tbody, .cs-table.stack tr, .cs-table.stack td { display: block; width: 100%; }
+  .cs-table.stack tr { border-bottom: 1px solid var(--border-bright); padding: 0.6rem 0; }
+  .cs-table.stack tbody tr:last-child { border-bottom: 0; }
+  .cs-table.stack td { border-bottom: 0; padding: 0.4rem 1rem; }
+  .cs-table.stack td::before {
+    content: attr(data-label); display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.2rem; font-weight: 400;
+  }
+
+  .cs-results th, .cs-results td { padding: 0.6rem 0.25rem; }
+  .cs-results thead th { font-size: 0.5rem; letter-spacing: 0.06em; }
+  .cs-results tbody th { font-size: 0.55rem; letter-spacing: 0.02em; }
+  .cs-results td { font-size: 0.6rem; }
+  .cs-results .status { font-size: 0.52rem; letter-spacing: 0.08em; }
+}
