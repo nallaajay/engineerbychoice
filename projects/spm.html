@@ -102,7 +102,7 @@
       <div class="cs-cards">
         <div class="cs-card reveal">
           <div class="cs-card-label">Challenge</div>
-          <p>A spherical parallel manipulator from a previous capstone team at UBC's Machine Dynamics Lab came to me as a bare frame. The motors were gone and the electronics were gone, after 5 of the 6 DC motors and the controllers had failed in the earlier build. The structure itself bound up and wouldn't move freely.</p>
+          <p>A spherical parallel manipulator from a previous capstone team at UBC's Machine Dynamics Lab came to me as a bare frame. The motors were gone and the electronics were gone, after the DC motors and the controllers had failed in the earlier build. The structure itself bound up and wouldn't move freely.</p>
         </div>
         <div class="cs-card reveal">
           <div class="cs-card-label">My Role</div>
@@ -133,7 +133,7 @@
         <div class="cs-step-body">
           <div class="cs-prose">
             <p><strong>Not a broken robot. Not a partly working prototype. A mechanical skeleton.</strong></p>
-            <p>The previous build had used DC motors driven by Arduinos. Five of six motors burnt out, the controllers were damaged, and by the time the robot reached me the motors and electronics were gone. What was left was a frame that bound up under its own geometry. The arms had to be pulled together to assemble the platform, and that preload went straight into the joints.</p>
+            <p>The previous build had used DC motors driven by Arduinos. The motors burnt out, the controllers were damaged, and by the time the robot reached me the motors and electronics were gone. What was left was a frame that bound up under its own geometry. The arms had to be pulled together to assemble the platform, and that preload went straight into the joints.</p>
             <p>From the handover and the earlier team's documentation, I traced each failure to its root cause before touching anything:</p>
           </div>
         </div>
@@ -144,7 +144,7 @@
             </thead>
             <tbody>
               <tr>
-                <td data-label="Symptom">5 of 6 DC motors burnt out</td>
+                <td data-label="Symptom">DC motors burnt out</td>
                 <td data-label="Root cause">The motors were never tested against the real load. Undersized for the torque, they drew current until they failed.</td>
                 <td data-label="What I did">Re-derived the torque budget from measured mass. Chose servos with a 2.5× safety factor, then bench-tested them.</td>
               </tr>
@@ -181,8 +181,6 @@
           <div class="cs-prose">
             <p>A parallel manipulator that fights itself will destroy any actuator you bolt onto it. That's very likely part of what happened to the original motors. So I didn't buy anything yet.</p>
             <p>I stripped the frame down and rebuilt it on free bearings and spindles: studs and bearing sleeves I designed and turned on the lathe, bearing surfaces cut to tolerance and finished at 2000 grit, and flats milled for the hubs. I re-assembled the arms and corrected the misalignment until the platform went together <strong>with no force</strong> and every degree of freedom swung freely by hand.</p>
-            <p>Only when the mechanism moved cleanly on its own did I size actuators for it.</p>
-            <p class="cs-pull">You don't add actuation to a broken mechanism. You fix the mechanism first.</p>
           </div>
           <div class="cs-media">
             <figure class="cs-figure">
@@ -192,12 +190,22 @@
               </picture>
               <figcaption>Lathe-turned studs and bearing sleeves let me test the bare mechanism by hand and remove the binding before choosing actuators.</figcaption>
             </figure>
+          </div>
+        </div>
+        <div class="cs-step-body cs-feature">
+          <div class="cs-media">
             <figure class="cs-figure portrait">
               <video controls muted playsinline preload="metadata" poster="../images/spm/manual-test-poster.jpg" width="1080" height="1920">
                 <source src="../images/spm/manual-test.mp4" type="video/mp4"/>
               </video>
               <figcaption>Manual test after the rebuild: free motion through the workspace, zero geometric binding.</figcaption>
             </figure>
+          </div>
+          <div class="cs-prose">
+            <div class="cs-sub-label">The hand test</div>
+            <p>No motors, no electronics: just the bare mechanism moved by hand. I confirmed each degree of freedom moved independently and smoothly through the workspace.</p>
+            <p>Only when the mechanism moved cleanly on its own did I size actuators for it.</p>
+            <p class="cs-pull">You don't add actuation to a broken mechanism. You fix the mechanism first.</p>
           </div>
         </div>
       </article>
@@ -298,7 +306,6 @@
         <div class="cs-step-body has-media">
           <div class="cs-prose">
             <p>The original electronics died because motor power and logic weren't separated, so the power system came first. Worst case is about 6 A per servo, roughly 20 A for the bus. I reused the 24 V / 300 W adapter from the earlier build through a 96%-efficient 24 → 12 V DC/DC converter, which gives about 24 A available. The chain is: e-stop → 30 A main fuse → DC/DC → a 6 A fuse on each servo. The logic side (servo driver, manual controllers) runs on its own 5 V supply, so a motor fault can't reach the ICs.</p>
-            <p>Then I connected everything, ran the control script, and watched the platform move for the first time.</p>
           </div>
           <div class="cs-media">
             <figure class="cs-figure">
@@ -308,6 +315,10 @@
               </picture>
               <figcaption>Power chain: e-stop → 30 A main fuse → 24 → 12 V DC/DC → a 6 A fuse per servo, with the manual controllers on their own supply.</figcaption>
             </figure>
+          </div>
+        </div>
+        <div class="cs-step-body cs-feature">
+          <div class="cs-media">
             <figure class="cs-figure">
               <div class="cs-short" data-video-id="nOu_WwaFv3Y" data-video-title="Spherical Parallel Manipulator running">
                 <button class="yt-facade" aria-label="Play video: Spherical Parallel Manipulator running">
@@ -318,6 +329,10 @@
               </div>
               <figcaption>The rebuilt SPM running: servo actuation, Raspberry Pi control, smooth motion across the hemispherical workspace.</figcaption>
             </figure>
+          </div>
+          <div class="cs-prose">
+            <div class="cs-sub-label">First motion</div>
+            <p>Then I connected everything, ran the control script, and watched the platform move for the first time.</p>
           </div>
         </div>
       </article>

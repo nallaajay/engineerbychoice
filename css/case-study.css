@@ -90,6 +90,13 @@
 }
 .cs-step-body { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: start; }
 .cs-step-body.has-media { grid-template-columns: 1.05fr 1fr; }
+/* Feature row: a portrait video paired with the text it proves */
+.cs-feature {
+  grid-template-columns: minmax(0, 0.85fr) 1fr; align-items: center;
+  margin-top: 2.5rem; padding: 2rem;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.cs-feature .cs-prose p:last-child { margin-bottom: 0; }
 .cs-media { display: flex; flex-direction: column; gap: 1.8rem; min-width: 0; }
 
 .cs-prose { max-width: 720px; min-width: 0; }
@@ -244,7 +251,7 @@
 @media (max-width: 1024px) {
   .cs-hero { padding-top: 7.5rem; }
   .cs-stats { grid-template-columns: 1fr 1fr; }
-  .cs-step-body.has-media { grid-template-columns: 1fr; }
+  .cs-step-body.has-media, .cs-feature { grid-template-columns: 1fr; }
   .cs-close-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
@@ -255,6 +262,7 @@
   .cs-cards { grid-template-columns: 1fr; }
   .cs-card { padding: 1.6rem 1.3rem; }
   .cs-step { padding: 3rem 0; }
+  .cs-feature { padding: 1.4rem 1.1rem; gap: 1.8rem; }
   .cs-proves, .cs-next { padding: 1.6rem 1.3rem; }
   .cs-pager { grid-template-columns: 1fr; }
   .cs-pager .next { text-align: left; }
