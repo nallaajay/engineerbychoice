@@ -66,10 +66,10 @@
   <nav>
     <a href="#home" class="nav-logo">Engineer by Choice</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Problems Solved</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#engage">Engage</a></li>
       <li><a href="services.html">Services</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#background">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -80,52 +80,18 @@
   <section class="hero" id="home">
     <div class="hero-bg-text" aria-hidden="true">ENGINEER</div>
     <div class="hero-left">
-      <div class="hero-available-badge">
-        <span class="badge-dot"></span>
-        <span>Available — Remote &amp; On-Site</span>
-      </div>
-      <div class="hero-eyebrow">Robotics · Automation · Medical Devices</div>
+      <div class="hero-eyebrow">Robotics · Medical Devices · Advanced Manufacturing</div>
       <h1 class="hero-name">Ajay<span>Nalla.</span></h1>
-      <p class="hero-tagline">When your hardware won't work, I make it work. I diagnose what's broken, redesign it, and prove it works — from Class III medical devices to parallel robots.</p>
-      <div class="hero-tags">
-        <span class="tag">Diagnose → Redesign → Prove</span>
-        <span class="tag">ISO 13485 Experience</span>
-        <span class="tag">Remote &amp; On-Site</span>
-      </div>
+      <p class="hero-headline">I Make Stuck Hardware Work.</p>
+      <p class="hero-tagline">For hardware teams in robotics, medical devices and advanced manufacturing whose prototype, line or machine won't perform, scale or behave as intended. From root-cause diagnosis through redesign, build and validation.</p>
+      <div class="hero-method">Diagnose → Redesign → Prove</div>
       <div class="hero-cta">
-        <a href="services.html" class="btn-primary">Bring Me Your Stuck Problem</a>
-        <a href="#projects" class="btn-secondary">See Problems Solved</a>
-      </div>
-      <div class="hero-credentials">
-        <div class="credential-row">
-          <div class="cred"><strong>M.Eng</strong>University of British Columbia</div>
-          <div class="cred"><strong>B.Tech</strong>JNTUH · Mechanical Engineering</div>
-          <div class="cred"><strong>Experience</strong>Canada · India</div>
-        </div>
-      </div>
-      <div class="hero-scroll-cue">
-        <span class="hero-scroll-line"></span>
-        <span class="hero-scroll-cue-text">Scroll to explore</span>
+        <a href="#contact" class="btn-primary">Bring Me Your Stuck Problem</a>
+        <a href="#engage" class="hero-text-link">How engagements work ↓</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-right-wrap">
-        <div class="hero-stat-panel">
-          <div class="hero-stat-v">
-            <span class="hs-num">6+</span>
-            <span class="hs-label">Years<br>Experience</span>
-          </div>
-          <div class="hero-stat-sep"></div>
-          <div class="hero-stat-v">
-            <span class="hs-num">6</span>
-            <span class="hs-label">Problems<br>Solved</span>
-          </div>
-          <div class="hero-stat-sep"></div>
-          <div class="hero-stat-v">
-            <span class="hs-num">ISO</span>
-            <span class="hs-label">13485<br>Regulated</span>
-          </div>
-        </div>
         <div class="hero-img-frame">
           <img src="images/profile-graduation-web.jpg" alt="Ajay Nalla — UBC M.Eng graduation portrait" width="900" height="1350" fetchpriority="high"/>
         </div>
@@ -133,75 +99,61 @@
     </div>
   </section>
 
-  <!-- PROOF STRIP -->
+  <!-- PROOF NUMBERS -->
   <section class="proof" id="proof" aria-label="Results">
     <div class="proof-grid">
-      <div class="stat-card proof-card reveal"><div class="stat-number">~30% → ~2%</div><div class="stat-label">Production scrap, Class III device line</div></div>
-      <div class="stat-card proof-card reveal"><div class="stat-number">40 hrs → 20 min</div><div class="stat-label">Critical process time</div></div>
+      <div class="stat-card proof-card reveal"><div class="stat-number">30% → 2%</div><div class="stat-label">Production scrap · Class III device line</div></div>
+      <div class="stat-card proof-card reveal"><div class="stat-number">40 hr → 20 min</div><div class="stat-label">Critical process time</div></div>
       <div class="stat-card proof-card reveal"><div class="stat-number">$30K+ → &lt;$3K</div><div class="stat-label">Bionic hand cost</div></div>
-      <div class="stat-card proof-card reveal"><div class="stat-number">&lt;10% of budget</div><div class="stat-label">Working construction-robot prototype</div></div>
+      <div class="stat-card proof-card reveal"><div class="stat-number">&lt;10%</div><div class="stat-label">Of budget to a working construction-robot prototype</div></div>
+    </div>
+    <p class="proof-note">Medical-device process details are confidential; results shown as headline metrics only.</p>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="why" id="why">
+    <div class="section-label">01 — The Problem</div>
+    <h2 class="section-heading">Hardware Failures Rarely Stay in One Discipline.</h2>
+    <p class="why-body reveal">A mechanical symptom can come from actuation, controls, electronics, tolerances, manufacturing or software. I work across the whole system to find the actual failure, not patch the symptom. Then I fix it and prove the fix with data.</p>
+  </section>
+
+  <!-- ENGAGE -->
+  <section class="engage" id="engage">
+    <div class="section-label">02 — Engage</div>
+    <h2 class="section-heading">Start Small. Scale If It's Working.</h2>
+    <div class="engage-grid">
+      <div class="engage-card reveal">
+        <div class="engage-kicker">Start here</div>
+        <h3 class="engage-title">Diagnostic Sprint</h3>
+        <div class="engage-meta">1–2 weeks · fixed fee</div>
+        <p class="engage-desc">Find the root cause before you commit to a bigger fix. You get a written root-cause analysis, the evidence behind it, and a scoped recommendation for the fix.</p>
+      </div>
+      <div class="engage-arrow" aria-hidden="true">→</div>
+      <div class="engage-card reveal">
+        <div class="engage-kicker">Then</div>
+        <h3 class="engage-title">Fix &amp; Build</h3>
+        <div class="engage-meta">Project-based</div>
+        <p class="engage-desc">I redesign, prototype, integrate and validate the fix, or build the hardware from concept when that's what the problem needs.</p>
+      </div>
+      <div class="engage-arrow" aria-hidden="true">→</div>
+      <div class="engage-card reveal">
+        <div class="engage-kicker">Or ongoing</div>
+        <h3 class="engage-title">Embedded Engineer</h3>
+        <div class="engage-meta">Fractional · part-time or fixed term</div>
+        <p class="engage-desc">Senior electromechanical capacity working directly inside your team.</p>
+      </div>
+    </div>
+    <div class="engage-foot">
+      <p class="engage-terms">Remote worldwide · on-site in Canada · NDAs as standard.</p>
+      <a href="#contact" class="btn-primary">Discuss Your Problem →</a>
+      <p class="engage-call">A 20–30 minute fit call to see whether a Diagnostic Sprint is the right next step.</p>
     </div>
   </section>
 
-  <!-- TICKER -->
-  <div class="hero-ticker-wrap" aria-hidden="true">
-    <div class="hero-ticker">
-      <span>Root-Cause Diagnosis</span><span class="ticker-dot">·</span>
-      <span>System Redesign</span><span class="ticker-dot">·</span>
-      <span>Proven in Validation</span><span class="ticker-dot">·</span>
-      <span>Class III Medical Devices</span><span class="ticker-dot">·</span>
-      <span>Parallel Robotics</span><span class="ticker-dot">·</span>
-      <span>Automation Lines</span><span class="ticker-dot">·</span>
-      <span>Scrap &amp; Yield</span><span class="ticker-dot">·</span>
-      <span>Mechanics · Actuation · Electronics · Code</span><span class="ticker-dot">·</span>
-      <span>ISO 13485</span><span class="ticker-dot">·</span>
-      <span>M.Eng · UBC</span><span class="ticker-dot">·</span>
-      <span>Remote &amp; On-Site</span><span class="ticker-dot">·</span>
-      <span>Root-Cause Diagnosis</span><span class="ticker-dot">·</span>
-      <span>System Redesign</span><span class="ticker-dot">·</span>
-      <span>Proven in Validation</span><span class="ticker-dot">·</span>
-      <span>Class III Medical Devices</span><span class="ticker-dot">·</span>
-      <span>Parallel Robotics</span><span class="ticker-dot">·</span>
-      <span>Automation Lines</span><span class="ticker-dot">·</span>
-      <span>Scrap &amp; Yield</span><span class="ticker-dot">·</span>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-label">01 — Profile</div>
-    <h2 class="section-heading">I Make Stuck Hardware Work.</h2>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>I'm the engineer teams call when hardware is stuck — <strong>a prototype that won't perform, a line throwing scrap, a robot that won't hold position.</strong></p>
-        <p>I work across mechanics, actuation, electronics and code, so I find the real root cause instead of patching one subsystem. <strong>UBC M.Eng Mechatronics</strong>, ISO 13485 regulated experience, Indian patent holder, Springer-published.</p>
-        <p>How I work: <strong>Diagnose → Redesign → Prove.</strong> I start with a fixed-scope diagnostic, so you know what's wrong before you commit to a fix.</p>
-        <div class="about-links">
-          <a href="https://www.linkedin.com/in/ajayreddynalla/" target="_blank" rel="noopener" class="about-link">↗ LinkedIn</a>
-          <a href="https://grabcad.com/ajay.nalla-1" target="_blank" rel="noopener" class="about-link">↗ GrabCAD Models</a>
-          <a href="#contact-form" class="about-link">↗ Get in Touch</a>
-        </div>
-      </div>
-      <div class="about-right reveal">
-        <div class="stats-grid">
-          <div class="stat-card"><div class="stat-number" data-target="7" data-suffix="+">7+</div><div class="stat-label">Years Engineering Experience</div></div>
-          <div class="stat-card"><div class="stat-number">III</div><div class="stat-label">Class III Medical Device Work</div></div>
-          <div class="stat-card"><div class="stat-number" data-target="6" data-suffix="">6</div><div class="stat-label">Stuck Problems Solved</div></div>
-          <div class="stat-card"><div class="stat-number">ISO</div><div class="stat-label">13485 / QMS Regulated Env.</div></div>
-        </div>
-        <div class="about-device-img">
-          <img src="images/medical-implant.jpg" alt="Class III implantable medical device at fingertip scale" width="800" height="533" loading="lazy" decoding="async"/>
-          <div class="about-device-caption">Class III Implantable Device · Fingertip Scale · Life-Critical Engineering</div>
-          <div class="about-device-caption" style="font-size:0.48rem;opacity:0.55;border-top:1px solid var(--border);padding-top:0.4rem;">Image courtesy Resonetics Medical Power</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEMS SOLVED -->
+  <!-- SELECTED PROBLEMS SOLVED -->
   <section class="projects" id="projects">
-    <div class="section-label">02 — Proof</div>
-    <h2 class="section-heading">Problems Solved.</h2>
+    <div class="section-label">03 — Proof</div>
+    <h2 class="section-heading">Selected Problems Solved.</h2>
 
     <!-- P1: RESONETICS -->
     <div class="project-card reveal" id="resonetics">
@@ -216,6 +168,7 @@
         </div>
         <div class="project-content">
           <div class="project-number">01</div>
+          <div class="project-result">30% → 2% Scrap</div>
           <div class="project-category">Medical Devices · ISO 13485 · Class III</div>
           <h3 class="project-title">Resonetics — Class III Implantable Battery Line</h3>
           <div class="project-story">
@@ -258,9 +211,10 @@
         </div>
         <div class="project-content">
           <div class="project-number">02</div>
+          <div class="project-result">Dead Skeleton → Working 3-DOF Robot</div>
           <div class="project-category">Parallel Robotics · Failure Recovery · UBC Research</div>
           <h3 class="project-title">Spherical Parallel Manipulator</h3>
-          <p class="project-desc">Handed a self-locking robot skeleton with no motors, no electronics and no control system. I rebuilt the mechanism on free bearings to remove the binding, sized and bench-tested new servos (measured ~60% of rated torque, which the 2.5× design margin absorbed), designed a fused 24→12 V power system, redesigned the mounts with FEA, and fabricated everything at UBC Makerspaces. The result is a 3-DOF platform with three control modes (potentiometers, a Python desktop GUI and an Android app), IK-driven presets and an MSC Adams model.</p>
+          <p class="project-desc">Handed a self-locking robot skeleton with no motors, no electronics and no control system. I rebuilt the mechanism on new bearings and spindles to remove the binding, sized and bench-tested new servos (measured ~60% of rated torque, which the 2.5× design margin absorbed), designed a fused 24→12 V power system, redesigned the mounts with FEA, and fabricated everything at UBC Makerspaces. The result is a 3-DOF platform with three control modes (potentiometers, a Python desktop GUI and an Android app), IK-driven presets and an MSC Adams model.</p>
           <div class="project-tech">
             <span class="tech-pill">Root-Cause Analysis</span>
             <span class="tech-pill">Actuator Validation</span>
@@ -288,6 +242,7 @@
         </div>
         <div class="project-content">
           <div class="project-number">03</div>
+          <div class="project-result">$30K+ → &lt;$3K</div>
           <div class="project-category">Medical Devices · Prosthetics · ISO 13485</div>
           <h3 class="project-title">Bionic Prosthetic Hand — Makershive</h3>
           <div class="project-story">
@@ -324,7 +279,7 @@
     </div>
 
     <!-- P4: CONCRETE PRINTER -->
-    <div class="project-card reveal">
+    <div class="project-card reveal" id="concrete-printer">
       <div class="project-inner reverse">
         <div class="project-gallery video-only" data-video-id="IjnoCOKBG7U" data-video-title="Concrete 3D Printer Demo">
           <button class="yt-facade" aria-label="Play video: Concrete 3D Printer Demo">
@@ -335,6 +290,7 @@
         </div>
         <div class="project-content">
           <div class="project-number">04</div>
+          <div class="project-result">Prototype at &lt;10% of Budget</div>
           <div class="project-category">Construction Robotics · Archtype 3D / 14North</div>
           <h3 class="project-title">Concrete 3D Printer</h3>
           <div class="project-story">
@@ -364,252 +320,118 @@
       </div>
     </div>
 
-    <!-- P5: BCIT -->
-    <div class="project-card reveal">
-      <div class="project-inner">
-        <div class="project-gallery video-only" data-video-id="qKFPMa1yNug" data-video-title="CNC 5-Axis HAAS 750 Simulation — VERICUT">
-          <button class="yt-facade" aria-label="Play video: CNC 5-Axis HAAS 750 Simulation — VERICUT">
-            <img src="https://i.ytimg.com/vi/qKFPMa1yNug/hqdefault.jpg" alt="5-axis HAAS CNC VERICUT simulation video thumbnail" loading="lazy" decoding="async"/>
-            <span class="play-btn"><svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path d="M0 0 L22 13 L0 26 Z"/></svg></span>
-            <span class="video-label">Watch Demo</span>
-          </button>
-          <div class="gallery-courtesy">Video courtesy BCIT Advanced Manufacturing Hub</div>
-        </div>
-        <div class="project-content">
-          <div class="project-number">05</div>
-          <div class="project-category">Advanced Manufacturing · Materials · BCIT</div>
-          <h3 class="project-title">BCIT — Advanced Manufacturing</h3>
-          <div class="project-story">
-            <div class="story-block">
-              <div class="story-label">The Problem</div>
-              <p>Metal-filled PLA filaments are weak and hard to print reliably.</p>
-            </div>
-            <div class="story-block">
-              <div class="story-label">What I Did</div>
-              <p>Led material research on copper-filled PLA; ran BCIT's additive lab across FDM, SLA, HP MJF and metal; supported industry clients.</p>
-            </div>
-            <div class="story-block story-result">
-              <div class="story-label">Result</div>
-              <p>Published in Springer's <em>Journal of Polymer Research</em> (2025).</p>
-            </div>
-          </div>
-          <div class="project-tech">
-            <span class="tech-pill">Copper-Filled PLA</span>
-            <span class="tech-pill">FDM / SLA</span>
-            <span class="tech-pill">HP MJF Powder Bed</span>
-            <span class="tech-pill">Metal Additive</span>
-            <span class="tech-pill">HAAS 5-Axis CNC</span>
-            <span class="tech-pill">Published Research</span>
-          </div>
-          <div class="project-highlight">Peer-reviewed Springer publication · Ran BCIT's additive lab · Industry client support across polymer and metal processes.</div>
-          <div class="project-publications">
-            <div class="pub-item">
-              <span class="pub-type">Publication</span>
-              <span class="pub-title"><a href="https://link.springer.com/article/10.1007/s10965-025-04588-6" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">Mechanical and Thermal Properties of Copper-Filled PLA Composites for FDM Additive Manufacturing</a> — <em>Journal of Polymer Research · Springer · 2025</em></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- P6: MOTORSPORT -->
-    <div class="project-card reveal">
-      <div class="project-inner reverse">
-        <div class="project-gallery">
-          <img class="main-img lightbox-trigger" src="images/kart-racing.jpg" alt="BAJA all-terrain vehicle in competition" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;cursor:pointer;"/>
-          <div class="gallery-thumbs">
-            <img class="thumb lightbox-trigger" src="images/kart-racing.jpg" alt="BAJA ATV racing action thumbnail" loading="lazy" decoding="async"/>
-            <img class="thumb lightbox-trigger" src="images/kart-sitting.jpg" alt="Formula kart competition thumbnail" loading="lazy" decoding="async"/>
-            <img class="thumb lightbox-trigger" src="images/cnc-simulation.png" alt="CNC CAM simulation thumbnail" loading="lazy" decoding="async"/>
-          </div>
-        </div>
-        <div class="project-content">
-          <div class="project-number">06</div>
-          <div class="project-category">Vehicle Engineering · SAE BAJA</div>
-          <h3 class="project-title">BAJA / Formula Motorsport</h3>
-          <div class="project-story">
-            <div class="story-block">
-              <div class="story-label">The Problem</div>
-              <p>Build a race-legal all-terrain vehicle that passes SAE BAJA technical inspection on a student budget.</p>
-            </div>
-            <div class="story-block">
-              <div class="story-label">What I Did</div>
-              <p>Chassis, suspension, powertrain integration, fabrication and costing; budget owner and rules-compliance lead in a team of 25.</p>
-            </div>
-            <div class="story-block story-result">
-              <div class="story-label">Result</div>
-              <p>Passed all safety tests and competed at SAE India BAJA.</p>
-            </div>
-          </div>
-          <div class="project-tech">
-            <span class="tech-pill">Chassis Design</span>
-            <span class="tech-pill">Suspension Geometry</span>
-            <span class="tech-pill">Powertrain Integration</span>
-            <span class="tech-pill">Lathe / Mill / Welding</span>
-            <span class="tech-pill">CAD / CAE Validation</span>
-            <span class="tech-pill">Budget Management</span>
-          </div>
-          <div class="project-highlight">Passed SAE BAJA technical inspection · Budget owner and rules-compliance lead · Design-to-race on a student budget.</div>
-        </div>
-      </div>
-    </div>
-
     <div class="projects-cta reveal">
       <p>Got a problem like these?</p>
       <a href="services.html" class="btn-primary">See How I Work</a>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="experience" id="experience">
-    <div class="section-label">03 — Career</div>
-    <h2 class="section-heading">Experience.</h2>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-date">Feb 2024 — Present</div>
-        <div class="timeline-company">Resonetics Medical Power</div>
-        <div class="timeline-role">Mechanical Design Engineer · Surrey, Canada</div>
-        <ul class="timeline-details">
-          <li>R&amp;D mechanical design for Class III implantable batteries used in pacemakers and neurostimulators</li>
-          <li>Report to the R&amp;D Director; lead 4 engineers and a 50-person production floor</li>
-          <li>Cut production scrap from ~30% to ~2% and critical process time from 40 hrs to ~20 min through system-level redesign</li>
-          <li>Automated manual steps, retrofitted equipment and built CTQ data tools — all inside an ISO 13485 / FDA quality system</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Apr 2023 — Feb 2024</div>
-        <div class="timeline-company">British Columbia Institute of Technology (BCIT)</div>
-        <div class="timeline-role">Research Analyst — Applied Research · Burnaby, Canada</div>
-        <ul class="timeline-details">
-          <li>Led material research on copper-filled PLA filaments — published in Springer's Journal of Polymer Research (2025)</li>
-          <li>Ran the Advanced Additive Manufacturing Lab across FDM, SLA, HP MJF and metal; supported industry clients</li>
-          <li>Hands-on with 5-axis CNC (HAAS UMC 750) and VERICUT simulation</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Dec 2022 — Feb 2023</div>
-        <div class="timeline-company">Industrial Pixel VFX</div>
-        <div class="timeline-role">Mechanical &amp; Electrical Designer · Vancouver, Canada</div>
-        <ul class="timeline-details">
-          <li>Designed electromechanical capture systems for film — clients include Marvel, DC and major Hollywood productions</li>
-          <li>Built full-body scan rigs, face scanners and mobile LiDAR systems for creating digital doubles</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Nov 2022 — Jan 2024</div>
-        <div class="timeline-company">Archtype 3D · 14North Construction Ltd</div>
-        <div class="timeline-role">Consultant Engineer (Mechatronics) · Saskatoon, Canada</div>
-        <ul class="timeline-details">
-          <li>Hired as a consultant to build a concrete 3D printer for construction; became project lead of 5 engineers and 2 technicians</li>
-          <li>Designed a cable-driven parallel robot targeting 10,000 sq ft structures; working prototype in 14 months using under 10% of the project budget</li>
-          <li>Owned motion architecture, extruder design and vision-based path correction; printed 8×8 ft concrete samples</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Oct 2019 — Aug 2021</div>
-        <div class="timeline-company">Makers Hive Innovations</div>
-        <div class="timeline-role">Mechanical Design &amp; Support Engineer · Hyderabad, India</div>
-        <ul class="timeline-details">
-          <li>Core R&amp;D mechanical designer on an affordable bionic prosthetic hand; designed, validated and patented mechanisms to ISO 13485</li>
-          <li>Cut cost by more than 90% through CAE, rapid prototyping and design simplification; 18 grip modes and ~8 kg load capacity</li>
-          <li>Worked with the electronics team on control boards; built in-house tests that sped up ISO 13485 certification</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Mar 2019 — Aug 2019</div>
-        <div class="timeline-company">Leap Robots LLP</div>
-        <div class="timeline-role">Research Associate · Hyderabad, India</div>
-        <ul class="timeline-details">
-          <li>Designed enclosures, robot frames and gearboxes; prototyped in-house with FDM</li>
-          <li>Programmed Arduino and Raspberry Pi robot controllers</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Mar 2018 — Sep 2018</div>
-        <div class="timeline-company">Eleation</div>
-        <div class="timeline-role">Engineering Intern · Pune, India</div>
-        <ul class="timeline-details">
-          <li>Validated a wind turbine blade design with CFD in Ansys Workbench, Mechanical and Fluent</li>
-        </ul>
-      </div>
-
+  <!-- TESTIMONIALS: hidden until real quotes are added -->
+  <section class="testimonials" id="testimonials" hidden>
+    <div class="section-label">04 — Testimonials</div>
+    <h2 class="section-heading">In Their Words.</h2>
+    <div class="quote-grid">
+      <!-- Copy this block once per quote (1–3), fill it in, then delete `hidden` on the section.
+      <figure class="quote-card reveal">
+        <blockquote class="quote-text">QUOTE</blockquote>
+        <figcaption class="quote-by">
+          <span class="quote-name">NAME</span>
+          <span class="quote-role">ROLE · ORGANISATION</span>
+          <a class="quote-project" href="#resonetics">Related project →</a>
+        </figcaption>
+      </figure>
+      -->
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="skills" id="skills">
-    <div class="section-label">04 — Capabilities</div>
-    <h2 class="section-heading">Technical Stack.</h2>
-    <div class="skills-grid">
-      <div class="skill-group reveal">
-        <h3 class="skill-group-title">Design &amp; CAE</h3>
-        <ul class="skill-list">
-          <li>SolidWorks / CATIA / Fusion 360</li>
-          <li>GD&amp;T &amp; Tolerance Analysis</li>
-          <li>FEA — Structural &amp; Thermal</li>
-          <li>Mechanism Design &amp; DFM</li>
-        </ul>
+  <!-- WHO I WORK WITH -->
+  <section class="clients" id="clients">
+    <div class="section-label">05 — Clients</div>
+    <h2 class="section-heading">Who I Work With.</h2>
+    <div class="clients-grid">
+      <div class="client-card reveal"><h3 class="client-title">Robotics &amp; Hardware Teams</h3><p class="client-desc">Prototype doesn't perform reliably.</p></div>
+      <div class="client-card reveal"><h3 class="client-title">Medical Device Teams</h3><p class="client-desc">Need engineering inside regulated development and manufacturing.</p></div>
+      <div class="client-card reveal"><h3 class="client-title">Manufacturing Teams</h3><p class="client-desc">Scrap, cycle time, automation or equipment problems.</p></div>
+      <div class="client-card reveal"><h3 class="client-title">Founders &amp; R&amp;D Teams</h3><p class="client-desc">A difficult electromechanical concept that needs to become working hardware.</p></div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section class="method" id="method">
+    <div class="section-label">06 — Method</div>
+    <h2 class="section-heading">Diagnose → Redesign → Prove.</h2>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="service-num">01</div>
+        <h3 class="service-title">Diagnose</h3>
+        <p class="service-desc">Establish the real failure mode and root cause, with evidence.</p>
       </div>
-      <div class="skill-group reveal">
-        <h3 class="skill-group-title">Mechatronics &amp; Controls</h3>
-        <ul class="skill-list">
-          <li>Parallel &amp; Serial Kinematics</li>
-          <li>Servo &amp; Stepper Control</li>
-          <li>Raspberry Pi / Arduino · Python / C</li>
-          <li>Adams / MATLAB Simulation</li>
-        </ul>
+      <div class="step-card reveal">
+        <div class="service-num">02</div>
+        <h3 class="service-title">Redesign</h3>
+        <p class="service-desc">Engineer the mechanical, mechatronic or manufacturing fix.</p>
       </div>
-      <div class="skill-group reveal">
-        <h3 class="skill-group-title">Manufacturing</h3>
-        <ul class="skill-list">
-          <li>Automation &amp; Equipment Retrofit</li>
-          <li>Lean &amp; CTQ Data Analysis</li>
-          <li>5-Axis CNC &amp; CAM</li>
-          <li>FDM / SLA / HP MJF / Metal AM</li>
-        </ul>
-      </div>
-      <div class="skill-group reveal">
-        <h3 class="skill-group-title">Medical Device QMS</h3>
-        <ul class="skill-list">
-          <li>ISO 13485 / FDA</li>
-          <li>Class III Device Production</li>
-          <li>IQ / OQ / PQ Validation</li>
-          <li>CAPA &amp; FMEA</li>
-        </ul>
+      <div class="step-card reveal">
+        <div class="service-num">03</div>
+        <h3 class="service-title">Prove</h3>
+        <p class="service-desc">Prototype, test and validate, so the fix is shown to work and not just assumed.</p>
       </div>
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section class="education" id="education">
-    <div class="section-label">05 — Academic</div>
-    <h2 class="section-heading">Education.</h2>
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <h3 class="edu-degree">Master of Engineering</h3>
-        <div class="edu-school">University of British Columbia, Vancouver, Canada</div>
-        <div class="edu-year">Mechanical Engineering · Mechatronics · Sep 2021 – Aug 2022</div>
+  <!-- BACKGROUND & CREDENTIALS -->
+  <section class="background" id="background">
+    <div class="section-label">07 — Background</div>
+    <h2 class="section-heading">Engineering Background.</h2>
+
+    <div class="cred-grid">
+      <div class="cred-card"><strong>7+ Years</strong>Engineering</div>
+      <div class="cred-card"><strong>Class III</strong>Medical Devices</div>
+      <div class="cred-card"><strong>ISO 13485</strong>Regulated</div>
+      <div class="cred-card"><strong>Patent 403148</strong>Indian Patent</div>
+      <div class="cred-card"><strong>Springer 2025</strong>Publication</div>
+      <div class="cred-card"><strong>M.Eng</strong>UBC</div>
+    </div>
+
+    <div class="bg-grid">
+      <div class="bg-col">
+        <div class="bg-label">Selected Experience</div>
+        <ul class="exp-list">
+          <li><strong>Resonetics Medical Power</strong><span>Mechanical Design Engineer (R&amp;D) · Class III implantable batteries · ISO 13485 · automation &amp; process optimisation</span></li>
+          <li><strong>Archtype 3D / 14North</strong><span>Mechatronics Consultant → Project Lead · cable-driven construction robot</span></li>
+          <li><strong>BCIT Applied Research</strong><span>Research Analyst · advanced &amp; additive manufacturing · Springer-published materials research</span></li>
+          <li><strong>Industrial Pixel VFX</strong><span>Mechanical &amp; Electrical Designer · scan rigs and LiDAR capture systems for film</span></li>
+          <li><strong>Makers Hive Innovations</strong><span>Mechanical Design Engineer · bionic prosthetic hand · patented mechanism · ISO 13485</span></li>
+        </ul>
+        <a href="https://www.linkedin.com/in/ajayreddynalla/" target="_blank" rel="noopener" class="about-link">Full history on LinkedIn ↗</a>
       </div>
-      <div class="edu-card reveal">
-        <h3 class="edu-degree">Bachelor of Technology</h3>
-        <div class="edu-school">JNTUH · Mechanical Engineering, Hyderabad</div>
-        <div class="edu-year">Mechanical Engineering · Robotics &amp; Vehicle Projects</div>
+      <div class="bg-col">
+        <div class="bg-label">Also Built</div>
+        <div class="also-grid">
+          <div class="also-card">
+            <h3 class="also-title">Copper-Filled PLA Research · BCIT</h3>
+            <p>Peer-reviewed in the <a href="https://link.springer.com/article/10.1007/s10965-025-04588-6" target="_blank" rel="noopener"><em>Journal of Polymer Research</em></a> (Springer, 2025).</p>
+          </div>
+          <div class="also-card">
+            <h3 class="also-title">SAE India BAJA / Formula</h3>
+            <p>Chassis, suspension, fabrication; budget and rules-compliance lead in a 25-person team.</p>
+          </div>
+        </div>
+        <div class="bg-label">Education</div>
+        <ul class="edu-list">
+          <li><strong>M.Eng (Mechatronics)</strong> · University of British Columbia</li>
+          <li><strong>B.Tech (Mechanical)</strong> · JNTUH</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
-    <div class="section-label" style="justify-content:center;">06 — Contact</div>
+    <div class="section-label" style="justify-content:center;">08 — Contact</div>
     <h2 class="contact-heading">What's Stuck?</h2>
-    <p class="contact-sub">Tell me what isn't working. I reply within 24 hours.</p>
+    <p class="contact-sub">Tell me what isn't working.</p>
+    <p class="contact-avail">Remote worldwide · on-site in Canada · reply within 24 hours.</p>
 
     <div class="contact-grid">
       <div class="contact-item reveal">
@@ -632,6 +454,7 @@
     </div>
 
     <!-- CONTACT FORM -->
+    <p class="contact-unsure">Not sure what you need? That's fine. Describe the problem and I'll tell you where I'd start.</p>
     <div class="contact-form-wrap" id="contact-form">
       <div class="contact-form-label">Describe the Problem</div>
       <form action="https://formspree.io/f/xrejbwdv" method="POST">
