@@ -10,7 +10,7 @@
   <meta property="og:site_name" content="Engineer by Choice"/>
   <meta property="og:url" content="https://engineerbychoice.com/projects/spm.html"/>
   <meta property="og:title" content="Spherical Parallel Manipulator — From Self-Locking Skeleton to 3-DOF Platform"/>
-  <meta property="og:description" content="Root-cause diagnosis, mechanism rebuild, servo sizing and bench validation, fused power system, FEA-checked mounts and Raspberry Pi / Android control. A UBC M.Eng case study by Ajay Nalla."/>
+  <meta property="og:description" content="Root-cause diagnosis, mechanism rebuild, servo sizing and bench validation, fused power system, FEA-checked mounts and Raspberry Pi control from hardware, desktop and Android. A UBC M.Eng case study by Ajay Nalla."/>
   <meta property="og:image" content="https://engineerbychoice.com/images/spm/hero.png"/>
   <meta property="og:image:width" content="1709"/>
   <meta property="og:image:height" content="920"/>
@@ -19,7 +19,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:url" content="https://engineerbychoice.com/projects/spm.html"/>
   <meta name="twitter:title" content="Spherical Parallel Manipulator — From Self-Locking Skeleton to 3-DOF Platform"/>
-  <meta name="twitter:description" content="Root-cause diagnosis, mechanism rebuild, servo sizing and bench validation, fused power system, FEA-checked mounts and Raspberry Pi / Android control."/>
+  <meta name="twitter:description" content="Root-cause diagnosis, mechanism rebuild, servo sizing and bench validation, fused power system, FEA-checked mounts and Raspberry Pi control from hardware, desktop and Android."/>
   <meta name="twitter:image" content="https://engineerbychoice.com/images/spm/hero.png"/>
   <link rel="canonical" href="https://engineerbychoice.com/projects/spm.html"/>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
@@ -72,6 +72,7 @@
         <span class="tag">Sheet-Metal Design</span>
         <span class="tag">FEA</span>
         <span class="tag">Raspberry Pi</span>
+        <span class="tag">Python GUI</span>
         <span class="tag">Android App</span>
         <span class="tag">Inverse Kinematics</span>
         <span class="tag">MSC Adams</span>
@@ -88,7 +89,7 @@
         <div class="stat-card"><div class="stat-number">3-DOF</div><div class="stat-label">Spherical parallel robot</div></div>
         <div class="stat-card"><div class="stat-number">~60%</div><div class="stat-label">Of rated servo torque, measured on my test rig</div></div>
         <div class="stat-card"><div class="stat-number">2.5×</div><div class="stat-label">Design safety factor that absorbed it</div></div>
-        <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Control modes: manual + app</div></div>
+        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Control modes: manual, desktop, Android</div></div>
       </div>
     </div>
   </section>
@@ -109,11 +110,11 @@
         </div>
         <div class="cs-card reveal">
           <div class="cs-card-label">Systems</div>
-          <p>3-RRR spherical mechanism; Hitec HS-1100WP servos; a 24 V → 12 V DC/DC power rail with e-stop and per-servo fusing; Raspberry Pi 4 + PCA9685 PWM driver (I2C); potentiometer manual controllers; an Android app over Bluetooth; WIT-motion IMU; MSC Adams.</p>
+          <p>3-RRR spherical mechanism; Hitec HS-1100WP servos; a 24 V → 12 V DC/DC power rail with e-stop and per-servo fusing; Raspberry Pi 4 + PCA9685 PWM driver (I2C); potentiometer manual controllers; a Python desktop GUI; an Android app over Bluetooth; WIT-motion IMU; MSC Adams.</p>
         </div>
         <div class="cs-card reveal">
           <div class="cs-card-label">Outcome</div>
-          <p>A fully working 3-DOF platform. It moves freely with zero geometric binding, runs on load-validated actuators behind a protected power system, and is controlled two ways: manually with potentiometers, and remotely from an Android app with inverse-kinematics-driven preset orientations.</p>
+          <p>A fully working 3-DOF platform. It moves freely with zero geometric binding, runs on load-validated actuators behind a protected power system, and is controlled three ways: manually with potentiometers, from a Python desktop GUI, and remotely from an Android app, with inverse-kinematics-driven preset orientations.</p>
         </div>
       </div>
     </div>
@@ -324,12 +325,13 @@
       <!-- STEP 06 -->
       <article class="cs-step" id="step-06">
         <div class="cs-step-label">Step 06 — Control</div>
-        <h3 class="cs-step-title">Control It Two Ways, and Model It.</h3>
+        <h3 class="cs-step-title">Control It Three Ways, and Model It.</h3>
         <div class="cs-step-body has-media">
           <div class="cs-prose">
             <ul>
               <li><strong>Manual:</strong> potentiometer servo controllers with programmable endpoints. I used them to find the singularity limits physically and lock them out.</li>
-              <li><strong>Remote:</strong> a Raspberry Pi 4 drives the servos through a 16-channel PCA9685 PWM driver over I2C. I built an <strong>Android app</strong> that talks to the Pi over Bluetooth, with per-joint angle sliders, calibration, and preset positions.</li>
+              <li><strong>Desktop:</strong> a Python GUI running on the Raspberry Pi 4, which drives the servos through a 16-channel PCA9685 PWM driver over I2C. It has per-motor angle sliders, calibration, stop/go control and preset demo motions.</li>
+              <li><strong>Remote:</strong> I built an <strong>Android app</strong> that talks to the Pi over Bluetooth, with per-joint angle sliders, calibration, and preset positions.</li>
               <li><strong>Kinematics:</strong> with the guidance of Dr. Ahmad Mohammadpanah, I developed the inverse kinematics and an <strong>MSC Adams</strong> dynamic model of the mechanism, which gives the actuator torque profiles across a motion cycle. The app's preset orientations run through the IK solution, which turns a target platform orientation into the three joint angles.</li>
               <li><strong>Instrumentation:</strong> a WIT-motion IMU on the platform logged acceleration, angular rate and orientation during test runs.</li>
             </ul>
@@ -386,6 +388,7 @@
         <span class="tag">Lathe / Mill / Waterjet / Press Brake</span>
         <span class="tag">Raspberry Pi</span>
         <span class="tag">I2C / PWM</span>
+        <span class="tag">Python GUI</span>
         <span class="tag">Android App</span>
         <span class="tag">Inverse Kinematics</span>
         <span class="tag">MSC Adams</span>
