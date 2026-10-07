@@ -1,11 +1,11 @@
 // ── NAV scroll effect + scroll progress bar
-const nav = document.querySelector('nav');
+const nav = document.querySelector('.site-nav') || document.querySelector('nav');
 const navLinks = document.querySelectorAll('.nav-links a');
 const sections = document.querySelectorAll('section[id]');
 const progressBar = document.getElementById('scroll-progress');
 
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
+  nav?.classList.toggle('scrolled', window.scrollY > 50);
 
   let current = '';
   sections.forEach(s => {
@@ -25,7 +25,7 @@ window.addEventListener('scroll', () => {
 
 // ── Mobile hamburger
 const hamburger = document.querySelector('.hamburger');
-const navLinksContainer = document.querySelector('.nav-links');
+const navLinksContainer = document.querySelector('.nav-menu') || document.querySelector('.nav-links');
 
 hamburger?.addEventListener('click', () => {
   const isOpen = navLinksContainer.classList.toggle('open');
@@ -107,7 +107,6 @@ document.querySelectorAll('.yt-facade').forEach(btn => {
     iframe.allowFullscreen = true;
     iframe.style.cssText = 'width:100%;height:100%;position:absolute;inset:0;border:0;';
     wrap.style.position = 'relative';
-    wrap.style.minHeight = '420px';
     wrap.appendChild(iframe);
     btn.remove();
   });
