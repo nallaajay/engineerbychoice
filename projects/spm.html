@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spherical Parallel Manipulator — Case Study | Ajay Nalla</title>
+  <meta name="description" content="Handed a self-locking robot skeleton with no motors, electronics or control system, I diagnosed why it wouldn't move, rebuilt the mechanism, re-engineered actuation and power, and delivered a fully controlled 3-DOF platform."/>
+  <!-- Open Graph / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Engineer by Choice"/>
+  <meta property="og:url" content="https://engineerbychoice.com/projects/spm.html"/>
+  <meta property="og:title" content="Spherical Parallel Manipulator — From Self-Locking Skeleton to 3-DOF Platform"/>
+  <meta property="og:description" content="Root-cause diagnosis, mechanism rebuild, servo sizing and bench validation, fused power system, FEA-checked mounts and Raspberry Pi / Android control. A UBC M.Eng case study by Ajay Nalla."/>
+  <meta property="og:image" content="https://engineerbychoice.com/images/spm/hero.png"/>
+  <meta property="og:image:width" content="1709"/>
+  <meta property="og:image:height" content="920"/>
+  <meta property="og:image:alt" content="The rebuilt Spherical Parallel Manipulator with its servo drives, power electronics and emergency stop."/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:url" content="https://engineerbychoice.com/projects/spm.html"/>
+  <meta name="twitter:title" content="Spherical Parallel Manipulator — From Self-Locking Skeleton to 3-DOF Platform"/>
+  <meta name="twitter:description" content="Root-cause diagnosis, mechanism rebuild, servo sizing and bench validation, fused power system, FEA-checked mounts and Raspberry Pi / Android control."/>
+  <meta name="twitter:image" content="https://engineerbychoice.com/images/spm/hero.png"/>
+  <link rel="canonical" href="https://engineerbychoice.com/projects/spm.html"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="preload" as="image" href="../images/spm/hero.webp" type="image/webp"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="data:," alt="Enlarged project image"/>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">Engineer by Choice</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects" class="active">Problems Solved</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main>
+  <!-- HERO -->
+  <section class="cs-hero" id="top">
+    <div class="cs-wrap">
+      <div class="cs-breadcrumb" role="navigation" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html#projects">Portfolio</a></li>
+          <li><span aria-current="page">Spherical Parallel Manipulator</span></li>
+        </ol>
+      </div>
+      <div class="cs-eyebrow">Parallel Robotics · Failure Recovery · UBC M.Eng</div>
+      <h1 class="cs-title">Spherical Parallel Manipulator</h1>
+      <p class="cs-subtitle">I was handed a self-locking robot skeleton: no motors, no electronics, no control system. I diagnosed why it wouldn't move, rebuilt the mechanism, re-engineered the actuation and power, and brought it to a fully controlled 3-DOF platform.</p>
+      <div class="cs-pills">
+        <span class="tag">Root-Cause Analysis</span>
+        <span class="tag">Actuator Sizing &amp; Validation</span>
+        <span class="tag">Power Electronics</span>
+        <span class="tag">Sheet-Metal Design</span>
+        <span class="tag">FEA</span>
+        <span class="tag">Raspberry Pi</span>
+        <span class="tag">Android App</span>
+        <span class="tag">Inverse Kinematics</span>
+        <span class="tag">MSC Adams</span>
+      </div>
+
+      <figure class="cs-hero-media">
+        <picture>
+          <source srcset="../images/spm/hero.webp" type="image/webp"/>
+          <img class="lightbox-trigger" src="../images/spm/hero.png" alt="The rebuilt Spherical Parallel Manipulator on the bench, with servo drives, power electronics and emergency stop" width="1709" height="920" fetchpriority="high"/>
+        </picture>
+      </figure>
+
+      <div class="cs-stats">
+        <div class="stat-card"><div class="stat-number">3-DOF</div><div class="stat-label">Spherical parallel robot</div></div>
+        <div class="stat-card"><div class="stat-number">~60%</div><div class="stat-label">Of rated servo torque, measured on my test rig</div></div>
+        <div class="stat-card"><div class="stat-number">2.5×</div><div class="stat-label">Design safety factor that absorbed it</div></div>
+        <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Control modes: manual + app</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 — SNAPSHOT -->
+  <section class="cs-section alt" id="snapshot">
+    <div class="cs-wrap">
+      <div class="section-label">01 — Snapshot</div>
+      <h2 class="section-heading">Engineering Snapshot.</h2>
+      <div class="cs-cards">
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Challenge</div>
+          <p>A spherical parallel manipulator from a previous capstone team at UBC's Machine Dynamics Lab came to me as a bare frame. The motors were gone and the electronics were gone, after 5 of the 6 DC motors and the controllers had failed in the earlier build. The structure itself bound up and wouldn't move freely.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">My Role</div>
+          <p>Sole engineer on the recovery, under the supervision of Dr. Ahmad Mohammadpanah. I handled diagnosis, mechanical rework, actuator sizing and testing, power-system design, mount and base redesign with FEA, all fabrication (self-supervised at UBC Makerspaces), control electronics, the Android app, and the kinematic modelling. The original frame geometry was the previous team's design.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Systems</div>
+          <p>3-RRR spherical mechanism; Hitec HS-1100WP servos; a 24 V → 12 V DC/DC power rail with e-stop and per-servo fusing; Raspberry Pi 4 + PCA9685 PWM driver (I2C); potentiometer manual controllers; an Android app over Bluetooth; WIT-motion IMU; MSC Adams.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Outcome</div>
+          <p>A fully working 3-DOF platform. It moves freely with zero geometric binding, runs on load-validated actuators behind a protected power system, and is controlled two ways: manually with potentiometers, and remotely from an Android app with inverse-kinematics-driven preset orientations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — THE STORY -->
+  <section class="cs-section" id="story">
+    <div class="cs-wrap">
+      <div class="section-label">02 — The Story</div>
+      <h2 class="section-heading">Skeleton to Platform.</h2>
+
+      <!-- STEP 01 -->
+      <article class="cs-step" id="step-01">
+        <div class="cs-step-label">Step 01 — Diagnosis</div>
+        <h3 class="cs-step-title">What I Inherited.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p><strong>Not a broken robot. Not a partly working prototype. A mechanical skeleton.</strong></p>
+            <p>The previous build had used DC motors driven by Arduinos. Five of six motors burnt out, the controllers were damaged, and by the time the robot reached me the motors and electronics were gone. What was left was a frame that bound up under its own geometry. The arms had to be pulled together to assemble the platform, and that preload went straight into the joints.</p>
+            <p>From the handover and the earlier team's documentation, I traced each failure to its root cause before touching anything:</p>
+          </div>
+        </div>
+        <div class="cs-table-wrap">
+          <table class="cs-table stack">
+            <thead>
+              <tr><th scope="col">Symptom in the previous build</th><th scope="col">Root cause</th><th scope="col">What I did</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Symptom">5 of 6 DC motors burnt out</td>
+                <td data-label="Root cause">The motors were never tested against the real load. Undersized for the torque, they drew current until they failed.</td>
+                <td data-label="What I did">Re-derived the torque budget from measured mass. Chose servos with a 2.5× safety factor, then bench-tested them.</td>
+              </tr>
+              <tr>
+                <td data-label="Symptom">Arduino and electronics destroyed</td>
+                <td data-label="Root cause">No decoupling between the logic and motor-power circuits.</td>
+                <td data-label="What I did">Separated the rails: a dedicated 12 V servo bus, an isolated 5 V logic supply, an e-stop, a 30 A main fuse and a 6 A fuse per servo.</td>
+              </tr>
+              <tr>
+                <td data-label="Symptom">Limit switches tripped only <em>after</em> the arm reached singularity</td>
+                <td data-label="Root cause">The switch placement defeated their purpose.</td>
+                <td data-label="What I did">Removed them. Servo endpoints are set in the controllers and software to stop <em>before</em> singularity.</td>
+              </tr>
+              <tr>
+                <td data-label="Symptom">Frame bound up; play at the hubs</td>
+                <td data-label="Root cause">Assembly misalignment and preload across the joints.</td>
+                <td data-label="What I did">Rebuilt the mechanism on free bearings and spindles first (Step 02).</td>
+              </tr>
+              <tr>
+                <td data-label="Symptom">Lag between command and motion</td>
+                <td data-label="Root cause">Laptop → Arduino serial latency.</td>
+                <td data-label="What I did">Moved control onto a Raspberry Pi 4 driving the servos directly over I2C.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- STEP 02 -->
+      <article class="cs-step" id="step-02">
+        <div class="cs-step-label">Step 02 — Mechanism</div>
+        <h3 class="cs-step-title">Fix the Mechanism First.</h3>
+        <div class="cs-step-body has-media">
+          <div class="cs-prose">
+            <p>A parallel manipulator that fights itself will destroy any actuator you bolt onto it. That's very likely part of what happened to the original motors. So I didn't buy anything yet.</p>
+            <p>I stripped the frame down and rebuilt it on free bearings and spindles: studs and bearing sleeves I designed and turned on the lathe, bearing surfaces cut to tolerance and finished at 2000 grit, and flats milled for the hubs. I re-assembled the arms and corrected the misalignment until the platform went together <strong>with no force</strong> and every degree of freedom swung freely by hand.</p>
+            <p>Only when the mechanism moved cleanly on its own did I size actuators for it.</p>
+            <p class="cs-pull">You don't add actuation to a broken mechanism. You fix the mechanism first.</p>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/spm/machined.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/spm/machined.png" alt="Machined shaft, shaft in base mount, bearing-stud assembly and the full SPM subassembly, with the lathe and milling machine used" width="1536" height="1024" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>Lathe-turned studs and bearing sleeves let me test the bare mechanism by hand and remove the binding before choosing actuators.</figcaption>
+            </figure>
+            <figure class="cs-figure portrait">
+              <video controls muted playsinline preload="metadata" poster="../images/spm/manual-test-poster.jpg" width="1080" height="1920">
+                <source src="../images/spm/manual-test.mp4" type="video/mp4"/>
+              </video>
+              <figcaption>Manual test after the rebuild: free motion through the workspace, zero geometric binding.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 03 -->
+      <article class="cs-step" id="step-03">
+        <div class="cs-step-label">Step 03 — Actuation</div>
+        <h3 class="cs-step-title">Size the Actuator, Then Prove It.</h3>
+        <div class="cs-step-body has-media">
+          <div class="cs-prose">
+            <p>I sized from measured numbers, not the old spec. The moving assembly weighed <strong>4.124 kg</strong>; I budgeted <strong>5 kg</strong> to leave room for sensors. Three actuators share the load, so each carries <strong>1.67 kg</strong> acting at <strong>250 mm</strong>. That works out to <strong>~4.1 N·m (41 kg·cm)</strong>. With a <strong>2.5× safety factor</strong> I needed <strong>≥102 kg·cm</strong> and <strong>≥3.34 rad/s</strong>. After benchmarking five large-scale servos, I chose the <strong>Hitec HS-1100WP</strong> (rated 110 kg·cm). Its built-in position control also removed the backlash and limit-switch problems of the old DC motors.</p>
+            <p>Then I didn't trust the datasheet. I built a test rig: the servo on an aluminium swing arm with load points at 143, 285 and 485 mm, loads from 1.35 to 2.2 kg, a 12–14.8 V supply, and current logged at every point.</p>
+            <p><strong>The servo delivered about 65 kg·cm, roughly 60% of its rating, and raising the voltage didn't change it.</strong> At the real working radius it still held 2.2 kg at 285 mm against a 1.66 kg requirement. The 2.5× margin I'd designed in is the only reason the design survived an underperforming part. One servo failed under deliberate overload despite a bench current limit, which is why every channel on the robot now has its own fuse.</p>
+            <p>That habit comes from regulated manufacturing: you don't assume a component meets spec, you verify it.</p>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <video controls muted playsinline preload="metadata" poster="../images/spm/servo-load-test-poster.jpg" width="1280" height="720">
+                <source src="../images/spm/servo-load-test.mp4" type="video/mp4"/>
+              </video>
+              <figcaption>Servo validation rig: weights at fixed radii, current logged at each point. Measured torque came out about 60% of the rated value.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="cs-table-wrap" id="results">
+          <div class="cs-table-title">Servo bench test: hold status and current draw at 12 V</div>
+          <table class="cs-table cs-results">
+            <thead>
+              <tr><th scope="col">Load radius</th><th scope="col">1.35 kg</th><th scope="col">1.61 kg</th><th scope="col">1.81 kg</th><th scope="col">2.2 kg</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">143 mm</th>
+                <td class="pass"><span class="status">Pass</span><span class="amps">0.6 A</span></td>
+                <td class="pass"><span class="status">Pass</span><span class="amps">0.8 A</span></td>
+                <td class="pass"><span class="status">Pass</span><span class="amps">1.1 A</span></td>
+                <td class="pass"><span class="status">Pass</span><span class="amps">1.2 A</span></td>
+              </tr>
+              <tr>
+                <th scope="row">285 mm</th>
+                <td class="pass"><span class="status">Pass</span><span class="amps">1.3 A</span></td>
+                <td class="pass"><span class="status">Pass</span><span class="amps">1.6 A</span></td>
+                <td class="pass"><span class="status">Pass</span><span class="amps">1.8 A</span></td>
+                <td class="pass"><span class="status">Pass</span><span class="amps">2.0 A</span></td>
+              </tr>
+              <tr>
+                <th scope="row">485 mm</th>
+                <td class="pass"><span class="status">Pass</span><span class="amps">1.6 A</span></td>
+                <td class="fail"><span class="status">Fail</span><span class="amps">2.5 A</span></td>
+                <td class="fail"><span class="status">Fail</span><span class="amps">3.7 A</span></td>
+                <td class="fail"><span class="status">Fail</span><span class="amps">4.0 A</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="cs-table-note">Rated 110 kg·cm → should hold 2.26 kg at 485 mm. Actual max: 1.35 kg → ~65 kg·cm. Working requirement: 1.66 kg at ~280 mm, so a measured margin of ~1.3×.</p>
+        </div>
+      </article>
+
+      <!-- STEP 04 -->
+      <article class="cs-step" id="step-04">
+        <div class="cs-step-label">Step 04 — Structure</div>
+        <h3 class="cs-step-title">Redesign the Base and Make It.</h3>
+        <div class="cs-step-body has-media">
+          <div class="cs-prose">
+            <p>Swapping DC motors for servos wasn't a component swap. The servos have a different form factor, mounting pattern and position relative to the joint axis, and the servo bodies dug into the original base plate. I redesigned the servo mounts in 1.4 mm sheet steel while holding the original mounting plane and hub position, so the kinematic geometry stayed unchanged. FEA put the mount at a safety factor of about 15 with roughly 0.1 mm maximum deflection. I re-cut the base plate for clearance and re-checked it in FEA.</p>
+            <p>I did all the fabrication myself, self-supervised, at <strong>UBC Makerspaces</strong>:</p>
+            <ul>
+              <li>shearing and <strong>waterjet cutting</strong> (DXF → toolpath) for the sheet-metal mounts</li>
+              <li>a <strong>24-ton press brake</strong>, using locating tabs I designed into the flat pattern</li>
+              <li>the <strong>lathe</strong> for non-standard 16 mm ID / 20 mm OD / 1.2 mm spacers that keep each arm in its original position</li>
+              <li><strong>drilling and tapping</strong> to re-pattern the arm hubs for the servo horns</li>
+            </ul>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/spm/simulation.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/spm/simulation.png" alt="FEA results for the modified base plate and modified servo mount: principal stresses, safety factor, von Mises stress and total displacement" width="1536" height="1024" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>FEA on the redesigned base plate and servo mount: safety factor of about 15 and roughly 0.1 mm maximum deflection on the mount.</figcaption>
+            </figure>
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/spm/fabrication.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/spm/fabrication.png" alt="Fabrication sequence: waterjet toolpath, waterjet cutting, cut sheet-metal parts, hydraulic press brake, bending and finished servo mounts" width="1536" height="1024" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>Servo mounts: waterjet-cut, formed on the press brake, and FEA-checked before cutting metal.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 05 -->
+      <article class="cs-step" id="step-05">
+        <div class="cs-step-label">Step 05 — Power</div>
+        <h3 class="cs-step-title">Power It Safely, Then Watch It Move.</h3>
+        <div class="cs-step-body has-media">
+          <div class="cs-prose">
+            <p>The original electronics died because motor power and logic weren't separated, so the power system came first. Worst case is about 6 A per servo, roughly 20 A for the bus. I reused the 24 V / 300 W adapter from the earlier build through a 96%-efficient 24 → 12 V DC/DC converter, which gives about 24 A available. The chain is: e-stop → 30 A main fuse → DC/DC → a 6 A fuse on each servo. The logic side (servo driver, manual controllers) runs on its own 5 V supply, so a motor fault can't reach the ICs.</p>
+            <p>Then I connected everything, ran the control script, and watched the platform move for the first time.</p>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/spm/power-circuit.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/spm/power-circuit.png" alt="Servo power supply hardware and schematic: 24 V supply, emergency stop, 30 A fuse, 24 to 12 V DC/DC converter, 6 A fuse per servo, plus the manual potentiometer controllers" width="1536" height="1024" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>Power chain: e-stop → 30 A main fuse → 24 → 12 V DC/DC → a 6 A fuse per servo, with the manual controllers on their own supply.</figcaption>
+            </figure>
+            <figure class="cs-figure">
+              <div class="cs-short" data-video-id="nOu_WwaFv3Y" data-video-title="Spherical Parallel Manipulator running">
+                <button class="yt-facade" aria-label="Play video: Spherical Parallel Manipulator running">
+                  <img src="https://i.ytimg.com/vi/nOu_WwaFv3Y/hqdefault.jpg" alt="The rebuilt Spherical Parallel Manipulator running, video thumbnail" loading="lazy" decoding="async"/>
+                  <span class="play-btn"><svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path d="M0 0 L22 13 L0 26 Z"/></svg></span>
+                  <span class="video-label">Watch it run</span>
+                </button>
+              </div>
+              <figcaption>The rebuilt SPM running: servo actuation, Raspberry Pi control, smooth motion across the hemispherical workspace.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 06 -->
+      <article class="cs-step" id="step-06">
+        <div class="cs-step-label">Step 06 — Control</div>
+        <h3 class="cs-step-title">Control It Two Ways, and Model It.</h3>
+        <div class="cs-step-body has-media">
+          <div class="cs-prose">
+            <ul>
+              <li><strong>Manual:</strong> potentiometer servo controllers with programmable endpoints. I used them to find the singularity limits physically and lock them out.</li>
+              <li><strong>Remote:</strong> a Raspberry Pi 4 drives the servos through a 16-channel PCA9685 PWM driver over I2C. I built an <strong>Android app</strong> that talks to the Pi over Bluetooth, with per-joint angle sliders, calibration, and preset positions.</li>
+              <li><strong>Kinematics:</strong> with the guidance of Dr. Ahmad Mohammadpanah, I developed the inverse kinematics and an <strong>MSC Adams</strong> dynamic model of the mechanism, which gives the actuator torque profiles across a motion cycle. The app's preset orientations run through the IK solution, which turns a target platform orientation into the three joint angles.</li>
+              <li><strong>Instrumentation:</strong> a WIT-motion IMU on the platform logged acceleration, angular rate and orientation during test runs.</li>
+            </ul>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/spm/gui-control.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/spm/gui-control.png" alt="SPM control system: desktop control panel with per-motor sliders, Android servo-control app, and the Raspberry Pi with PCA9685 servo driver" width="1672" height="941" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>Control layer: per-joint angle control and IK-driven preset orientations, driving the servos through the Raspberry Pi.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 03 — TAKEAWAYS -->
+  <section class="cs-section alt" id="takeaways">
+    <div class="cs-wrap">
+      <div class="section-label">03 — Takeaways</div>
+      <h2 class="section-heading">What This Proves.</h2>
+      <div class="cs-close-grid">
+        <div class="cs-proves reveal">
+          <p>The interesting problems aren't the ones you design from a clean sheet. They're the ones where someone hands you hardware that doesn't work, with no clear reason why, and asks you to make it work. That takes diagnosis, structured reasoning, and the discipline to fix the root cause before adding complexity. It's the same thinking I've applied to Class III medical devices, construction robotics and prosthetics.</p>
+        </div>
+        <div class="cs-next reveal">
+          <div class="cs-sub-label">What I'd do next</div>
+          <ul>
+            <li>Non-contact encoders at each joint for true <strong>closed-loop</strong> position control. Today the servos' internal loops are the only feedback.</li>
+            <li>Move singularity limits fully into the IK layer.</li>
+            <li>Autonomous path planning across the hemispherical workspace (A* / RRT with depth and proximity sensing).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — CREDITS -->
+  <section class="cs-section cs-credits" id="credits">
+    <div class="cs-wrap">
+      <div class="section-label">04 — Credits</div>
+      <h2 class="section-heading">Credits.</h2>
+      <p>Supervised by <a href="https://scholar.google.com/citations?user=YfKHbIIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Dr. Ahmad Mohammadpanah</a>, Machine Dynamics Lab, UBC. Original frame designed by a previous UBC capstone team. Fabrication at UBC Makerspaces.</p>
+      <div class="cs-pills" aria-label="Skills evidenced">
+        <span class="tag">Failure Diagnosis</span>
+        <span class="tag">Root-Cause Analysis</span>
+        <span class="tag">Torque &amp; Actuator Sizing</span>
+        <span class="tag">Test-Rig Design</span>
+        <span class="tag">Power Distribution &amp; Protection</span>
+        <span class="tag">Sheet-Metal Design</span>
+        <span class="tag">FEA</span>
+        <span class="tag">Lathe / Mill / Waterjet / Press Brake</span>
+        <span class="tag">Raspberry Pi</span>
+        <span class="tag">I2C / PWM</span>
+        <span class="tag">Android App</span>
+        <span class="tag">Inverse Kinematics</span>
+        <span class="tag">MSC Adams</span>
+        <span class="tag">IMU Instrumentation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cs-cta" id="cta">
+    <div class="cs-wrap">
+      <h2 class="contact-heading">Got hardware that won't work?</h2>
+      <p class="cs-cta-text">Prototypes that won't move, mechanisms that bind, electronics that keep failing. Finding out why and fixing it is the work I do. Tell me what's stuck.</p>
+      <div class="cs-cta-buttons">
+        <a href="../index.html#contact" class="btn-primary">Work with me →</a>
+        <a href="https://www.linkedin.com/pulse/i-got-self-locking-robot-skeleton-heres-what-built-from-nalla-jnbwc/" target="_blank" rel="noopener" class="btn-secondary">Read the long-form story on LinkedIn ↗</a>
+      </div>
+      <div class="cs-pager" role="navigation" aria-label="More projects">
+        <a href="../index.html#resonetics" class="prev"><span class="dir">← Previous</span><span class="name">Resonetics — Class III Battery Line</span></a>
+        <a href="../index.html#bionic-hand" class="next"><span class="dir">Next →</span><span class="name">Bionic Prosthetic Hand</span></a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">Engineer by Choice</div>
+    <div class="footer-copy">© <span id="year">2026</span> · Ajay Nalla · All Rights Reserved · engineerbychoice.com</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

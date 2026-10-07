@@ -204,7 +204,7 @@
     <h2 class="section-heading">Problems Solved.</h2>
 
     <!-- P1: RESONETICS -->
-    <div class="project-card reveal">
+    <div class="project-card reveal" id="resonetics">
       <div class="project-inner">
         <div class="project-gallery">
           <img class="main-img lightbox-trigger" src="images/resonetics-battery2.png" alt="Resonetics implantable medical battery" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;background:#0d0d0f;cursor:pointer;padding:2rem;"/>
@@ -247,7 +247,7 @@
     </div>
 
     <!-- P2: SPM -->
-    <div class="project-card reveal">
+    <div class="project-card reveal" id="spm">
       <div class="project-inner reverse">
         <div class="project-gallery video-only" data-video-id="nOu_WwaFv3Y" data-video-title="Spherical Parallel Manipulator Demo">
           <button class="yt-facade" aria-label="Play video: Spherical Parallel Manipulator Demo">
@@ -258,37 +258,25 @@
         </div>
         <div class="project-content">
           <div class="project-number">02</div>
-          <div class="project-category">Robotics · Parallel Kinematics · UBC</div>
+          <div class="project-category">Parallel Robotics · Failure Recovery · UBC Research</div>
           <h3 class="project-title">Spherical Parallel Manipulator</h3>
-          <div class="project-story">
-            <div class="story-block">
-              <div class="story-label">The Problem</div>
-              <p>A 3-DOF spherical robot that couldn't move stably — structural misalignment, underpowered actuators and failed electronics.</p>
-            </div>
-            <div class="story-block">
-              <div class="story-label">What I Did</div>
-              <p>Diagnosed each failure, rebuilt the mechanics, re-selected actuators, redesigned the power architecture, and wrote Raspberry Pi control with inverse kinematics modelled in Adams.</p>
-            </div>
-            <div class="story-block story-result">
-              <div class="story-label">Result</div>
-              <p>Stable motion with two control modes — physical potentiometers and an app with slider and preset-position control.</p>
-            </div>
-          </div>
+          <p class="project-desc">Handed a self-locking robot skeleton with no motors, no electronics and no control system. I rebuilt the mechanism on free bearings to remove the binding, sized and bench-tested new servos (measured ~60% of rated torque, which the 2.5× design margin absorbed), designed a fused 24→12 V power system, redesigned the mounts with FEA, and fabricated everything at UBC Makerspaces. The result is a 3-DOF platform with potentiometer and Android-app control, IK-driven presets and an MSC Adams model.</p>
           <div class="project-tech">
-            <span class="tech-pill">Parallel Kinematics</span>
-            <span class="tech-pill">Adams IK Simulation</span>
-            <span class="tech-pill">Raspberry Pi Control</span>
-            <span class="tech-pill">Servo Actuation</span>
-            <span class="tech-pill">Power Architecture</span>
-            <span class="tech-pill">App GUI</span>
+            <span class="tech-pill">Root-Cause Analysis</span>
+            <span class="tech-pill">Actuator Validation</span>
+            <span class="tech-pill">Power Protection</span>
+            <span class="tech-pill">FEA</span>
+            <span class="tech-pill">Raspberry Pi / Android</span>
+            <span class="tech-pill">Inverse Kinematics / Adams</span>
           </div>
-          <div class="project-highlight">From unstable, failing platform to stable motion · Every failure diagnosed and fixed · Two control modes driven by inverse kinematics.</div>
+          <div class="project-highlight">Dead skeleton → fully controlled 3-DOF platform · Root cause found for every earlier failure · Servo bench-tested at ~60% of rating; design margin covered it.</div>
+          <div class="project-cs-link"><a href="projects/spm.html" class="btn-primary">Read the full case study →</a></div>
         </div>
       </div>
     </div>
 
     <!-- P3: BIONIC HAND (Makershive) -->
-    <div class="project-card reveal">
+    <div class="project-card reveal" id="bionic-hand">
       <div class="project-inner">
         <div class="project-gallery video-only" data-video-id="dnWHzWE7D-o" data-video-title="Bionic Arm — Makershive Prosthetic Demo">
           <button class="yt-facade" aria-label="Play video: Bionic Arm — Makershive Prosthetic Demo">
