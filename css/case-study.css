@@ -9,7 +9,7 @@
 
 /* Section shell */
 .cs-section{ padding:96px 0; }
-.cs-section.alt{ background:var(--bg-alt); }
+.cs-section.alt{ background:var(--bg-alt); --ink-3:#5B6A80; }
 .cs-section .section-label, .cs-cta .section-label{
   display:block; margin-bottom:14px;
   font-family:var(--mono); font-size:.75rem; font-weight:500;
