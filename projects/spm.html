@@ -26,7 +26,7 @@
   <link rel="preload" as="image" href="../images/spm/hero.webp" type="image/webp"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/case-study.css">
 </head>
@@ -40,25 +40,28 @@
   </div>
 
   <!-- NAV -->
-  <nav>
-    <a href="../index.html" class="nav-logo">Engineer by Choice</a>
-    <ul class="nav-links">
-      <li><a href="../index.html#projects" class="active">Work</a></li>
-      <li><a href="../index.html#engage">Engage</a></li>
-      <li><a href="../services.html">Services</a></li>
-      <li><a href="../index.html#background">About</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  </nav>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="wordmark">Engineer by Choice<span>.</span></a>
+      <nav class="nav-menu" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="../index.html#work" class="active">Work</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+        <a href="../index.html#contact" class="btn nav-cta">Discuss Your Problem →</a>
+      </nav>
+      <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
 
-  <main>
+  <main id="top">
   <!-- HERO -->
   <section class="cs-hero" id="top">
     <div class="cs-wrap">
       <div class="cs-breadcrumb" role="navigation" aria-label="Breadcrumb">
         <ol>
-          <li><a href="../index.html#projects">Portfolio</a></li>
+          <li><a href="../index.html#work">Portfolio</a></li>
           <li><span aria-current="page">Spherical Parallel Manipulator</span></li>
         </ol>
       </div>
@@ -418,8 +421,8 @@
       <h2 class="contact-heading">Got hardware that won't work?</h2>
       <p class="cs-cta-text">Prototypes that won't move, mechanisms that bind, electronics that keep failing. Finding out why and fixing it is the work I do. Tell me what's stuck.</p>
       <div class="cs-cta-buttons">
-        <a href="../index.html#contact" class="btn-primary">Work with me →</a>
-        <a href="https://www.linkedin.com/pulse/i-got-self-locking-robot-skeleton-heres-what-built-from-nalla-jnbwc/" target="_blank" rel="noopener" class="btn-secondary">Read the long-form story on LinkedIn ↗</a>
+        <a href="../index.html#contact" class="btn">Work with me →</a>
+        <a href="https://www.linkedin.com/pulse/i-got-self-locking-robot-skeleton-heres-what-built-from-nalla-jnbwc/" target="_blank" rel="noopener" class="btn btn--on-dark">Read the long-form story on LinkedIn ↗</a>
       </div>
       <div class="cs-pager" role="navigation" aria-label="More projects">
         <a href="../index.html#resonetics" class="prev"><span class="dir">← Previous</span><span class="name">Resonetics — Class III Battery Line</span></a>
@@ -429,9 +432,24 @@
   </section>
   </main>
 
-  <footer>
-    <div class="footer-logo">Engineer by Choice</div>
-    <div class="footer-copy">© <span id="year">2026</span> · Ajay Nalla · All Rights Reserved · engineerbychoice.com</div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="../index.html" class="wordmark">Engineer by Choice<span>.</span></a>
+        <ul class="footer-links">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="mailto:ajaynalla@engineerbychoice.com">ajaynalla@engineerbychoice.com</a></li>
+          <li><a href="https://www.linkedin.com/in/ajayreddynalla/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://grabcad.com/ajay.nalla-1" target="_blank" rel="noopener">GrabCAD</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Ajay Nalla · All rights reserved</span>
+        <span class="footer-domains">engineerbychoice.com · .in · .ca · .org</span>
+      </div>
+    </div>
   </footer>
 
   <script src="../js/main.js"></script>
