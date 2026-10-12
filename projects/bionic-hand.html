@@ -49,7 +49,286 @@
   </header>
 
   <main id="top">
-  <!-- CONTENT -->
+  <!-- HERO -->
+  <section class="cs-hero">
+    <div class="cs-wrap">
+      <div class="cs-breadcrumb" role="navigation" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html#work">Portfolio</a></li>
+          <li><span aria-current="page">Bionic Prosthetic Hand</span></li>
+        </ol>
+      </div>
+      <div class="cs-eyebrow">Case Study 02 · Biomedical Robotics · ISO 13485</div>
+      <h1 class="cs-title">A Bionic Hand India Could Actually Afford</h1>
+      <p class="cs-subtitle">Advanced bionic hands sold for USD 20,000–80,000. Most amputees in India wore a plastic cosmetic hand instead. We set out to build a multi-grip bionic hand priced under USD 3,000 — and when the parts we needed didn't exist at that price, we built them.</p>
+      <div class="cs-pills">
+        <span class="tag">Makers Hive Innovations</span>
+        <span class="tag">Hyderabad, India</span>
+        <span class="tag">Oct 2019 – Aug 2021</span>
+        <span class="tag">Mechanical Design &amp; Support Engineer</span>
+      </div>
+
+      <figure class="cs-hero-media cs-figure">
+        <div class="yt" data-video-id="dnWHzWE7D-o" data-video-title="KalArm in use — Makers Hive Innovations">
+          <button class="yt-facade" aria-label="Play video: KalArm in use">
+            <img src="https://i.ytimg.com/vi/dnWHzWE7D-o/hqdefault.jpg" alt="KalArm bionic hand in use, video thumbnail" fetchpriority="high"/>
+            <span class="play-btn"><svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path d="M0 0 L22 13 L0 26 Z"/></svg></span>
+            <span class="video-label">Watch KalArm</span>
+          </button>
+        </div>
+        <figcaption>KalArm in use — video courtesy Makers Hive Innovations.</figcaption>
+      </figure>
+
+      <div class="cs-stats">
+        <div class="stat-card"><div class="stat-number">&lt;$3K</div><div class="stat-label">Launch price (USD)</div></div>
+        <div class="stat-card"><div class="stat-number">18 + 6</div><div class="stat-label">Grip patterns (preset + custom)</div></div>
+        <div class="stat-card"><div class="stat-number">~8 kg</div><div class="stat-label">Load capacity</div></div>
+        <div class="stat-card"><div class="stat-number">403148</div><div class="stat-label">Indian patent — thumb mechanism</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 — SNAPSHOT -->
+  <section class="cs-section alt" id="snapshot">
+    <div class="cs-wrap">
+      <div class="section-label">01 — Snapshot</div>
+      <h2 class="section-heading">Engineering Snapshot.</h2>
+      <div class="cs-cards">
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Challenge</div>
+          <p>Deliver bionic-hand function — multiple grips, real load capacity, muscle-signal control — at a price an Indian family could realistically reach. Off-the-shelf actuators, sensors and electronics either didn't fit the hand or didn't fit the budget.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">My Role</div>
+          <p>Core member of the R&amp;D mechanical team. I owned mechanical design of the actuators and the thumb mechanism, moved production parts to HP Multi Jet Fusion, and built the in-house test strategy used ahead of certification lab testing. I worked closely with the electronics team on the control board, sensors and power system.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Systems</div>
+          <p>Custom linear actuators · patented thumb swivel with position feedback · in-house EMG sensors · custom PCBs, power circuits and battery packs · Bluetooth app control · MJF-printed structure.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Outcome</div>
+          <p>KalArm launched within budget at under USD 3,000, with 18 preset grips plus 6 custom, ~8 kg load capacity, and EMG + app control — and went into production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — THE STORY -->
+  <section class="cs-section" id="story">
+    <div class="cs-wrap">
+      <div class="section-label">02 — The Story</div>
+      <h2 class="section-heading">Engineered to a Price.</h2>
+
+      <!-- STEP 01 -->
+      <article class="cs-step" id="step-01">
+        <div class="cs-step-label">Step 01 — The Problem</div>
+        <h3 class="cs-step-title">The problem wasn't technology. It was price.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>Bionic hands already existed. Multi-grip myoelectric hands sold for USD 20,000–80,000 in Western markets, and even the most affordable 3D-printed option cost around USD 13,000. For most upper-limb amputees in India, that put a functional hand out of reach entirely. The realistic option was a plastic cosmetic prosthesis — it looks like a hand, but it doesn't grip, hold or work like one.</p>
+            <p>So we set a hard target: a hand that competes on function with the bionic hands on the market, at under USD 3,000. Not cheap for the sake of cheap — a price that was at least within reach. Every engineering decision after that was measured against it.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 02 -->
+      <article class="cs-step" id="step-02">
+        <div class="cs-step-label">Step 02 — Actuation</div>
+        <h3 class="cs-step-title">No actuator on the market fit. So we built our own.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>The first wall was actuation. We needed enough force to grip and hold real objects, inside the envelope of a human finger, at a cost that worked inside a sub-USD 3,000 product. Off-the-shelf actuators gave us two of those three at best: small ones lacked the force, strong ones didn't fit, and the ones that did both were priced for a USD 50,000 hand.</p>
+            <p>So we designed the linear actuators from scratch around our own force, size and cost requirements. The internal design is patent- and NDA-protected, so I won't detail it here — but owning the actuator meant we owned the trade-offs instead of inheriting someone else's.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 03 -->
+      <article class="cs-step" id="step-03">
+        <div class="cs-step-label">Step 03 — Thumb</div>
+        <h3 class="cs-step-title">A thumb that knows where it is.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>A hand that can only open and close isn't much of a hand. Most useful grips — key grip, tripod, pinch — depend on where the thumb sits. We designed a thumb swivel mechanism with position feedback, so the controller knows the thumb's position and can switch grips reliably. That mechanism is protected by Indian Patent 403148.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 04 -->
+      <article class="cs-step" id="step-04">
+        <div class="cs-step-label">Step 04 — Electronics</div>
+        <h3 class="cs-step-title">Sensors and electronics, built to our spec.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>The same story repeated for electronics. The EMG sensors that read muscle signals were either unreliable or too expensive for our price point, so we developed our own to our requirements. We built our own PCBs and power circuits, and customised the battery packs to fit the hand. My part was the mechanical side of that integration — packaging, mounting and working with the electronics team on design decisions for the control board.</p>
+          </div>
+        </div>
+        <div class="cs-table-wrap">
+          <div class="cs-table-title">Constraint → why off-the-shelf failed → what we did</div>
+          <table class="cs-table stack">
+            <thead>
+              <tr><th scope="col">Constraint</th><th scope="col">Why off-the-shelf didn't work</th><th scope="col">What we did</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Constraint">Grip force inside a finger-sized envelope</td>
+                <td data-label="Why off-the-shelf didn't work">Small actuators lacked force; strong ones didn't fit</td>
+                <td data-label="What we did">Designed custom linear actuators</td>
+              </tr>
+              <tr>
+                <td data-label="Constraint">Reliable grip switching</td>
+                <td data-label="Why off-the-shelf didn't work">No affordable thumb positioning with feedback</td>
+                <td data-label="What we did">Designed a thumb swivel with position feedback (Patent 403148)</td>
+              </tr>
+              <tr>
+                <td data-label="Constraint">Reading muscle signals affordably</td>
+                <td data-label="Why off-the-shelf didn't work">Available EMG sensors were unreliable or too expensive</td>
+                <td data-label="What we did">Developed in-house EMG sensors</td>
+              </tr>
+              <tr>
+                <td data-label="Constraint">Power and control in a hand-sized package</td>
+                <td data-label="Why off-the-shelf didn't work">Generic boards and batteries didn't fit</td>
+                <td data-label="What we did">Built custom PCBs, power circuits and battery packs</td>
+              </tr>
+              <tr>
+                <td data-label="Constraint">Unit cost under USD 3,000</td>
+                <td data-label="Why off-the-shelf didn't work">Machined parts drove cost on every revision</td>
+                <td data-label="What we did">Rapid prototyping, then HP MJF for production parts</td>
+              </tr>
+              <tr>
+                <td data-label="Constraint">Medical-device compliance</td>
+                <td data-label="Why off-the-shelf didn't work">First-time team, no existing QMS experience</td>
+                <td data-label="What we did">Learned ISO 13485, built in-house tests ahead of lab certification</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- STEP 05 -->
+      <article class="cs-step" id="step-05">
+        <div class="cs-step-label">Step 05 — Manufacturing</div>
+        <h3 class="cs-step-title">Taking machining out of the cost.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>Machined parts were one of the biggest costs in the build. We moved to rapid prototyping for development, then to HP Multi Jet Fusion for production parts. MJF gave us commercial-grade, strong, repeatable parts without machining set-ups for every revision — which cut a large share of the cost and let a design change go from CAD to a usable part in days instead of weeks.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 06 -->
+      <article class="cs-step" id="step-06">
+        <div class="cs-step-label">Step 06 — Integration</div>
+        <h3 class="cs-step-title">Many workstreams, one product.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>We were a small team, so we ran actuators, thumb, sensors, electronics and structure as parallel streams that converged on each prototype, instead of finishing one before starting the next. It was messier than a linear plan, but it's why we moved as fast as we did. I tested each design iteration to find its failure points — combining analysis with physical testing — before the next round, so each prototype fixed real problems rather than guessed ones.</p>
+          </div>
+        </div>
+        <!-- ARCHITECTURE DIAGRAM -->
+      </article>
+
+      <!-- STEP 07 -->
+      <article class="cs-step" id="step-07">
+        <div class="cs-step-label">Step 07 — Compliance</div>
+        <h3 class="cs-step-title">Learning ISO 13485 from zero.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>None of us had taken a medical device to market before. We learned ISO 13485 on the go — reading the standards, working out what they actually required of our design and processes, and changing the product to meet them. I built in-house functional and durability tests that mirrored what the certification labs would check. Those tests became the basis for the external lab testing, and I worked with the testing body through the process — which saved time and money compared with discovering failures at the lab.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 03 — RESULTS -->
+  <section class="cs-section alt" id="results">
+    <div class="cs-wrap">
+      <div class="section-label">03 — Results</div>
+      <h2 class="section-heading">What shipped.</h2>
+      <div class="cs-table-wrap">
+        <table class="cs-table stack">
+          <thead>
+            <tr><th scope="col">Parameter</th><th scope="col">Result</th></tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Parameter">Launch price</td><td data-label="Result">Under USD 3,000</td></tr>
+            <tr><td data-label="Parameter">Comparable market price</td><td data-label="Result">USD 20,000–80,000 (multi-grip myoelectric hands); ~USD 13,000 for the lowest-cost 3D-printed alternative</td></tr>
+            <tr><td data-label="Parameter">Grip patterns</td><td data-label="Result">18 preset + 6 custom</td></tr>
+            <tr><td data-label="Parameter">Load capacity</td><td data-label="Result">~8 kg</td></tr>
+            <tr><td data-label="Parameter">Control</td><td data-label="Result">EMG (in-house sensors) + Bluetooth app</td></tr>
+            <tr><td data-label="Parameter">Structure</td><td data-label="Result">HP Multi Jet Fusion production parts</td></tr>
+            <tr><td data-label="Parameter">Quality system</td><td data-label="Result">Developed under ISO 13485</td></tr>
+            <tr><td data-label="Parameter">Intellectual property</td><td data-label="Result">Indian Patent 403148 — thumb swivel with position feedback</td></tr>
+            <tr><td data-label="Parameter">Status at my departure (Aug 2021)</td><td data-label="Result">Launched within budget; in production</td></tr>
+          </tbody>
+        </table>
+        <p class="cs-table-note">Hardware details and internal test data are confidential to Makers Hive / KAL Bionics.</p>
+      </div>
+
+      <div class="cs-proves cs-patent reveal">
+        <div class="cs-card-label">Patent</div>
+        <h3 class="cs-step-title">Thumb Finger Swiveling System with Position Feedback</h3>
+        <p>Indian Patent No. 403148 · Application No. 202041016882 · Granted 5 August 2022 · Assignee: KAL Bionics Private Limited. I'm a named inventor on this patent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — TAKEAWAYS -->
+  <section class="cs-section" id="takeaways">
+    <div class="cs-wrap">
+      <div class="section-label">04 — Takeaways</div>
+      <h2 class="section-heading">What This Proves.</h2>
+      <div class="cs-close-grid">
+        <div class="cs-proves reveal">
+          <p>When the part you need doesn't exist at the price you need, waiting for the market isn't a plan. This project was a chain of those decisions — actuators, thumb, sensors, electronics, manufacturing — each one made against a single number: under USD 3,000. It's the same discipline I bring to stuck hardware now: find the constraint that actually matters, and engineer to it instead of around it.</p>
+        </div>
+        <div class="cs-next reveal">
+          <div class="cs-sub-label">What I'd do next</div>
+          <ul>
+            <li>Two things. First, publish independent user-outcome data — grip success rates and daily-use time from real users — because a spec sheet proves capability, not adoption.</li>
+            <li>Second, design for serviceability in the field: in a market like India, the cost of a repair trip can matter as much as the price of the hand.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 — CREDITS -->
+  <section class="cs-section alt cs-credits" id="credits">
+    <div class="cs-wrap">
+      <div class="section-label">05 — Credits</div>
+      <h2 class="section-heading">Credits.</h2>
+      <p>KalArm is the work of the whole Makers Hive team. The name says it: a hive of makers building something none of us could have built alone. The electronics team developed the EMG sensors, control board, power circuits and battery packs; my work sat on the mechanical side and at the mechanical–electronic interfaces. Product and company: Makers Hive Innovations / KAL Bionics Private Limited, Hyderabad.</p>
+      <div class="cs-pills" aria-label="Skills evidenced">
+        <span class="tag">Mechanism Design</span>
+        <span class="tag">Custom Actuators</span>
+        <span class="tag">Design for Cost</span>
+        <span class="tag">HP Multi Jet Fusion</span>
+        <span class="tag">Rapid Prototyping</span>
+        <span class="tag">Failure Testing</span>
+        <span class="tag">ISO 13485</span>
+        <span class="tag">Electromechanical Integration</span>
+        <span class="tag">Cross-functional Teams</span>
+        <span class="tag">Patent</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cs-cta" id="cta">
+    <div class="cs-wrap">
+      <h2 class="contact-heading">Got hardware that won't work?</h2>
+      <p class="cs-cta-text">Prototypes that won't move, mechanisms that bind, electronics that keep failing. Finding out why and fixing it is the work I do. Tell me what's stuck.</p>
+      <div class="cs-cta-buttons">
+        <a href="../index.html#contact" class="btn">Work with me →</a>
+      </div>
+      <div class="cs-pager" role="navigation" aria-label="More projects">
+        <a href="spm.html" class="prev"><span class="dir">← Previous</span><span class="name">Spherical Parallel Manipulator</span></a>
+      </div>
+    </div>
+  </section>
   </main>
 
   <footer class="site-footer">

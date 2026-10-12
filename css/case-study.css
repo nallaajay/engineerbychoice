@@ -176,3 +176,8 @@
 @media (max-width:400px){
   .cs-wrap{ padding:0 16px; }
 }
+
+/* ── PATENT CARD (bionic-hand) ── */
+.cs-patent{ margin-top:40px; }
+.cs-patent .cs-step-title{ margin-bottom:12px; }
+.cs-patent p{ font-size:1.0625rem; font-weight:400; color:var(--ink-2); }
