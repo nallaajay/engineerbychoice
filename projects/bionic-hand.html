@@ -227,6 +227,24 @@
           </div>
         </div>
         <!-- ARCHITECTURE DIAGRAM -->
+        <figure class="cs-figure cs-arch">
+          <div class="cs-arch-board" role="img" aria-label="Block diagram: muscle signal, to in-house EMG sensors, to custom control board and power, to custom linear actuators, to fingers and patented thumb. Thumb position feedback returns to the control board. A Bluetooth app sets grip selection: 18 preset plus 6 custom.">
+            <ol class="cs-arch-flow" aria-hidden="true">
+              <li class="cs-arch-node"><span class="n">01</span>Muscle signal</li>
+              <li class="cs-arch-node"><span class="n">02</span>In-house EMG sensors</li>
+              <li class="cs-arch-node is-key"><span class="n">03</span>Custom control board + power</li>
+              <li class="cs-arch-node"><span class="n">04</span>Custom linear actuators</li>
+              <li class="cs-arch-node is-key"><span class="n">05</span>Fingers &amp; patented thumb</li>
+            </ol>
+            <div class="cs-arch-loop" aria-hidden="true"><span>↺ Thumb position feedback → control board</span></div>
+            <div class="cs-arch-aux" aria-hidden="true">
+              <span class="cs-arch-chip">Bluetooth app</span>
+              <span class="cs-arch-arrow">→</span>
+              <span class="cs-arch-chip">Grip selection (18 + 6 custom)</span>
+            </div>
+          </div>
+          <figcaption>System architecture — block diagram, not to scale. Hardware internals are confidential.</figcaption>
+        </figure>
       </article>
 
       <!-- STEP 07 -->
