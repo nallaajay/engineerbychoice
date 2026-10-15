@@ -299,6 +299,7 @@ textarea.input{ min-height:150px; resize:vertical; }
 .hero-clip-caption{ margin-top:.6rem; font-family:var(--mono); font-size:.75rem; color:var(--ink-2); line-height:1.5; }
 .hero-clip-caption a{ color:var(--accent); text-decoration:none; white-space:nowrap; }
 .hero-clip-caption a:hover{ color:var(--accent-hover); }
+.hero-clip-short{ display:none; }
 @media (prefers-reduced-motion: reduce){
   .hero-clip-video{ display:none; }
   .hero-clip::before{
@@ -424,6 +425,19 @@ textarea.input{ min-height:150px; resize:vertical; }
 }
 @media (max-width:480px){
   .proof-row{ grid-template-columns:1fr; gap:.75rem; }
+}
+/* Services hero on phones: clip first, as a 16:9 strip, so hardware is the first thing seen */
+@media (max-width:700px){
+  .page-hero--clip{ padding-top:20px; }
+  .page-hero--clip .container{ display:flex; flex-direction:column; }
+  .page-hero--clip .hero-split{ display:contents; }
+  .page-hero--clip .hero-clip{ order:-1; margin:0 0 16px; max-width:none; }
+  .page-hero--clip .label{ margin-bottom:12px; }
+  .page-hero--clip .hero-clip-video{ aspect-ratio:16 / 9; object-position:50% 45%; }
+  .page-hero--clip .hero-clip::before{ aspect-ratio:16 / 9; background-position:50% 45%; }
+  .page-hero--clip .hero-clip-caption{ margin-top:.4rem; }
+  .page-hero--clip .hero-clip-long{ display:none; }
+  .page-hero--clip .hero-clip-short{ display:inline; }
 }
 @media (max-width:400px){
   .container{ padding:0 16px; }
