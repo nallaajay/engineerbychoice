@@ -283,6 +283,30 @@ textarea.input{ min-height:150px; resize:vertical; }
 .page-hero .label{ display:block; margin-bottom:18px; }
 .page-hero .hero-sub{ max-width:680px; }
 
+/* Services hero: SPM clip (right column on desktop, under the CTA on mobile) */
+.hero-split{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,420px); column-gap:56px;
+  grid-template-rows:auto 1fr; grid-template-areas:"text clip" "proof clip"; align-items:start;
+}
+.hero-split-text{ grid-area:text; }
+.hero-split .hero-clip{ grid-area:clip; margin-top:24px; }
+.hero-split .proof-row{ grid-area:proof; }
+.hero-clip{ margin:2rem 0 0; max-width:480px; }
+.hero-clip-video{
+  width:100%; height:auto; aspect-ratio:1 / 1; object-fit:cover;
+  border-radius:var(--radius); display:block; background:var(--bg-alt);
+}
+.hero-clip-caption{ margin-top:.6rem; font-family:var(--mono); font-size:.75rem; color:var(--ink-2); line-height:1.5; }
+.hero-clip-caption a{ color:var(--accent); text-decoration:none; white-space:nowrap; }
+.hero-clip-caption a:hover{ color:var(--accent-hover); }
+@media (prefers-reduced-motion: reduce){
+  .hero-clip-video{ display:none; }
+  .hero-clip::before{
+    content:''; display:block; aspect-ratio:1 / 1; border-radius:var(--radius);
+    background:url('../images/spm/spm-loop-poster.jpg') center / cover no-repeat;
+  }
+}
+
 /* Services hero: proof row */
 .proof-row{
   list-style:none; padding:0; margin:1.5rem 0 0;
@@ -357,6 +381,8 @@ textarea.input{ min-height:150px; resize:vertical; }
 @media (max-width:1024px){
   .hero-grid{ grid-template-columns:1fr; gap:40px; }
   .tiers{ grid-template-columns:1fr; }
+  .hero-split{ display:block; }
+  .hero-split .hero-clip{ margin-top:2rem; }
   .tier-arrow{ transform:rotate(90deg); justify-self:center; }
   .grid-4{ grid-template-columns:1fr 1fr; }
   .work-item, .work-item--flip{ grid-template-columns:1fr; gap:28px; }
