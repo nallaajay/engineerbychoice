@@ -210,6 +210,18 @@ document.querySelectorAll('.copy-email').forEach(btn => {
   });
 });
 
+// ── Phone-only hero clip (homepage): fetch and play it only where it is shown
+const phoneClip = document.querySelector('video[data-phone-autoplay]');
+if (phoneClip && window.matchMedia('(max-width:700px)').matches) {
+  phoneClip.poster = phoneClip.dataset.poster;
+  if (!prefersReducedMotion) {
+    phoneClip.muted = true;
+    phoneClip.autoplay = true;
+    phoneClip.preload = 'auto';
+    phoneClip.play().catch(() => {});
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Engineer by Choice — loaded.');
 });

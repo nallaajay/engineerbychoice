@@ -22,11 +22,11 @@
   <meta name="twitter:description" content="System-level engineering for robotics, medical devices and advanced manufacturing — from diagnosis and redesign to a working, validated solution."/>
   <meta name="twitter:image" content="https://engineerbychoice.com/images/brand/og-home.jpg"/>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link rel="preload" as="image" href="images/brand/hero-spm-workshop.webp" type="image/webp"/>
+  <link rel="preload" as="image" href="images/brand/hero-spm-workshop.webp" type="image/webp" media="(min-width:701px)"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261012">
+  <link rel="stylesheet" href="css/style.css?v=20261017">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,6 +78,15 @@
   <!-- 2.1 HERO (white) -->
   <section class="hero">
     <div class="container hero-grid">
+      <figure class="hero-clip hero-clip--home">
+        <video class="hero-clip-video" muted loop playsinline preload="none" width="720" height="720"
+               data-phone-autoplay data-poster="images/spm/spm-loop-poster.jpg"
+               aria-label="Spherical parallel manipulator moving through positions under servo control">
+          <source src="images/spm/spm-loop.webm" type="video/webm">
+          <source src="images/spm/spm-loop.mp4" type="video/mp4">
+        </video>
+        <figcaption class="hero-clip-caption">Non-functional SPM, recovered. <a href="projects/spm.html">Read how →</a></figcaption>
+      </figure>
       <div>
         <span class="label">Ajay Nalla · Mechanical &amp; Mechatronics Engineer</span>
         <h1 class="h1">I Make Stuck<br><span class="accent">Hardware Work</span>.</h1>
@@ -103,6 +112,7 @@
       </div>
       <figure class="hero-media">
         <picture>
+          <source media="(max-width:700px)" srcset="images/spm/spm-loop-poster.jpg"/>
           <source srcset="images/brand/hero-spm-workshop.webp" type="image/webp"/>
           <img src="images/brand/hero-spm-workshop.jpg" alt="Ajay at a UBC Makerspace bench operating the rebuilt spherical parallel manipulator, with its servo controllers, power board and emergency stop in front of him" width="1732" height="1634" fetchpriority="high"/>
         </picture>
@@ -433,6 +443,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261012"></script>
+  <script src="js/main.js?v=20261017"></script>
 </body>
 </html>

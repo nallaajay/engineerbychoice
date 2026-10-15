@@ -300,6 +300,7 @@ textarea.input{ min-height:150px; resize:vertical; }
 .hero-clip-caption a{ color:var(--accent); text-decoration:none; white-space:nowrap; }
 .hero-clip-caption a:hover{ color:var(--accent-hover); }
 .hero-clip-short{ display:none; }
+.hero-clip--home{ display:none; }
 @media (prefers-reduced-motion: reduce){
   .hero-clip-video{ display:none; }
   .hero-clip::before{
@@ -438,6 +439,23 @@ textarea.input{ min-height:150px; resize:vertical; }
   .page-hero--clip .hero-clip-caption{ margin-top:.4rem; }
   .page-hero--clip .hero-clip-long{ display:none; }
   .page-hero--clip .hero-clip-short{ display:inline; }
+}
+/* Phones: smaller headlines; homepage hero leads with the SPM clip and a compact method row */
+@media (max-width:700px){
+  .h1{ font-size:2.25rem; line-height:1.05; }
+  .hero{ padding-top:20px; }
+  .hero-grid{ row-gap:0; }
+  .hero-clip--home{ display:block; margin:0 0 16px; max-width:none; }
+  .hero-clip--home .hero-clip-video{ aspect-ratio:16 / 9; object-position:50% 45%; }
+  .hero-clip--home::before{ aspect-ratio:16 / 9; background-position:50% 45%; }
+  .hero-clip--home .hero-clip-caption{ margin-top:.4rem; }
+  .hero .label{ margin-bottom:12px; }
+  .hero-media{ display:none; }
+  .method-row{ flex-wrap:nowrap; justify-content:space-between; gap:12px; margin-top:24px; }
+  .method-row li{ gap:8px; }
+  .method-row svg{ width:22px; height:22px; }
+  .method-row span{ display:none; }
+  .hero-actions{ margin-top:28px; }
 }
 @media (max-width:400px){
   .container{ padding:0 16px; }
