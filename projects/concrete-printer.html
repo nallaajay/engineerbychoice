@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cable-Driven Concrete 3D Printer — Case Study | Ajay Nalla</title>
-  <meta name="description" content="Brought in to fix cables slipping off a fixed spool, I rebuilt a cable-driven concrete 3D printer as a system: a constant-feed-point spool, a load-free drive train, measured actuator sizing, continuous concrete feed and vision-based path correction. Working prototype on under $100K of a $1M budget."/>
+  <meta name="description" content="Brought in to fix cables slipping off a fixed spool, I redesigned a cable-driven concrete 3D printer from the ground up: a constant-feed-point spool, a load-free drive train, measured actuator sizing, continuous concrete feed and vision-based path correction. Working prototype on under $100K of a $1M budget."/>
   <!-- Open Graph / LinkedIn / WhatsApp -->
   <meta property="og:type" content="article"/>
   <meta property="og:site_name" content="Engineer by Choice"/>
   <meta property="og:url" content="https://engineerbychoice.com/projects/concrete-printer.html"/>
   <meta property="og:title" content="Cable-Driven Concrete 3D Printer — Fixing the Machine, Not Just the Brief"/>
-  <meta property="og:description" content="A spool problem turned into a full mechanical and mechatronic rebuild: constant-feed-point spools, swappable drives, measured torque sizing, continuous concrete feed and camera-based path correction. Under $100K of a $1M budget."/>
+  <meta property="og:description" content="A spool problem turned into a ground-up mechanical and mechatronic redesign: constant-feed-point spools, swappable drives, measured torque sizing, continuous concrete feed and camera-based path correction. Under $100K of a $1M budget."/>
   <meta property="og:image" content="https://engineerbychoice.com/images/brand/og-concrete.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -19,7 +19,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:url" content="https://engineerbychoice.com/projects/concrete-printer.html"/>
   <meta name="twitter:title" content="Cable-Driven Concrete 3D Printer — Fixing the Machine, Not Just the Brief"/>
-  <meta name="twitter:description" content="A spool problem turned into a full mechanical and mechatronic rebuild. Working prototype on under $100K of a $1M budget."/>
+  <meta name="twitter:description" content="A spool problem turned into a ground-up mechanical and mechatronic redesign. Working prototype on under $100K of a $1M budget."/>
   <meta name="twitter:image" content="https://engineerbychoice.com/images/brand/og-concrete.jpg"/>
   <meta name="twitter:image:alt" content="Engineer by Choice case study — a cable-driven concrete 3D printer laying a concrete bead."/>
   <link rel="canonical" href="https://engineerbychoice.com/projects/concrete-printer.html"/>
@@ -67,9 +67,9 @@
           <li><span aria-current="page">Concrete 3D Printer</span></li>
         </ol>
       </div>
-      <div class="cs-eyebrow">Construction Robotics · System Rebuild · Contract</div>
+      <div class="cs-eyebrow">Construction Robotics · System Design · Contract</div>
       <h1 class="cs-title">Cable-Driven Concrete 3D Printer</h1>
-      <p class="cs-subtitle">I was brought in because the cables kept slipping off the spools. Fixing that alone would not have given the client a machine that could print. So I rebuilt it as a system: new spooling, a new drive train, actuators sized from measured torque, a continuous concrete feed and camera-based path correction. The result was a working prototype on under $100K of a $1M budget.</p>
+      <p class="cs-subtitle">I was brought in because the cables kept slipping off the spools. Fixing that alone would not have given the client a machine that could do what they wanted, and the old machine could not get there. So I designed the whole system again from the ground up: new spooling, a new drive train, actuators sized from measured torque, a continuous concrete feed and camera-based path correction. The result was a working prototype on under $100K of a $1M budget.</p>
       <div class="cs-pills">
         <span class="tag">Cable-Driven Parallel Robot</span>
         <span class="tag">Mechanism Design</span>
@@ -84,7 +84,7 @@
       <figure class="cs-hero-media">
         <picture>
           <source srcset="../images/concrete-printed.webp" type="image/webp"/>
-          <img class="lightbox-trigger" src="../images/concrete-printed.png" alt="The rebuilt printer's nozzle laying a continuous concrete bead on a site floor" width="1920" height="1080" fetchpriority="high"/>
+          <img class="lightbox-trigger" src="../images/concrete-printed.png" alt="The printer's nozzle laying a continuous concrete bead on a site floor" width="1920" height="1080" fetchpriority="high"/>
         </picture>
       </figure>
 
@@ -109,11 +109,11 @@
         </div>
         <div class="cs-card reveal">
           <div class="cs-card-label">My Role</div>
-          <p>I joined as a consultant to fix the spooling and became project lead for the rebuild, running a team of five engineers and two technicians. I owned the system architecture, the mechanical and mechatronic redesign, actuator sizing and testing, and the path from bench tests to concrete prints.</p>
+          <p>I joined as a consultant to fix the spooling and became project lead for the redesign, running a team of five engineers and two technicians. I owned the system architecture, the mechanical and mechatronic redesign, actuator sizing and testing, and the path from bench tests to concrete prints.</p>
         </div>
         <div class="cs-card reveal">
           <div class="cs-card-label">Systems</div>
-          <p>Lead-screw spools with a constant cable feed point; FDM parts reinforced with steel rods, lead screws, linear bearings and structural members; belt-driven big and small pulleys with tensioners and a solenoid brake; swappable servos on CAT6 cabling; an external concrete pump with a cable-supported hose; and a camera system driving linear actuators on the cables.</p>
+          <p>Lead-screw spools with a constant cable feed point; FDM parts reinforced with steel rods, lead screws, linear bearings and structural members; belt-driven big and small pulleys with tensioners and a solenoid brake; swappable servos wired with just a power cable and a CAT6 communication cable each; an external concrete pump with a cable-supported hose; and a camera system driving linear actuators on the cables.</p>
         </div>
         <div class="cs-card reveal">
           <div class="cs-card-label">Outcome</div>
@@ -136,7 +136,7 @@
         <div class="cs-step-body">
           <div class="cs-prose">
             <p>The brief was the spool. In the earlier build each cable wound onto a spool that could only turn, not move. When the cable sat in the middle of the spool it ran straight onto the pulley. Toward either end it left at an angle, and the length changed. Software tried to compensate for that drift.</p>
-            <p><strong>On site, the cable slipped off the spool or jumped a groove, and the moment it did, the compensation was wrong for every move after it.</strong> Looking at the rest of the machine, the spool was only the first of several problems standing between this build and a printed wall:</p>
+            <p><strong>On site, the cable slipped off the spool or jumped a groove, and the moment it did, the compensation was wrong for every move after it.</strong> Looking at the rest of the machine, the spool was only the first of several problems standing between this build and a printed wall. What the client wanted to achieve wasn't reachable by patching the old machine, so this became a design from the foundations up:</p>
           </div>
         </div>
         <div class="cs-table-wrap">
@@ -205,7 +205,7 @@
           <div class="cs-prose">
             <p>Machining every spool part in metal would have been expensive and slow to iterate. Instead I set up a small print farm of two <strong>Creality Ender-5 Plus</strong>, an <strong>Ultimaker S5</strong> and <strong>AnkerMake</strong> FDM printers, and ran trial after trial to get the strongest prints I could. I designed for additive manufacturing throughout: print orientation, wall and infill strategy, and part consolidation, using what I'd learned from working with a lot of different printers.</p>
             <p>The final spool unit combines printed parts with <strong>steel rod reinforcement, lead screws, lead nuts, linear bearings and structural members</strong>, each placed where its strength is needed. That brought the manufacturing cost down by about <strong>10×</strong> compared with making the same parts in metal.</p>
-            <p>With one spool proven, I replicated it for every cable on the robot.</p>
+            <p>With one spool proven, I built seven more: <strong>eight spools</strong> in total, one for each cable on the robot.</p>
           </div>
         </div>
       </article>
@@ -245,7 +245,7 @@
         <div class="cs-step-body">
           <div class="cs-prose">
             <p>A bench test showed the existing motors <strong>weren't delivering the torque on their spec sheet</strong>. So I stopped relying on spec sheets and measured what the job actually needed: the torque at the cable, near the spool, using an <strong>inline torque tester</strong>.</p>
-            <p>I sized new servos to that measured requirement with a <strong>2.5× safety factor</strong>, and chose servos that connect over <strong>CAT6 cable</strong> to keep wiring simple across a machine this size. I swapped them in and repeated the test on the spool bench with weights. The new servos held the load with the margin intact.</p>
+            <p>I sized new servos to that measured requirement with a <strong>2.5× safety factor</strong>, and chose servos that each need only <strong>one power cable and one CAT6 cable</strong> for communication. The old motors ran separate power and communication cabling, so this kept the wiring much simpler across a machine this size. I swapped them in and repeated the test on the spool bench with weights. The new servos held the load with the margin intact.</p>
             <p>That's the same discipline I use in regulated manufacturing: you don't assume a component meets spec, you verify it.</p>
           </div>
         </div>
