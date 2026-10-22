@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cable-Driven Concrete 3D Printer — Case Study | Ajay Nalla</title>
+  <meta name="description" content="Brought in to fix cables slipping off a fixed spool, I rebuilt a cable-driven concrete 3D printer as a system: a constant-feed-point spool, a load-free drive train, measured actuator sizing, continuous concrete feed and vision-based path correction. Working prototype on under $100K of a $1M budget."/>
+  <!-- Open Graph / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Engineer by Choice"/>
+  <meta property="og:url" content="https://engineerbychoice.com/projects/concrete-printer.html"/>
+  <meta property="og:title" content="Cable-Driven Concrete 3D Printer — Fixing the Machine, Not Just the Brief"/>
+  <meta property="og:description" content="A spool problem turned into a full mechanical and mechatronic rebuild: constant-feed-point spools, swappable drives, measured torque sizing, continuous concrete feed and camera-based path correction. Under $100K of a $1M budget."/>
+  <meta property="og:image" content="https://engineerbychoice.com/images/brand/og-concrete.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Engineer by Choice case study — a cable-driven concrete 3D printer laying a concrete bead."/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:url" content="https://engineerbychoice.com/projects/concrete-printer.html"/>
+  <meta name="twitter:title" content="Cable-Driven Concrete 3D Printer — Fixing the Machine, Not Just the Brief"/>
+  <meta name="twitter:description" content="A spool problem turned into a full mechanical and mechatronic rebuild. Working prototype on under $100K of a $1M budget."/>
+  <meta name="twitter:image" content="https://engineerbychoice.com/images/brand/og-concrete.jpg"/>
+  <meta name="twitter:image:alt" content="Engineer by Choice case study — a cable-driven concrete 3D printer laying a concrete bead."/>
+  <link rel="canonical" href="https://engineerbychoice.com/projects/concrete-printer.html"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/icon-32.png"/>
+  <link rel="apple-touch-icon" href="/images/brand/icon-180.png"/>
+  <link rel="preload" as="image" href="../images/concrete-printed.webp" type="image/webp"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=20261018">
+  <link rel="stylesheet" href="../css/case-study.css?v=20261018">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="data:," alt="Enlarged project image"/>
+  </div>
+
+  <!-- NAV -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="wordmark wordmark--logo"><picture><source srcset="../images/brand/logo-nav.webp" type="image/webp"/><img src="../images/brand/logo-nav.png" alt="Engineer by Choice" width="482" height="88"/></picture></a>
+      <nav class="nav-menu" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="../index.html#work" class="active">Work</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+        <a href="../index.html#contact" class="btn nav-cta">Discuss Your Problem →</a>
+      </nav>
+      <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+  <!-- HERO -->
+  <section class="cs-hero">
+    <div class="cs-wrap">
+      <div class="cs-breadcrumb" role="navigation" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../index.html#work">Portfolio</a></li>
+          <li><span aria-current="page">Concrete 3D Printer</span></li>
+        </ol>
+      </div>
+      <div class="cs-eyebrow">Construction Robotics · System Rebuild · Contract</div>
+      <h1 class="cs-title">Cable-Driven Concrete 3D Printer</h1>
+      <p class="cs-subtitle">I was brought in because the cables kept slipping off the spools. Fixing that alone would not have given the client a machine that could print. So I rebuilt it as a system: new spooling, a new drive train, actuators sized from measured torque, a continuous concrete feed and camera-based path correction. The result was a working prototype on under $100K of a $1M budget.</p>
+      <div class="cs-pills">
+        <span class="tag">Cable-Driven Parallel Robot</span>
+        <span class="tag">Mechanism Design</span>
+        <span class="tag">Design for Additive Manufacturing</span>
+        <span class="tag">Torque Measurement &amp; Actuator Sizing</span>
+        <span class="tag">Servo Systems</span>
+        <span class="tag">Concrete Extrusion</span>
+        <span class="tag">Machine Vision</span>
+        <span class="tag">Project Leadership</span>
+      </div>
+
+      <figure class="cs-hero-media">
+        <picture>
+          <source srcset="../images/concrete-printed.webp" type="image/webp"/>
+          <img class="lightbox-trigger" src="../images/concrete-printed.png" alt="The rebuilt printer's nozzle laying a continuous concrete bead on a site floor" width="1920" height="1080" fetchpriority="high"/>
+        </picture>
+      </figure>
+
+      <div class="cs-stats">
+        <div class="stat-card"><div class="stat-number">&lt;$100K</div><div class="stat-label">Spent of a $1M budget</div></div>
+        <div class="stat-card"><div class="stat-number">~10×</div><div class="stat-label">Lower spool-system cost than machined metal</div></div>
+        <div class="stat-card"><div class="stat-number">2.5×</div><div class="stat-label">Safety factor on measured cable torque</div></div>
+        <div class="stat-card"><div class="stat-number">14 mo</div><div class="stat-label">To a fully working prototype</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 — SNAPSHOT -->
+  <section class="cs-section alt" id="snapshot">
+    <div class="cs-wrap">
+      <div class="section-label">01 — Snapshot</div>
+      <h2 class="section-heading">Engineering Snapshot.</h2>
+      <div class="cs-cards">
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Challenge</div>
+          <p>An earlier build of a cable-driven concrete printer could not run reliably on site. Cables slipped off fixed spools, the stepper motors were undersized and carried load on their shafts, and a small bucket extruder limited both how much concrete the machine could hold and how far it could print. The goal was house-scale printing, up to a 100 × 100 ft footprint.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">My Role</div>
+          <p>I joined as a consultant to fix the spooling and became project lead for the rebuild, running a team of five engineers and two technicians. I owned the system architecture, the mechanical and mechatronic redesign, actuator sizing and testing, and the path from bench tests to concrete prints.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Systems</div>
+          <p>Lead-screw spools with a constant cable feed point; FDM parts reinforced with steel rods, lead screws, linear bearings and structural members; belt-driven big and small pulleys with tensioners and a solenoid brake; swappable servos on CAT6 cabling; an external concrete pump with a cable-supported hose; and a camera system driving linear actuators on the cables.</p>
+        </div>
+        <div class="cs-card reveal">
+          <div class="cs-card-label">Outcome</div>
+          <p>The first fully functional prototype, printing 8 × 8 ft concrete structures. It printed concrete with a continuous feed from outside the machine and corrected its own path over long runs. It came in under $100K of a $1M budget, leaving the client room to develop a commercial version.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — THE STORY -->
+  <section class="cs-section" id="story">
+    <div class="cs-wrap">
+      <div class="section-label">02 — The Story</div>
+      <h2 class="section-heading">From a Spool Fix to a Working Machine.</h2>
+
+      <!-- STEP 01 -->
+      <article class="cs-step" id="step-01">
+        <div class="cs-step-label">Step 01 — Diagnosis</div>
+        <h3 class="cs-step-title">The Brief Was One Problem. The Machine Had Five.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>The brief was the spool. In the earlier build each cable wound onto a spool that could only turn, not move. When the cable sat in the middle of the spool it ran straight onto the pulley. Toward either end it left at an angle, and the length changed. Software tried to compensate for that drift.</p>
+            <p><strong>On site, the cable slipped off the spool or jumped a groove, and the moment it did, the compensation was wrong for every move after it.</strong> Looking at the rest of the machine, the spool was only the first of several problems standing between this build and a printed wall:</p>
+          </div>
+        </div>
+        <div class="cs-table-wrap">
+          <table class="cs-table stack">
+            <thead>
+              <tr><th scope="col">Problem in the earlier build</th><th scope="col">Root cause</th><th scope="col">What I did</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Problem">Cables slipped off the spool or jumped a groove</td>
+                <td data-label="Root cause">A fixed spool, so the cable's feed point moved along the drum as it wound.</td>
+                <td data-label="What I did">Designed a spool that travels on a lead screw, so the feed point never moves (Step 02).</td>
+              </tr>
+              <tr>
+                <td data-label="Problem">Path errors from software length compensation</td>
+                <td data-label="Root cause">The software was correcting a mechanical error, and any slip broke the correction.</td>
+                <td data-label="What I did">Removed the error mechanically, so cable length is measured from a fixed point and needs no compensation.</td>
+              </tr>
+              <tr>
+                <td data-label="Problem">Motor errors under load</td>
+                <td data-label="Root cause">Cable load was carried on the motor shafts.</td>
+                <td data-label="What I did">Moved all load onto an independent pulley and shaft system; the motor only supplies torque (Step 04).</td>
+              </tr>
+              <tr>
+                <td data-label="Problem">Steppers too small for the job</td>
+                <td data-label="Root cause">Motors chosen without a measured torque requirement.</td>
+                <td data-label="What I did">Measured cable torque in line, sized new servos with a 2.5× safety factor and bench-tested them (Step 05).</td>
+              </tr>
+              <tr>
+                <td data-label="Problem">Small bucket extruder</td>
+                <td data-label="Root cause">Concrete carried on the end effector, so capacity and weight were capped by the motors.</td>
+                <td data-label="What I did">Moved the concrete off the robot: an external pump feeding a hose carried on its own cable system (Step 06).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- STEP 02 -->
+      <article class="cs-step" id="step-02">
+        <div class="cs-step-label">Step 02 — Spooling</div>
+        <h3 class="cs-step-title">Make the Feed Point Stand Still.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>I designed the spooling system from scratch. The spool rides on a lead screw: as it turns to wind or pay out cable, the screw moves it sideways by exactly one cable pitch per turn. The cable always leaves the spool from <strong>the same point in space</strong>, whatever its position on the drum.</p>
+            <p>That removed the problem instead of correcting for it. Cable length is calculated from that fixed point, so there is no drift to model and no software compensation to fall out of step when something slips.</p>
+            <p class="cs-pull">Don't compensate in software for an error you can remove in the mechanism.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 03 -->
+      <article class="cs-step" id="step-03">
+        <div class="cs-step-label">Step 03 — Manufacturing</div>
+        <h3 class="cs-step-title">Build It for a Tenth of the Cost.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>Machining every spool part in metal would have been expensive and slow to iterate. Instead I set up a small print farm of two <strong>Creality Ender-5 Plus</strong>, an <strong>Ultimaker S5</strong> and <strong>AnkerMake</strong> FDM printers, and ran trial after trial to get the strongest prints I could. I designed for additive manufacturing throughout: print orientation, wall and infill strategy, and part consolidation, using what I'd learned from working with a lot of different printers.</p>
+            <p>The final spool unit combines printed parts with <strong>steel rod reinforcement, lead screws, lead nuts, linear bearings and structural members</strong>, each placed where its strength is needed. That brought the manufacturing cost down by about <strong>10×</strong> compared with making the same parts in metal.</p>
+            <p>With one spool proven, I replicated it for every cable on the robot.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 04 -->
+      <article class="cs-step" id="step-04">
+        <div class="cs-step-label">Step 04 — Drive Train</div>
+        <h3 class="cs-step-title">Take the Load off the Motor.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>In the earlier build the motor shafts carried the cable load, which caused motor errors. In the new design every part has one job:</p>
+            <ul>
+              <li>The spool lives on its lead screw, reinforced by <strong>three parallel rods</strong> arranged around it.</li>
+              <li>That assembly turns on a <strong>large pulley</strong>.</li>
+              <li>A <strong>small pulley</strong> sits on its own independent shaft with an <strong>electronic solenoid brake</strong> to hold position.</li>
+              <li>A <strong>belt</strong> transmits power from the small pulley to the large one, with <strong>built-in tensioners</strong> to adjust belt tension.</li>
+              <li>The motor couples to the small pulley and is <strong>swappable</strong>. It supplies torque and nothing else.</li>
+            </ul>
+            <p>I proved the mechanics first with old stepper motors: ran trial tests, found the problems and fixed them until the mechanical system ran without errors. At that point I had a stable machine that was clearly underpowered, and because the motors were swappable, that was now a motor choice rather than a redesign.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 05 -->
+      <article class="cs-step" id="step-05">
+        <div class="cs-step-label">Step 05 — Actuation</div>
+        <h3 class="cs-step-title">Measure the Torque, Then Buy the Motor.</h3>
+        <div class="cs-step-body">
+          <div class="cs-prose">
+            <p>A bench test showed the existing motors <strong>weren't delivering the torque on their spec sheet</strong>. So I stopped relying on spec sheets and measured what the job actually needed: the torque at the cable, near the spool, using an <strong>inline torque tester</strong>.</p>
+            <p>I sized new servos to that measured requirement with a <strong>2.5× safety factor</strong>, and chose servos that connect over <strong>CAT6 cable</strong> to keep wiring simple across a machine this size. I swapped them in and repeated the test on the spool bench with weights. The new servos held the load with the margin intact.</p>
+            <p>That's the same discipline I use in regulated manufacturing: you don't assume a component meets spec, you verify it.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 06 -->
+      <article class="cs-step" id="step-06">
+        <div class="cs-step-label">Step 06 — Extrusion</div>
+        <h3 class="cs-step-title">Feed Concrete From Outside the Machine.</h3>
+        <div class="cs-step-body has-media">
+          <div class="cs-prose">
+            <p>A bucket on the end effector can never cover a 100 × 100 ft footprint: it runs out, and every kilogram it carries is load on the motors. I moved the concrete off the robot. A <strong>pump sits outside the system</strong>, and the hose runs to the extruder on a <strong>separate four-motor, four-cable support system</strong> that moves with the end effector.</p>
+            <p>That gave the printer a <strong>continuous supply of concrete</strong>: keep the pump fed and the machine keeps printing, with the hose weight carried by its own cables rather than the positioning cables.</p>
+            <p>Then I brought it up in stages, each one removing a class of error before the next:</p>
+            <ul>
+              <li><strong>Marker test</strong> to tune positioning accuracy.</li>
+              <li><strong>Clay test</strong> to shake out extrusion problems without wasting concrete.</li>
+              <li><strong>Concrete printing</strong> once the extruder errors were eliminated.</li>
+            </ul>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/concrete-printer-cable.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/concrete-printer-cable.jpg" alt="The cable-driven end effector suspended over the print bed, laying a concrete bead, with cable towers on either side" width="780" height="520" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>The end effector hangs from the positioning cables; concrete arrives by hose from a pump outside the machine.</figcaption>
+            </figure>
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/concrete-extrusion.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/concrete-extrusion.jpg" alt="A layered concrete test print on a board, with stepper motors and wiring around it" width="780" height="520" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>Layered test print during bring-up.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP 07 -->
+      <article class="cs-step" id="step-07">
+        <div class="cs-step-label">Step 07 — Accuracy</div>
+        <h3 class="cs-step-title">Let the Machine See Its Own Path.</h3>
+        <div class="cs-step-body has-media">
+          <div class="cs-prose">
+            <p>Over long runs we saw slight path errors build up. I added a <strong>camera vision system</strong> that uses the line already laid as its reference, measures how far the new path has drifted left or right, and corrects it by adjusting <strong>linear actuators on the cables</strong>.</p>
+            <p>With that in place, the machine was the first fully functional prototype: stable mechanics, measured actuation, continuous feed, and closed-loop correction of its own path.</p>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <div class="yt" data-video-id="IjnoCOKBG7U" data-video-title="Cable-driven concrete 3D printer demo">
+                <button class="yt-facade" aria-label="Play video: cable-driven concrete 3D printer demo">
+                  <img src="https://i.ytimg.com/vi/IjnoCOKBG7U/hqdefault.jpg" alt="Cable-driven concrete 3D printer demo, video thumbnail" loading="lazy" decoding="async"/>
+                  <span class="play-btn"><svg width="22" height="26" viewBox="0 0 22 26" aria-hidden="true"><path d="M0 0 L22 13 L0 26 Z"/></svg></span>
+                </button>
+              </div>
+              <figcaption>The printer in operation.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 03 — TAKEAWAYS -->
+  <section class="cs-section alt" id="takeaways">
+    <div class="cs-wrap">
+      <div class="section-label">03 — Takeaways</div>
+      <h2 class="section-heading">Beyond the Problem Statement.</h2>
+      <div class="cs-close-grid">
+        <div class="cs-proves reveal">
+          <p>The brief was a spool that kept slipping. I could have fixed that and handed back a machine that still couldn't print a house. A problem statement describes a symptom someone has noticed. The job is to understand what the product is meant to achieve and make sure it gets there.</p>
+          <p>Here that meant treating the printer as one system: fix the mechanism before choosing motors, measure before buying, take the concrete off the robot, and let the machine check its own work. The project grew well past its original scope, which is how hardware projects usually go when you follow the root causes.</p>
+        </div>
+        <div class="cs-next reveal">
+          <div class="cs-sub-label">Where it stood at handover</div>
+          <ul>
+            <li>A <strong>fully functional prototype</strong> printing concrete with continuous feed and vision-based path correction.</li>
+            <li>Built for <strong>under $100K of a $1M budget</strong>, leaving the client the headroom to develop a commercial product.</li>
+            <li>With the proof of concept complete, my contract ended and I moved on to the next projects.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — CREDITS -->
+  <section class="cs-section cs-credits" id="credits">
+    <div class="cs-wrap">
+      <div class="section-label">04 — Credits</div>
+      <h2 class="section-heading">Credits.</h2>
+      <p>Built as a contract engagement with a team of five engineers and two technicians. Client details, drawings and process data are confidential, so this case study describes the engineering approach without them.</p>
+      <div class="cs-pills" aria-label="Skills evidenced">
+        <span class="tag">System Architecture</span>
+        <span class="tag">Root-Cause Analysis</span>
+        <span class="tag">Cable-Driven Parallel Robots</span>
+        <span class="tag">Lead-Screw Spool Design</span>
+        <span class="tag">Belt &amp; Pulley Drives</span>
+        <span class="tag">Design for Additive Manufacturing</span>
+        <span class="tag">Torque Measurement</span>
+        <span class="tag">Servo Sizing &amp; Validation</span>
+        <span class="tag">Concrete Pumping &amp; Extrusion</span>
+        <span class="tag">Machine Vision</span>
+        <span class="tag">Linear Actuators</span>
+        <span class="tag">Team Leadership</span>
+        <span class="tag">Cost Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cs-cta" id="cta">
+    <div class="cs-wrap">
+      <h2 class="contact-heading">Got a machine that won't do its job?</h2>
+      <p class="cs-cta-text">Sometimes the problem you can see is only the first one. I find all of them and fix the system, so the product does what it was meant to do. Tell me what's stuck.</p>
+      <div class="cs-cta-buttons">
+        <a href="../index.html#contact" class="btn">Work with me →</a>
+      </div>
+      <div class="cs-pager" role="navigation" aria-label="More projects">
+        <a href="bionic-hand.html" class="prev"><span class="dir">← Previous</span><span class="name">Bionic Prosthetic Hand</span></a>
+        <a href="../index.html#work" class="next"><span class="dir">Next →</span><span class="name">Back to all work</span></a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="../index.html" class="wordmark wordmark--logo"><picture><source srcset="../images/brand/logo-on-dark.webp" type="image/webp"/><img src="../images/brand/logo-on-dark.png" alt="Engineer by Choice" width="482" height="88"/></picture></a>
+        <ul class="footer-links">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="mailto:ajaynalla@engineerbychoice.com">ajaynalla@engineerbychoice.com</a></li>
+          <li><a href="https://www.linkedin.com/in/ajayreddynalla/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://grabcad.com/ajay.nalla-1" target="_blank" rel="noopener">GrabCAD</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Ajay Nalla · All rights reserved</span>
+        <span class="footer-domains">engineerbychoice.com · .in · .ca · .org</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js?v=20261018"></script>
+</body>
+</html>
