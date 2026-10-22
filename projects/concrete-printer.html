@@ -179,11 +179,20 @@
       <article class="cs-step" id="step-02">
         <div class="cs-step-label">Step 02 — Spooling</div>
         <h3 class="cs-step-title">Make the Feed Point Stand Still.</h3>
-        <div class="cs-step-body">
+        <div class="cs-step-body has-media">
           <div class="cs-prose">
             <p>I designed the spooling system from scratch. The spool rides on a lead screw: as it turns to wind or pay out cable, the screw moves it sideways by exactly one cable pitch per turn. The cable always leaves the spool from <strong>the same point in space</strong>, whatever its position on the drum.</p>
             <p>That removed the problem instead of correcting for it. Cable length is calculated from that fixed point, so there is no drift to model and no software compensation to fall out of step when something slips.</p>
             <p class="cs-pull">Don't compensate in software for an error you can remove in the mechanism.</p>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/concrete/spool-assembly.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/concrete/spool-assembly.jpg" alt="CAD model of one spool unit: the cable spool on a lead screw between two end supports, with three reinforcing rods, the belt drive and the motor mounted on a slotted-channel frame" width="1825" height="918" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>One spool unit in CAD. The spool travels along its lead screw as it turns, so the cable always leaves from the same point; the drive train and motor sit alongside on the same frame.</figcaption>
+            </figure>
           </div>
         </div>
       </article>
@@ -205,7 +214,7 @@
       <article class="cs-step" id="step-04">
         <div class="cs-step-label">Step 04 — Drive Train</div>
         <h3 class="cs-step-title">Take the Load off the Motor.</h3>
-        <div class="cs-step-body">
+        <div class="cs-step-body has-media">
           <div class="cs-prose">
             <p>In the earlier build the motor shafts carried the cable load, which caused motor errors. In the new design every part has one job:</p>
             <ul>
@@ -216,6 +225,15 @@
               <li>The motor couples to the small pulley and is <strong>swappable</strong>. It supplies torque and nothing else.</li>
             </ul>
             <p>I proved the mechanics first with old stepper motors: ran trial tests, found the problems and fixed them until the mechanical system ran without errors. At that point I had a stable machine that was clearly underpowered, and because the motors were swappable, that was now a motor choice rather than a redesign.</p>
+          </div>
+          <div class="cs-media">
+            <figure class="cs-figure">
+              <picture>
+                <source srcset="../images/concrete/spool-drive-train.webp" type="image/webp"/>
+                <img class="lightbox-trigger" src="../images/concrete/spool-drive-train.jpg" alt="CAD close-up of the spool drive train: the spool and three rods turning with a large spoked pulley, a belt down to a small pulley on its own bearing-mounted shaft with a brake, on a slotted adjustable base" width="721" height="770" loading="lazy" decoding="async"/>
+              </picture>
+              <figcaption>Drive train in CAD. The large pulley carries the spool; a belt brings power up from the small pulley, which runs on its own shaft and bearings with the brake. The slotted base sets belt tension, and the motor couples to the free shaft end.</figcaption>
+            </figure>
           </div>
         </div>
       </article>
