@@ -302,7 +302,7 @@ textarea.input{ min-height:150px; resize:vertical; }
 .hero-clip-caption a{ color:var(--accent); text-decoration:none; white-space:nowrap; }
 .hero-clip-caption a:hover{ color:var(--accent-hover); }
 .hero-clip-short{ display:none; }
-.hero-clip--home{ display:none; }
+.hero-clip--home{ order:1; margin:0; max-width:none; }
 @media (prefers-reduced-motion: reduce){
   .hero-clip-video{ display:none; }
   .hero-clip::before{
@@ -387,6 +387,7 @@ textarea.input{ min-height:150px; resize:vertical; }
   .hero-grid{ grid-template-columns:1fr; gap:40px; }
   .tiers{ grid-template-columns:1fr; }
   .hero-split{ display:block; }
+  .hero-clip--home{ max-width:480px; }
   .hero-split .hero-clip{ margin-top:2rem; }
   .tier-arrow{ transform:rotate(90deg); justify-self:center; }
   .grid-4{ grid-template-columns:1fr 1fr; }
@@ -449,12 +450,11 @@ textarea.input{ min-height:150px; resize:vertical; }
   .h1{ font-size:2.25rem; line-height:1.05; }
   .hero{ padding-top:20px; }
   .hero-grid{ row-gap:0; }
-  .hero-clip--home{ display:block; margin:0 0 16px; max-width:none; }
+  .hero-clip--home{ order:-1; margin:0 0 16px; max-width:none; }
   .hero-clip--home .hero-clip-video{ aspect-ratio:16 / 9; object-position:50% 45%; }
   .hero-clip--home::before{ aspect-ratio:16 / 9; background-position:50% 45%; }
   .hero-clip--home .hero-clip-caption{ margin-top:.4rem; }
   .hero .label{ margin-bottom:12px; }
-  .hero-media{ display:none; }
   .method-row{ flex-wrap:nowrap; justify-content:space-between; gap:12px; margin-top:24px; }
   .method-row li{ gap:8px; }
   .method-row svg{ width:22px; height:22px; }
