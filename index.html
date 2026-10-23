@@ -24,11 +24,10 @@
   <meta name="twitter:image:alt" content="Engineer by Choice — I make stuck hardware work. Ajay Nalla at the bench with the rebuilt spherical parallel manipulator."/>
   <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/icon-32.png"/>
   <link rel="apple-touch-icon" href="/images/brand/icon-180.png"/>
-  <link rel="preload" as="image" href="images/brand/hero-spm-workshop.webp" type="image/webp" media="(min-width:701px)"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261018">
+  <link rel="stylesheet" href="css/style.css?v=20261023">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,8 +80,8 @@
   <section class="hero">
     <div class="container hero-grid">
       <figure class="hero-clip hero-clip--home">
-        <video class="hero-clip-video" muted loop playsinline preload="none" width="720" height="720"
-               data-phone-autoplay data-poster="images/spm/spm-loop-poster.jpg"
+        <video class="hero-clip-video" autoplay muted loop playsinline preload="metadata" width="720" height="720"
+               poster="images/spm/spm-loop-poster.jpg"
                aria-label="Spherical parallel manipulator moving through positions under servo control">
           <source src="images/spm/spm-loop.webm" type="video/webm">
           <source src="images/spm/spm-loop.mp4" type="video/mp4">
@@ -112,14 +111,6 @@
           <a href="#work" class="link-arrow">See Selected Work →</a>
         </div>
       </div>
-      <figure class="hero-media">
-        <picture>
-          <source media="(max-width:700px)" srcset="images/spm/spm-loop-poster.jpg"/>
-          <source srcset="images/brand/hero-spm-workshop.webp" type="image/webp"/>
-          <img src="images/brand/hero-spm-workshop.jpg" alt="Ajay at a UBC Makerspace bench operating the rebuilt spherical parallel manipulator, with its servo controllers, power board and emergency stop in front of him" width="1732" height="1634" fetchpriority="high"/>
-        </picture>
-        <figcaption>Recovering a failed 3-DOF parallel robot · UBC</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -446,6 +437,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261018"></script>
+  <script src="js/main.js?v=20261023"></script>
 </body>
 </html>
