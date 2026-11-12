@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261024">
+  <link rel="stylesheet" href="css/style.css?v=20261112">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -88,7 +88,7 @@
         </video>
         <figcaption class="hero-clip-caption">Non-functional SPM, recovered. <a href="projects/spm.html">Read how →</a></figcaption>
       </figure>
-      <div>
+      <div class="hero-rise">
         <span class="label">Ajay Nalla · Mechanical &amp; Mechatronics Engineer</span>
         <h1 class="h1">I Make Stuck<br><span class="accent">Hardware Work</span>.</h1>
         <p class="hero-sub">System-level engineering for robotics, medical devices and advanced manufacturing — from diagnosis and redesign to a working, validated solution.</p>
@@ -118,10 +118,10 @@
   <section class="sec sec--dark sec--tight" aria-label="Results">
     <div class="container">
       <div class="metrics">
-        <div class="metric"><div class="metric-num">~30%<span class="arr">→</span><wbr>~2%</div><div class="metric-label">Production scrap · Class III line</div></div>
-        <div class="metric"><div class="metric-num">40&nbsp;hr<span class="arr">→</span><wbr>~20&nbsp;min</div><div class="metric-label">Critical process time</div></div>
-        <div class="metric"><div class="metric-num">$30K+<span class="arr">→</span><wbr>&lt;$3K</div><div class="metric-label">Bionic hand price vs. market</div></div>
-        <div class="metric"><div class="metric-num">$100K<span class="arr">/</span><wbr>$1M</div><div class="metric-label">Working prototype · budget used</div></div>
+        <div class="metric"><div class="metric-num">~30%<span class="arr">→</span><wbr><span class="metric-count" data-from="30" data-to="2" data-prefix="~" data-suffix="%">~2%</span></div><div class="metric-bar" style="--bar-from:100%;--bar-to:6.7%" aria-hidden="true"><span></span></div><div class="metric-label">Production scrap · Class III line</div></div>
+        <div class="metric"><div class="metric-num">40&nbsp;hr<span class="arr">→</span><wbr><span class="metric-count" data-from="2400" data-to="20" data-kind="dur">~20&nbsp;min</span></div><div class="metric-bar" style="--bar-from:100%;--bar-to:0.83%" aria-hidden="true"><span></span></div><div class="metric-label">Critical process time</div></div>
+        <div class="metric"><div class="metric-num">$30K+<span class="arr">→</span><wbr><span class="metric-count" data-from="30" data-to="3" data-prefix="&lt;$" data-suffix="K">&lt;$3K</span></div><div class="metric-bar" style="--bar-from:100%;--bar-to:10%" aria-hidden="true"><span></span></div><div class="metric-label">Bionic hand price vs. market</div></div>
+        <div class="metric"><div class="metric-num"><span class="metric-count" data-from="0" data-to="100" data-prefix="$" data-suffix="K">$100K</span><span class="arr">/</span><wbr>$1M</div><div class="metric-bar" style="--bar-from:0%;--bar-to:10%" aria-hidden="true"><span></span></div><div class="metric-label">Working prototype · budget used</div></div>
       </div>
       <p class="metrics-note">Medical-device process details are confidential; results are shown as headline metrics.</p>
     </div>
@@ -135,13 +135,47 @@
         <h2>Hardware failures rarely stay in one discipline.</h2>
       </div>
       <p class="body-lg">A mechanical symptom can come from actuation, controls, electronics, tolerances, manufacturing or software. I work across the whole system to find the actual failure, not patch the symptom. Then I fix it and prove the fix with data.</p>
-      <ul class="chain" aria-label="Disciplines I work across">
-        <li><span class="pill">Mechanics</span><span class="join" aria-hidden="true">↔</span></li>
-        <li><span class="pill">Actuation</span><span class="join" aria-hidden="true">↔</span></li>
-        <li><span class="pill">Electronics</span><span class="join" aria-hidden="true">↔</span></li>
-        <li><span class="pill">Controls</span><span class="join" aria-hidden="true">↔</span></li>
-        <li><span class="pill">Manufacturing</span></li>
-      </ul>
+      <div class="trace" id="trace">
+        <p class="label trace-prompt" hidden>Pick a symptom. See where the cause can hide.</p>
+        <div class="trace-tabs" role="tablist" aria-label="Symptoms" hidden>
+          <button type="button" class="trace-tab" role="tab" id="trace-tab-1" aria-controls="trace-panel-1" aria-selected="true">Mechanism locks up</button>
+          <button type="button" class="trace-tab" role="tab" id="trace-tab-2" aria-controls="trace-panel-2" aria-selected="false" tabindex="-1">Position drifts</button>
+          <button type="button" class="trace-tab" role="tab" id="trace-tab-3" aria-controls="trace-panel-3" aria-selected="false" tabindex="-1">Scrap is too high</button>
+        </div>
+        <div class="trace-panel" role="tabpanel" id="trace-panel-1" aria-labelledby="trace-tab-1">
+          <h3 class="trace-title">Mechanism locks up</h3>
+          <ol class="trace-rail" aria-label="Where the cause can hide">
+            <li class="trace-node is-found" style="--i:0"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Mechanics</span><p>Over-constrained joints, misalignment, friction where a bearing should be.</p><span class="trace-flag">Root cause</span></li>
+            <li class="trace-node is-found" style="--i:1"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Actuation</span><p>A motor that delivers less torque than its datasheet says.</p><span class="trace-flag">Second fault, caught on the bench</span></li>
+            <li class="trace-node" style="--i:2"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Electronics</span><p>Supply sag or a current limit tripping under load.</p></li>
+            <li class="trace-node" style="--i:3"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Controls</span><p>Limits and gains tuned for a different load.</p></li>
+            <li class="trace-node" style="--i:4"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Manufacturing</span><p>Tolerance stack-up, or parts out of spec.</p></li>
+          </ol>
+          <p class="trace-case"><strong>Real case.</strong> A robot skeleton that locked itself. The cause was geometric binding in the mechanism. Bench-testing the replacement servos then showed about 60% of rated torque, a second fault that a 2.5× design margin absorbed. <a href="projects/spm.html" class="link-arrow">Read the SPM case study →</a></p>
+        </div>
+        <div class="trace-panel" role="tabpanel" id="trace-panel-2" aria-labelledby="trace-tab-2">
+          <h3 class="trace-title">Position drifts</h3>
+          <ol class="trace-rail" aria-label="Where the cause can hide">
+            <li class="trace-node is-found" style="--i:0"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Mechanics</span><p>Cable, belt or screw geometry that changes length through the travel.</p><span class="trace-flag">Root cause</span></li>
+            <li class="trace-node" style="--i:1"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Actuation</span><p>Slip or missed steps under load.</p></li>
+            <li class="trace-node" style="--i:2"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Electronics</span><p>Sensor noise, grounding, a drifting reference.</p></li>
+            <li class="trace-node is-found" style="--i:3"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Controls</span><p>Compensation that hides a hardware error.</p><span class="trace-flag">Symptom was patched here</span></li>
+            <li class="trace-node" style="--i:4"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Manufacturing</span><p>Assembly variation from one unit to the next.</p></li>
+          </ol>
+          <p class="trace-case"><strong>Real case.</strong> A cable-driven concrete printer. The cable left a fixed spool at a changing angle, so its length changed. Software compensated, until the cable jumped a groove and every move after it was wrong. The fix was a redesigned spool, not better compensation. <a href="projects/concrete-printer.html" class="link-arrow">Read the case study →</a></p>
+        </div>
+        <div class="trace-panel" role="tabpanel" id="trace-panel-3" aria-labelledby="trace-tab-3">
+          <h3 class="trace-title">Scrap is too high</h3>
+          <ol class="trace-rail" aria-label="Where the cause can hide">
+            <li class="trace-node" style="--i:0"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Mechanics</span><p>Fixtures that do not locate parts repeatably.</p></li>
+            <li class="trace-node" style="--i:1"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Actuation</span><p>Force or stroke that varies from cycle to cycle.</p></li>
+            <li class="trace-node" style="--i:2"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Electronics</span><p>Sensors that do not measure what is critical to quality.</p></li>
+            <li class="trace-node" style="--i:3"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Controls</span><p>A process window narrower than the recipe assumes.</p></li>
+            <li class="trace-node" style="--i:4"><span class="trace-dot" aria-hidden="true"></span><span class="pill">Manufacturing</span><p>Manual steps that vary by operator and shift.</p></li>
+          </ol>
+          <p class="trace-case"><strong>Real case.</strong> A Class III implantable battery line running at about 30% scrap. Automating manual steps, retrofitting equipment and building CTQ data tools brought it to about 2%. Process details are confidential. <a href="#resonetics" class="link-arrow">See the result →</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -209,11 +243,11 @@
       <div class="work-list">
 
         <!-- A. RESONETICS (text only, no images) -->
-        <article class="work-item" id="resonetics">
+        <article class="work-item reveal" id="resonetics">
           <div class="work-media">
             <div class="type-panel" aria-hidden="true">
-              <div class="metric"><div class="metric-num">~30%<span class="arr">→</span><wbr>~2%</div><div class="metric-label">Production scrap</div></div>
-              <div class="metric"><div class="metric-num">40&nbsp;hr<span class="arr">→</span><wbr>~20&nbsp;min</div><div class="metric-label">Critical process time</div></div>
+              <div class="metric"><div class="metric-num">~30%<span class="arr">→</span><wbr><span class="metric-count" data-from="30" data-to="2" data-prefix="~" data-suffix="%">~2%</span></div><div class="metric-bar" style="--bar-from:100%;--bar-to:6.7%" aria-hidden="true"><span></span></div><div class="metric-label">Production scrap</div></div>
+              <div class="metric"><div class="metric-num">40&nbsp;hr<span class="arr">→</span><wbr><span class="metric-count" data-from="2400" data-to="20" data-kind="dur">~20&nbsp;min</span></div><div class="metric-bar" style="--bar-from:100%;--bar-to:0.83%" aria-hidden="true"><span></span></div><div class="metric-label">Critical process time</div></div>
             </div>
           </div>
           <div class="work-body">
@@ -231,7 +265,7 @@
         </article>
 
         <!-- B. SPM -->
-        <article class="work-item work-item--flip" id="spm">
+        <article class="work-item work-item--flip reveal" id="spm">
           <figure class="work-media">
             <picture>
               <source srcset="images/brand/spm-final.webp" type="image/webp"/>
@@ -253,7 +287,7 @@
         </article>
 
         <!-- C. BIONIC HAND -->
-        <article class="work-item" id="bionic-hand">
+        <article class="work-item reveal" id="bionic-hand">
           <figure class="work-media">
             <div class="yt" data-video-id="dnWHzWE7D-o" data-video-title="Bionic prosthetic hand demo — Makers Hive Innovations">
               <button class="yt-facade" aria-label="Play video: bionic prosthetic hand demo">
@@ -279,7 +313,7 @@
         </article>
 
         <!-- D. CONCRETE 3D PRINTER -->
-        <article class="work-item work-item--flip" id="concrete-printer">
+        <article class="work-item work-item--flip reveal" id="concrete-printer">
           <figure class="work-media">
             <div class="yt" data-video-id="IjnoCOKBG7U" data-video-title="Cable-driven concrete 3D printer demo">
               <button class="yt-facade" aria-label="Play video: cable-driven concrete 3D printer demo">
@@ -326,17 +360,40 @@
     </div>
   </section>
 
-  <!-- 2.8 METHOD (dark) -->
-  <section class="sec sec--dark" id="method">
-    <div class="container">
-      <div class="sec-head">
-        <span class="label">06 — Method</span>
-        <h2>Diagnose <span class="arr">→</span><wbr> Redesign <span class="arr">→</span><wbr> Prove.</h2>
-      </div>
-      <div class="method-grid">
-        <div class="method-col"><div class="method-num">01</div><h3>Diagnose</h3><p>Establish the real failure mode and root cause, with evidence.</p></div>
-        <div class="method-col"><div class="method-num">02</div><h3>Redesign</h3><p>Engineer the mechanical, mechatronic or manufacturing fix.</p></div>
-        <div class="method-col"><div class="method-num">03</div><h3>Prove</h3><p>Prototype, test and validate, so the fix is shown to work and not just assumed.</p></div>
+  <!-- 2.8 METHOD (dark) — pins on desktop and steps through with scroll; plain stacked layout otherwise -->
+  <section class="sec sec--dark method-pin" id="method">
+    <div class="method-sticky">
+      <div class="container method-layout">
+        <div class="sec-head">
+          <span class="label">06 — Method</span>
+          <h2>Diagnose <span class="arr">→</span><wbr> Redesign <span class="arr">→</span><wbr> Prove.</h2>
+        </div>
+        <ol class="method-steps">
+          <li class="method-step">
+            <div class="method-num">01</div>
+            <div class="method-text"><h3>Diagnose</h3><p>Establish the real failure mode and root cause, with evidence.</p></div>
+            <figure class="method-art">
+              <img src="images/spm/servo-load-test-poster.jpg" alt="Servo torque test rig with weights hung at a fixed radius" width="1280" height="720" loading="lazy" decoding="async"/>
+              <figcaption>Evidence: servo test rig. Measured torque was about 60% of the rating.</figcaption>
+            </figure>
+          </li>
+          <li class="method-step">
+            <div class="method-num">02</div>
+            <div class="method-text"><h3>Redesign</h3><p>Engineer the mechanical, mechatronic or manufacturing fix.</p></div>
+            <figure class="method-art">
+              <picture><source srcset="images/spm/simulation.webp" type="image/webp"/><img src="images/spm/simulation.png" alt="FEA results for the redesigned base plate and servo mount" width="1536" height="1024" loading="lazy" decoding="async"/></picture>
+              <figcaption>Fix: base plate and servo mount redesigned and checked with FEA before cutting metal.</figcaption>
+            </figure>
+          </li>
+          <li class="method-step">
+            <div class="method-num">03</div>
+            <div class="method-text"><h3>Prove</h3><p>Prototype, test and validate, so the fix is shown to work and not just assumed.</p></div>
+            <figure class="method-art">
+              <picture><source srcset="images/brand/spm-final.webp" type="image/webp"/><img src="images/brand/spm-final.png" alt="The rebuilt spherical parallel manipulator on the bench" width="778" height="586" loading="lazy" decoding="async"/></picture>
+              <figcaption>Proof: the rebuilt robot, moving freely under three control modes.</figcaption>
+            </figure>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
@@ -437,6 +494,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=20261023"></script>
+  <script src="js/main.js?v=20261112"></script>
 </body>
 </html>
