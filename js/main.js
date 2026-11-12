@@ -4,7 +4,8 @@ const navLinks = document.querySelectorAll('.nav-links a');
 const sections = document.querySelectorAll('section[id]');
 const progressBar = document.getElementById('scroll-progress');
 
-window.addEventListener('scroll', () => {
+const scrollTasks = [];
+const onScroll = () => {
   nav?.classList.toggle('scrolled', window.scrollY > 50);
 
   let current = '';
@@ -21,6 +22,13 @@ window.addEventListener('scroll', () => {
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     progressBar.style.width = docHeight > 0 ? (window.scrollY / docHeight * 100) + '%' : '0%';
   }
+  scrollTasks.forEach(fn => fn());
+};
+let scrollQueued = false;
+window.addEventListener('scroll', () => {
+  if (scrollQueued) return;
+  scrollQueued = true;
+  requestAnimationFrame(() => { scrollQueued = false; onScroll(); });
 }, { passive: true });
 
 // ── Mobile hamburger
@@ -135,6 +143,136 @@ if (!prefersReducedMotion) {
   }, { threshold: 0.5 });
 
   counters.forEach(el => counterObserver.observe(el));
+}
+
+// ── Before → after metrics: the bar drains and the number counts to its result
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const fmtCount = (el, n) => {
+    if (el.dataset.kind === 'dur') {
+      return n >= 90 ? `${Math.round(n / 60)} hr` : `~${Math.round(n)} min`;
+    }
+    return (el.dataset.prefix || '') + Math.round(n) + (el.dataset.suffix || '');
+  };
+  const runMetric = (metric) => {
+    const el = metric.querySelector('.metric-count');
+    metric.classList.add('metric--run');
+    if (!el) return;
+    const from = parseFloat(el.dataset.from);
+    const to = parseFloat(el.dataset.to);
+    const finalText = el.dataset.final;
+    const dur = 1500;
+    let t0 = null;
+    const tick = (now) => {
+      if (t0 === null) t0 = now;
+      const t = Math.min((now - t0) / dur, 1);
+      const e = 1 - Math.pow(1 - t, 3);
+      // ratios (30% → 2%, 40 hr → 20 min) read better on a log scale; counts from zero stay linear
+      const n = from > 0 && to > 0 ? from * Math.pow(to / from, e) : from + (to - from) * e;
+      if (t < 1) { el.textContent = fmtCount(el, n); requestAnimationFrame(tick); }
+      else el.textContent = finalText;
+    };
+    requestAnimationFrame(tick);
+  };
+  const metricObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      metricObserver.unobserve(entry.target);
+      const idx = [...entry.target.parentElement.children].indexOf(entry.target);
+      setTimeout(() => runMetric(entry.target), idx * 140);
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll('.metric').forEach(metric => {
+    if (!metric.querySelector('.metric-bar')) return;
+    const el = metric.querySelector('.metric-count');
+    if (el) {
+      el.dataset.final = el.textContent;
+      el.textContent = fmtCount(el, parseFloat(el.dataset.from));
+    }
+    metric.classList.add('metric--armed');
+    metricObserver.observe(metric);
+  });
+}
+
+// ── Fault trace: pick a symptom, watch the possible causes light up across disciplines
+const trace = document.getElementById('trace');
+if (trace) {
+  const tabs = [...trace.querySelectorAll('.trace-tab')];
+  const panels = [...trace.querySelectorAll('.trace-panel')];
+  const play = (panel) => {
+    panel.classList.remove('is-tracing');
+    void panel.offsetWidth; // restart the CSS sweep
+    panel.classList.add('is-tracing');
+  };
+  const select = (i, focus) => {
+    tabs.forEach((tab, j) => {
+      tab.setAttribute('aria-selected', String(j === i));
+      tab.tabIndex = j === i ? 0 : -1;
+    });
+    panels.forEach((panel, j) => { panel.hidden = j !== i; });
+    if (focus) tabs[i].focus();
+    play(panels[i]);
+  };
+  trace.querySelectorAll('.trace-tabs, .trace-prompt').forEach(el => { el.hidden = false; });
+  trace.querySelectorAll('.trace-title').forEach(el => { el.hidden = true; });
+  panels.forEach((panel, j) => { panel.hidden = j !== 0; });
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(i, false));
+    tab.addEventListener('keydown', e => {
+      const move = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+      if (!move) return;
+      e.preventDefault();
+      select((i + move + tabs.length) % tabs.length, true);
+    });
+  });
+  if ('IntersectionObserver' in window) {
+    const traceObserver = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      traceObserver.disconnect();
+      play(panels.find(panel => !panel.hidden) || panels[0]);
+    }, { threshold: 0.35 });
+    traceObserver.observe(trace);
+  }
+}
+
+// ── Method: pinned on desktop, scroll steps through Diagnose → Redesign → Prove
+const methodPin = document.querySelector('.method-pin');
+if (methodPin) {
+  const steps = [...methodPin.querySelectorAll('.method-step')];
+  const pinQuery = window.matchMedia('(min-width: 1025px) and (min-height: 700px) and (prefers-reduced-motion: no-preference)');
+  const updatePin = () => {
+    if (!methodPin.classList.contains('is-pinned')) return;
+    const navH = nav ? nav.offsetHeight : 0;
+    const rect = methodPin.getBoundingClientRect();
+    const travel = rect.height - (window.innerHeight - navH);
+    const p = travel > 0 ? Math.min(Math.max((navH - rect.top) / travel, 0), 1) : 0;
+    const active = Math.min(steps.length - 1, Math.floor(p * steps.length));
+    steps.forEach((step, i) => {
+      step.classList.toggle('is-active', i === active);
+      const fill = Math.min(Math.max(p * steps.length - i, 0), 1);
+      step.style.setProperty('--fill', (fill * 100).toFixed(1) + '%');
+    });
+  };
+  const applyPin = () => {
+    methodPin.classList.toggle('is-pinned', pinQuery.matches);
+    if (!pinQuery.matches) {
+      steps.forEach(step => { step.classList.remove('is-active'); step.style.removeProperty('--fill'); });
+    }
+    updatePin();
+  };
+  pinQuery.addEventListener('change', applyPin);
+  window.addEventListener('resize', updatePin, { passive: true });
+  scrollTasks.push(updatePin);
+  applyPin();
+}
+
+// ── Hero clip: don't decode video nobody is looking at
+const heroVideo = document.querySelector('.hero-clip-video');
+if (heroVideo && 'IntersectionObserver' in window) {
+  new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) heroVideo.play().catch(() => {});
+    else heroVideo.pause();
+  }, { threshold: 0.05 }).observe(heroVideo);
 }
 
 // ── Timeline draw-on-scroll
